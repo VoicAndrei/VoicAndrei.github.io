@@ -111,6 +111,56 @@
             border-radius: 3px;
             transition: width 0.5s ease-in-out;
         }
+        .receipt-btn {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            padding: 3px 8px;
+            font-size: 0.8em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .receipt-btn:hover {
+            background-color: #45a049;
+        }
+        .receipt-modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            overflow: auto;
+        }
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 90%;
+            margin-top: 2%;
+        }
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        @media screen and (max-width: 768px) {
+            .receipt-item {
+                flex: 0 0 calc(50% - 1em);
+            }
+        }
+        @media screen and (max-width: 480px) {
+            .receipt-item {
+                flex: 0 0 100%;
+            }
+        }
     </style>
 </head>
 <body class="is-preload">
@@ -148,6 +198,7 @@
                     <th>Preț/buc</th>
                     <th>Sumă</th>
                     <th>Data</th>
+                    <th>Bon</th>
                 </tr>
             </thead>
             <tbody id="expensesTableBody">
@@ -173,6 +224,12 @@
         <div class="last-update">
             Ultima actualizare: <span id="lastUpdate"></span>
         </div>
+    </div>
+
+    <!-- Modal for displaying receipts -->
+    <div id="receiptModal" class="receipt-modal">
+        <span class="close-modal" id="closeModal">&times;</span>
+        <img class="modal-content" id="modalImage">
     </div>
 
     <!-- Scripts -->
@@ -208,9 +265,9 @@
 
         // Expenses data - update as new expenses occur
         const expenses = [
-            { description: 'Cabana', quantity: 1, pricePerUnit: 3200, amount: 3200, date: '2025-02-22', isFuture: false },
-            { description: 'Bere Timișoreana 0.5L', quantity: 24, pricePerUnit: 2.992, amount: 71.8, date: '2025-02-26', isFuture: false },
-            { description: 'Bere Ursus Retro 0.5L', quantity: 96, pricePerUnit: 2.992, amount: 287.23, date: '2025-02-26', isFuture: false }
+            { description: 'Cabana (plată integrală)', quantity: 1, pricePerUnit: 3200, amount: 3200, date: '2025-02-22', isFuture: false, receipt: null },
+            { description: 'Bere Timișoreana 0.5L', quantity: 24, pricePerUnit: 2.992, amount: 71.8, date: '2025-02-26', isFuture: false, receipt: '../images/bonuri/bere_kaufland.jpg' },
+            { description: 'Bere Ursus Retro 0.5L', quantity: 96, pricePerUnit: 2.992, amount: 287.23, date: '2025-02-26', isFuture: false, receipt: '../images/bonuri/bere_kaufland.jpg' }
         ];
 
         const targetAmount = 290; // Total amount required per person
@@ -271,6 +328,9 @@
                 
                 const formattedDate = new Date(expense.date).toLocaleDateString('ro-RO');
                 const rowClass = expense.isFuture ? 'future-expense' : '';
+                const receiptButton = expense.receipt ? 
+                    `<button class="receipt-btn" onclick="openReceiptModal('${expense.receipt}')">Vezi Bon</button>` : 
+                    '';
 
                 html += `
                     <tr class="${rowClass}">
@@ -279,6 +339,7 @@
                         <td>${expense.pricePerUnit.toFixed(2)} RON</td>
                         <td>${expense.amount.toFixed(2)} RON</td>
                         <td>${formattedDate}</td>
+                        <td>${receiptButton}</td>
                     </tr>
                 `;
             });
@@ -290,6 +351,7 @@
                     <td></td>
                     <td></td>
                     <td>${totalExpenses.toFixed(2)} RON</td>
+                    <td></td>
                     <td></td>
                 </tr>
             `;
@@ -321,6 +383,26 @@
             // Update last update timestamp
             const now = new Date();
             document.getElementById('lastUpdate').textContent = now.toLocaleDateString('ro-RO');
+        }
+
+        function openReceiptModal(imagePath) {
+            const modal = document.getElementById('receiptModal');
+            const modalImg = document.getElementById('modalImage');
+            
+            modal.style.display = "block";
+            modalImg.src = imagePath;
+        }
+
+        // Close modal when clicking the X
+        document.getElementById('closeModal').onclick = function() {
+            document.getElementById('receiptModal').style.display = "none";
+        }
+
+        // Close modal when clicking outside the image
+        document.getElementById('receiptModal').onclick = function(event) {
+            if (event.target === this) {
+                this.style.display = "none";
+            }
         }
 
         // Initial update
