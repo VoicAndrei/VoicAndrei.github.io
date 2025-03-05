@@ -267,14 +267,17 @@
 
         // Expenses data - update as new expenses occur
         const expenses = [
-            { description: 'Cabana', quantity: 1, pricePerUnit: 3200, amount: 3200, date: '2025-02-22', isFuture: false, receipt: null },
+            { description: 'Cabana', quantity: 1, pricePerUnit: 3200, amount: 3200, date: '2025-02-22', isFuture: false, receipt: null, link: 'https://www.facebook.com/p/Casa-Nico-Nico-100057403091494/?locale=ro_RO' },
             { description: 'Bere Timișoreana 0.5L', quantity: 24, pricePerUnit: 2.992, amount: 71.8, date: '2025-02-26', isFuture: false, receipt: '../images/bonuri/bere_kaufland.jpg' },
             { description: 'Bere Ursus Retro 0.5L', quantity: 96, pricePerUnit: 2.992, amount: 287.23, date: '2025-02-26', isFuture: false, receipt: '../images/bonuri/bere_kaufland.jpg' },
             { description: 'V33 RED Vodka 37,5% 0,5L', quantity: 3, pricePerUnit: 15.49, amount: 46.47, date: '2025-03-01', isFuture: false, receipt: '../images/bonuri/votca_lidl.jpeg' }
         ];
 
         const targetAmount = 290; // Total amount required per person
-        const totalExpectedAmount = 5510; // Total amount expected to collect from all participants
+        
+        // Calculate total expected amount based on number of participants
+        const totalParticipants = payments.length;
+        const totalExpectedAmount = targetAmount * totalParticipants; // Total amount expected to collect from all participants
 
         function updatePaymentsTable() {
             const tableBody = document.getElementById('paymentTableBody');
@@ -331,9 +334,13 @@
                 
                 const formattedDate = new Date(expense.date).toLocaleDateString('ro-RO');
                 const rowClass = expense.isFuture ? 'future-expense' : '';
-                const receiptButton = expense.receipt ? 
-                    `<button class="receipt-btn" onclick="openReceiptModal('${expense.receipt}')">Vezi Bon</button>` : 
-                    '';
+                
+                let actionButton = '';
+                if (expense.receipt) {
+                    actionButton = `<button class="receipt-btn" onclick="openReceiptModal('${expense.receipt}')">Vezi Bon</button>`;
+                } else if (expense.link) {
+                    actionButton = `<a href="${expense.link}" target="_blank" class="receipt-btn">Vezi Cabana</a>`;
+                }
 
                 html += `
                     <tr class="${rowClass}">
@@ -342,7 +349,7 @@
                         <td>${expense.pricePerUnit.toFixed(2)} RON</td>
                         <td>${expense.amount.toFixed(2)} RON</td>
                         <td>${formattedDate}</td>
-                        <td>${receiptButton}</td>
+                        <td>${actionButton}</td>
                     </tr>
                 `;
             });
