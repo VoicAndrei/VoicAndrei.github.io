@@ -120,9 +120,15 @@
             font-size: 0.8em;
             cursor: pointer;
             transition: background-color 0.3s;
+            display: inline-block;
+            text-decoration: none;
+            text-align: center;
+            min-width: 80px;
         }
         .receipt-btn:hover {
             background-color: #45a049;
+            color: white;
+            text-decoration: none;
         }
         .receipt-modal {
             display: none;
@@ -155,10 +161,25 @@
             .receipt-item {
                 flex: 0 0 calc(50% - 1em);
             }
+            .receipt-btn {
+                padding: 6px 10px;
+                font-size: 0.9em;
+                min-width: 90px;
+            }
         }
         @media screen and (max-width: 480px) {
             .receipt-item {
                 flex: 0 0 100%;
+            }
+            .receipt-btn {
+                padding: 8px 12px;
+                font-size: 1em;
+                min-width: 100px;
+                margin: 2px 0;
+            }
+            .expenses-table th,
+            .expenses-table td {
+                padding: 8px 4px;
             }
         }
     </style>
