@@ -205,8 +205,24 @@
             display: flex;
             justify-content: space-between;
             margin-bottom: 0.5em;
+            align-items: center;
         }
         .stats-item:last-child {
+            font-weight: bold;
+            margin-top: 0.5em;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 0.5em;
+        }
+        .stats-item span:first-child {
+            flex: 1;
+            text-align: left;
+            padding-right: 10px;
+        }
+        .stats-item span:last-child {
+            flex: 0 0 100px;
+            text-align: right;
+        }
+        .stats-item.total-row {
             font-weight: bold;
             margin-top: 0.5em;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -615,22 +631,22 @@
             
             // Add totals
             if (showVolume && stats.totalVolume > 0) {
-                html += `<div class="stats-item">
-                    <span>Total litri</span>
-                    <span>${stats.totalVolume.toFixed(2)} L</span>
+                html += `<div class="stats-item total-row">
+                    <span><strong>Total litri</strong></span>
+                    <span><strong>${stats.totalVolume.toFixed(2)} L</strong></span>
                 </div>`;
             }
             
             if (showWeight && stats.totalWeight > 0) {
-                html += `<div class="stats-item">
-                    <span>Total grame</span>
-                    <span>${stats.totalWeight.toFixed(0)} g</span>
+                html += `<div class="stats-item total-row">
+                    <span><strong>Total grame</strong></span>
+                    <span><strong>${stats.totalWeight.toFixed(0)} g</strong></span>
                 </div>`;
             }
             
-            html += `<div class="stats-item">
-                <span>Total RON</span>
-                <span>${stats.totalAmount.toFixed(2)} RON</span>
+            html += `<div class="stats-item total-row">
+                <span><strong>Total RON</strong></span>
+                <span><strong>${stats.totalAmount.toFixed(2)} RON</strong></span>
             </div>`;
             
             container.innerHTML = html;
