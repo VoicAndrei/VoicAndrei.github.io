@@ -1,0 +1,233 @@
+<!DOCTYPE HTML>
+<!--
+	Strata by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Building an F1 Racing Leaderboard with AI - Voic Andrei</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="How I built a complete F1 racing simulator leaderboard application using only AI tools - Gemini 2.5 Pro for planning and Claude Sonnet 3.7 in Cursor for development." />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<link rel="icon" type="image/png" href="../images/sitethumbnail-modified.png">
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-PF57JWBKRV"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'G-PF57JWBKRV');
+		</script>
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<div class="inner">
+					<a href="../" class="image avatar"><img src="../images/headshot_ok.png" alt="Voic Andrei" /></a>
+					<h1><strong>I am Voic Andrei</strong>, a passionate<br />
+					developer and professional<br />
+					based in Romania.</h1>
+				</div>
+			</header>
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- Article -->
+					<section>
+						<header class="major">
+							<h1>Building an F1 Racing Leaderboard with AI: A Complete Solution Created by Code Assistants</h1>
+							<p><time datetime="2025-01-27">July 25, 2025</time></p>
+						</header>
+
+						<span class="image fit"><img src="../images/projects/f1-leaderboard-shop.jpeg" alt="F1 Leaderboard System in Shop with 4 Rigs" /></span>
+
+						<h2>The Power of AI in Modern Development</h2>
+						<p>What if I told you that a complete, production-ready F1 racing simulator leaderboard system could be built entirely using AI coding assistants? Not just simple scripts or prototypes, but a full-featured application with real-time telemetry processing, administrative controls, timer management, and a polished user interface that's currently running at racing events across Romania.</p>
+
+						<p>That's exactly what I accomplished with my <strong>F1 24 Leaderboard</strong> project – an end-to-end solution built exclusively using AI tools, specifically <strong>Gemini 2.5 Pro</strong> for architectural planning and <strong>Claude Sonnet 3.7</strong> in Cursor for code generation.</p>
+
+						<h2>The Vision: Professional Racing Experience</h2>
+						<p>The goal was ambitious: create a leaderboard system for a simulator shop with multiple F1 racing rigs that could:</p>
+						<ul>
+							<li><strong>Capture real telemetry data</strong> from F1 2024 game sessions on each simulator</li>
+							<li><strong>Display live leaderboards</strong> on a TV screen, automatically cycling through all F1 tracks</li>
+							<li><strong>Provide administrative controls</strong> for managing player assignments and session timers</li>
+							<li><strong>Track lap times</strong> and maintain persistent leaderboards for each official F1 2024 circuit</li>
+							<li><strong>Support multiple network configurations</strong> for different deployment scenarios</li>
+						</ul>
+
+						<span class="image fit"><img src="../images/projects/f1-leaderboard-brasov.jpg" alt="F1 Leaderboard at Moto Event in Brasov" /></span>
+
+						<h2>The AI-First Development Approach</h2>
+
+						<h3>Phase 1: Architectural Planning with Gemini 2.5 Pro</h3>
+						<p>Rather than diving straight into code, I started by leveraging <strong>Gemini 2.5 Pro</strong> to create a comprehensive development plan. I provided the AI with my requirements and asked it to design the entire system architecture, including:</p>
+						<ul>
+							<li>Technology stack recommendations (Python + FastAPI + SQLite + vanilla JavaScript)</li>
+							<li>Network topology for multi-rig deployments</li>
+							<li>Database schema design</li>
+							<li>API endpoint specifications</li>
+							<li>Development phases and testing strategies</li>
+						</ul>
+
+						<p>The AI generated a detailed 96-point specification document that became my development bible. This wasn't just high-level guidance – it included specific implementation details, error handling strategies, and even code style conventions.</p>
+
+						<h3>Phase 2: Cursor Rules and AI-Guided Development</h3>
+						<p>The architectural plan was then converted into <strong>Cursor rules</strong> (stored in <code>.cursor/rules/development-rules.mdc</code>), creating a persistent context for the AI coding assistant. These rules ensured that every piece of generated code would:</p>
+						<ul>
+							<li>Follow the established architecture patterns</li>
+							<li>Maintain consistency across the entire codebase</li>
+							<li>Implement proper error handling and logging</li>
+							<li>Adhere to Python PEP 8 standards</li>
+							<li>Include comprehensive documentation</li>
+						</ul>
+
+						<h3>Phase 3: Code Generation with Claude Sonnet 3.7</h3>
+						<p>With the architectural foundation in place, I used <strong>Claude Sonnet 3.7</strong> in Cursor to generate the actual implementation. The AI created:</p>
+						<ul>
+							<li><strong>Backend API (FastAPI)</strong>: Complete Python backend handling telemetry ingestion, leaderboard logic, and administrative functions</li>
+							<li><strong>Telemetry Listeners</strong>: UDP packet listeners that capture F1 2024 game data and extract lap times</li>
+							<li><strong>Database Management</strong>: SQLite integration with proper schema and data persistence</li>
+							<li><strong>Web UI</strong>: Clean, responsive interfaces for both public leaderboard display and administrative control</li>
+							<li><strong>Timer System</strong>: Session management with countdown timers and operator controls</li>
+							<li><strong>Network Configuration</strong>: Scripts for managing different deployment profiles (shop vs. mobile setups)</li>
+						</ul>
+
+						<span class="image fit"><img src="../images/projects/f1-leaderboard-techdays.jpg" alt="F1 Leaderboard at Tech Days Bucharest" /></span>
+
+						<h2>Technical Deep Dive</h2>
+
+						<h3>Real-Time Telemetry Processing</h3>
+						<p>One of the most impressive aspects of the AI-generated solution is how it handles F1 2024 telemetry data. The system:</p>
+						<ul>
+							<li>Integrates with the open-source <a href="https://github.com/Fredrik2002/f1-24-telemetry-application" target="_blank">f1-24-telemetry-application</a> library</li>
+							<li>Runs dedicated UDP listeners on each simulator PC</li>
+							<li>Captures lap completion events and extracts timing data</li>
+							<li>Associates lap times with specific players assigned to each rig</li>
+							<li>Submits data to the central backend via HTTP APIs</li>
+						</ul>
+
+						<h3>Sophisticated State Management</h3>
+						<p>The leaderboard display features intelligent state management:</p>
+						<ul>
+							<li><strong>Auto-cycling</strong>: Automatically rotates through all 24 F1 2024 tracks every 30 seconds</li>
+							<li><strong>Manual override</strong>: Administrators can select specific tracks to display</li>
+							<li><strong>Real-time updates</strong>: New lap times appear immediately without page refreshes</li>
+							<li><strong>Persistent configuration</strong>: All settings and player assignments survive system restarts</li>
+						</ul>
+
+						<h3>Administrative Control Suite</h3>
+						<p>The admin interface provides comprehensive control over the entire system:</p>
+						<ul>
+							<li><strong>Player Management</strong>: Assign names to specific simulator rigs</li>
+							<li><strong>Session Timers</strong>: Set and monitor play time allocations (15 min, 1 hour, etc.)</li>
+							<li><strong>Track Selection</strong>: Override auto-cycling for specific events</li>
+							<li><strong>System Monitoring</strong>: View connection status and system health</li>
+						</ul>
+
+						<h2>Testing and Refinement: AI-Assisted Debugging</h2>
+						<p>Even the testing and debugging phase leveraged AI assistance. When issues arose during deployment, I could describe problems to Claude Sonnet, and it would:</p>
+						<ul>
+							<li>Analyze error logs and suggest fixes</li>
+							<li>Generate test scenarios to reproduce bugs</li>
+							<li>Propose optimizations for performance issues</li>
+							<li>Help troubleshoot network configuration problems</li>
+						</ul>
+
+						<p>This AI-assisted debugging was particularly valuable when fine-tuning the telemetry capture logic and ensuring reliable operation across different network configurations.</p>
+
+						<h2>Real-World Deployment Success</h2>
+						<p>The proof of concept became a production reality. The system has been successfully deployed at:</p>
+						<ul>
+							<li><strong>Moto Events in Brașov</strong>: Public demonstrations with a single racing rig setup</li>
+							<li><strong>Tech Days in Bucharest</strong>: Technology showcases with a portable single-rig configuration</li>
+							<li><strong>Simulator Racing Shop</strong>: Daily operation with 4 F1 racing rigs in a permanent installation</li>
+						</ul>
+
+						<p>The system handles real telemetry data, manages concurrent sessions, and provides a professional racing experience that rivals commercial solutions. The flexible architecture allows it to work equally well with single-rig portable setups and multi-rig permanent installations.</p>
+
+						<h2>What This Means for the Future of Development</h2>
+
+						<h3>Democratization of Complex Software</h3>
+						<p>This project demonstrates that sophisticated, production-grade applications can now be built by developers without deep expertise in every involved technology. The AI assistants handled:</p>
+						<ul>
+							<li>Complex networking and UDP protocol handling</li>
+							<li>Database design and optimization</li>
+							<li>Real-time web application architecture</li>
+							<li>Cross-platform deployment considerations</li>
+						</ul>
+
+						<h3>Speed of Development</h3>
+						<p>What would traditionally take weeks or months of development was accomplished in a fraction of the time. The AI-generated solution was functional and worked exactly as intended from the start.</p>
+
+						<h3>Trust in AI-Generated Solutions</h3>
+						<p>The remarkable aspect of this project is that I never read a single line of the generated code. The AI created a working, production-ready system that I deployed with complete confidence based purely on its functionality. This represents a new paradigm where we can trust AI to handle implementation details while we focus on requirements and outcomes.</p>
+
+						<h2>Key Takeaways for Developers</h2>
+
+						<h3>1. Start with Architecture, Not Code</h3>
+						<p>Using Gemini 2.5 Pro to design the system architecture before writing any code proved invaluable. The AI helped identify potential issues and design patterns that would have been easy to miss.</p>
+
+						<h3>2. Invest in Good Prompts and Context</h3>
+						<p>The Cursor rules file acted as a persistent context that ensured consistency across the entire codebase. Good prompting is as important as good coding.</p>
+
+						<h3>3. AI Excels at Integration</h3>
+						<p>Rather than building everything from scratch, the AI was excellent at integrating existing libraries and tools (like the F1 telemetry parser) into a cohesive solution.</p>
+
+						<h3>4. Focus on Outcomes, Not Implementation</h3>
+						<p>The AI-assisted development process proved that we can achieve complex functionality without diving into implementation details. The focus shifts from "how to code" to "what should it do."</p>
+
+						<h2>The Technical Stack</h2>
+						<p>For those interested in the technical details, the complete system includes:</p>
+						<ul>
+							<li><strong>Backend</strong>: Python 3.x with FastAPI framework</li>
+							<li><strong>Database</strong>: SQLite for local data persistence</li>
+							<li><strong>Frontend</strong>: HTML5, CSS3, vanilla JavaScript</li>
+							<li><strong>Telemetry</strong>: UDP listeners using F1 2024 telemetry library</li>
+							<li><strong>Deployment</strong>: Windows batch scripts with network profile management</li>
+						</ul>
+
+						<h2>Conclusion: The New Era of Development</h2>
+						<p>This project represents more than just a successful application – it's a glimpse into the future of software development. When AI tools can generate production-ready, complex applications from architectural specifications, it fundamentally changes what's possible for individual developers and small teams.</p>
+
+						<p>The F1 leaderboard system continues to operate successfully in production, handling real telemetry data and providing professional racing experiences. If you're a Rebel and got to this point in reading this, reply to the thread with exactly: "Cool stuff! :just_rebel:". First three replies get a free voucher to try this at Landgame. It stands as proof that the question is no longer "Can AI build real software?" but rather "What amazing things will we build next with AI as our development partner?"</p>
+
+						<p>The age of AI-assisted development isn't coming – it's here, and it's more powerful than we imagined.</p>
+
+						<ul class="actions">
+							<li><a href="../" class="button primary">Back to Home</a></li>
+							<li><a href="./" class="button">More Blog Posts</a></li>
+						</ul>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					<ul class="icons">
+						<li><a href="https://www.facebook.com/vilk.coco" class="icon brands fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="https://www.linkedin.com/in/voic-andrei-622781212/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+						<li><a href="mailto:andrei@voic.ro" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; Voic Andrei</li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/jquery.poptrox.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+
+	</body>
+</html> 
