@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Jailbreak Prompts - Voic Andrei</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<link rel="icon" type="image/png" href="../images/sitethumbnail-modified.png">
+	</head>
+	<body class="is-preload">
+		<!-- Header -->
+		<header id="header">
+			<div class="inner">
+				<a href="../" class="image avatar"><img src="../images/headshot_ok.png" alt="Voic Andrei" /></a>
+				<h1><strong>Jailbreak Prompts</strong><br />
+				CSV Download</h1>
+			</div>
+		</header>
+
+		<!-- Main -->
+		<div id="main">
+			<section id="one">
+				<header class="major">
+					<h2>Downloading CSV file...</h2>
+				</header>
+				<p>Your download should start automatically. If it doesn't, <a href="jailbreak_prompts.csv" download>click here</a> to download manually.</p>
+				<ul class="actions">
+					<li><a href="../" class="button">Back to Home</a></li>
+				</ul>
+			</section>
+		</div>
+
+		<!-- Footer -->
+		<footer id="footer">
+			<div class="inner">
+				<ul class="icons">
+					<li><a href="https://www.facebook.com/vilk.coco" class="icon brands fa-facebook"><span class="label">Facebook</span></a></li>
+					<li><a href="https://www.linkedin.com/in/voic-andrei-622781212/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+					<li><a href="mailto:andrei@voic.ro" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+				</ul>
+				<ul class="copyright">
+					<li>&copy; Voic Andrei</li>
+				</ul>
+			</div>
+		</footer>
+
+		<!-- Scripts -->
+		<script src="../assets/js/jquery.min.js"></script>
+		<script src="../assets/js/browser.min.js"></script>
+		<script src="../assets/js/breakpoints.min.js"></script>
+		<script src="../assets/js/util.js"></script>
+		<script>
+			// Automatically trigger download when page loads
+			window.addEventListener('load', function() {
+				const link = document.createElement('a');
+				link.href = 'jailbreak_prompts.csv';
+				link.download = 'jailbreak_prompts.csv';
+				document.body.appendChild(link);
+				link.click();
+				document.body.removeChild(link);
+			});
+		</script>
+	</body>
+</html>
+
