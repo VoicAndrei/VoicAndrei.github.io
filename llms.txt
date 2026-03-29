@@ -1,0 +1,19 @@
+# voic.ro
+
+Canonical profile and portfolio site for Voic Andrei, focused on AI, robotics, embedded systems, drones, hackathons, and engineering projects.
+
+Start here:
+- https://voic.ro/
+- https://voic.ro/blog/
+
+Best articles:
+- https://voic.ro/blog/ai-powered-f1-leaderboard.html
+- https://voic.ro/blog/my-first-year-at-rebeldot.html
+
+Main topics:
+- AI engineering
+- robotics
+- embedded systems
+- drone technology
+- hackathons
+- engineering projects
