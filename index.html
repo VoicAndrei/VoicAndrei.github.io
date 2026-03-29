@@ -9,8 +9,48 @@
 		<title>Voic Andrei - Personal Website</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="Voic Andrei is an AI engineer and builder focused on robotics, embedded systems, drone technology, hackathons, and engineering projects." />
+		<link rel="canonical" href="https://voic.ro/" />
+		<meta property="og:title" content="Voic Andrei - AI Engineer, Robotics, and Embedded Systems" />
+		<meta property="og:description" content="Portfolio and personal site for Voic Andrei, featuring AI, robotics, embedded systems, drone projects, awards, and engineering writing." />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://voic.ro/" />
+		<meta property="og:image" content="https://voic.ro/images/sitethumbnail-modified.png" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content="Voic Andrei - AI Engineer, Robotics, and Embedded Systems" />
+		<meta name="twitter:description" content="Portfolio and personal site for Voic Andrei, featuring AI, robotics, embedded systems, drone projects, awards, and engineering writing." />
+		<meta name="twitter:image" content="https://voic.ro/images/sitethumbnail-modified.png" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="icon" type="image/png" href="images/sitethumbnail-modified.png">
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@graph": [
+					{
+						"@type": "Person",
+						"name": "Voic Andrei",
+						"url": "https://voic.ro/",
+						"email": "mailto:andrei@voic.ro",
+						"jobTitle": "AI Engineer",
+						"address": {
+							"@type": "PostalAddress",
+							"addressCountry": "RO"
+						},
+						"knowsAbout": [
+							"Artificial Intelligence",
+							"Robotics",
+							"Embedded Systems",
+							"Drone Technology"
+						]
+					},
+					{
+						"@type": "WebSite",
+						"name": "voic.ro",
+						"url": "https://voic.ro/"
+					}
+				]
+			}
+		</script>
 		<!-- Google tag (gtag.js) -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-PF57JWBKRV"></script>
 		<script>
@@ -35,9 +75,9 @@
 			<header id="header">
 				<div class="inner">
 					<a href="#" class="image avatar"><img src="images/headshot_ok.png" alt="Voic Andrei" /></a>
-					<h1><strong>I am Voic Andrei</strong>, a passionate<br />
-					developer and professional<br />
-					based in Romania.</h1>
+					<h1><strong>I am Voic Andrei</strong>, an AI engineer<br />
+					building robotics, embedded systems,<br />
+					and drone technology in Romania.</h1>
 				</div>
 			</header>
 
@@ -50,8 +90,8 @@
 							<h2>Bringing Ideas to Life<br />
 							Through Technology</h2>
 						</header>
-						<p>I am an engineer with expertise in embedded systems, drone technology, and artificial intelligence. I hold a bachelor's degree in Automation from the Technical University of Cluj-Napoca and am currently pursuing a Master's in Applied Computational Intelligence at Babeș-Bolyai University. My interdisciplinary background in electrical engineering, software development, and AI enables me to craft integrated solutions that connect hardware and software seamlessly.
-						I am passionate about leveraging my skills to develop innovative solutions that address real-world challenges, particularly in the fields of AI and drone technology.</p>
+						<p>I am an AI engineer focused on robotics, embedded systems, and drone technology, building projects that connect software, electronics, and autonomous systems. I hold a bachelor's degree in Automation from the Technical University of Cluj-Napoca and am currently pursuing a Master's in Applied Computational Intelligence at Babeș-Bolyai University. My work spans engineering projects and hackathons, from autonomous robots and flight controllers to AI-assisted products.</p>
+						<p>Start with the <a href="blog/">blog</a>, read <a href="blog/my-first-year-at-rebeldot.html">My First Year at RebelDot</a> and <a href="blog/ai-powered-f1-leaderboard.html">Building an F1 Racing Leaderboard with AI</a>, or jump to flagship builds like <a href="#surroundly-project">Surroundly</a>, <a href="#stm32-flight-controller">STM32 Flight Controller</a>, and <a href="#robochef-project">RoboChef</a>.</p>
 						<ul class="actions">
 						<li><a href="images/CV_Voic_Andrei_Florin_10_February_2026.pdf" class="button" target="_blank">Grab a copy of my CV</a></li>
 							<li><a href="blog/" class="button">Blog</a></li>
@@ -63,7 +103,7 @@
 					<section id="two" class="lightbox-gallery">
 						<h2>Projects</h2>
 						<div class="row">
-							<article class="col-6 col-12-xsmall work-item">
+							<article id="surroundly-project" class="col-6 col-12-xsmall work-item">
 								<a href="images/projects/surroundly_project.png" class="image fit thumb"><img src="images/projects/surroundly_project.png" alt="Surroundly - Immersive VR YouTube Experience" /></a>
 								<h3>Surroundly - Immersive VR YouTube Experience</h3>
 								<p>Transforming YouTube into an immersive VR experience for Meta Quest using AI. Surroundly analyzes video content to generate matching 360° skyboxes and interactive 3D objects, turning passive viewing into spatial presence. Built with Meta Spatial SDK, Kotlin, and a custom AI pipeline. <a href="https://www.youtube.com/watch?v=nsQPHOu-D7M" target="_blank">Watch the demo</a></p>
@@ -98,7 +138,7 @@
 								<h3>6-DOF Robotic Arm</h3>
 								<p>Built a 6-DOF robotic arm from a DIY kit won at ITEC 2024. The project focused on assembling the mechanical parts, wiring servo motors, and programming basic movements using an Arduino. While not overly complex, it provided hands-on experience with robotic arm mechanics and basic control principles.</p>
 							</article>
-							<article class="col-6 col-12-xsmall work-item">
+							<article id="stm32-flight-controller" class="col-6 col-12-xsmall work-item">
 								<a href="images/projects/STM32Quadcopter.jpg" class="image fit thumb"><img src="images/projects/STM32Quadcopter.jpg" alt="STM32 Flight Controller" /></a>
 								<h3>STM32 Flight Controller</h3>
 								<p>Designed and built a custom flight controller, starting with the electrical schematics, followed by PCB design and soldering. Combined the hardware with firmware development to achieve stable flight and precise control. This project was a great learning experience in circuit design and embedded systems.</p>
@@ -118,7 +158,7 @@
 								<h3>Landgame.ro Platform</h3>
 								<p>Full-stack booking platform with loyalty program, admin panel, internationalization, and complex pricing logic, built with React, Supabase, and Tailwind CSS. Developed end-to-end exclusively using AI tools (Claude Code, Lovable, Cursor, Codex). <a href="https://landgame.ro" target="_blank">Check out the website</a></p>
 							</article>
-							<article class="col-6 col-12-xsmall work-item">
+							<article id="robochef-project" class="col-6 col-12-xsmall work-item">
 								<a href="images/projects/robochef.jpg" class="image fit thumb"><img src="images/projects/robochef.jpg" alt="RoboChef - GPT-OSS Kitchen Assistant" /></a>
 								<h3>RoboChef - GPT-OSS Kitchen Assistant</h3>
 								<p>AI-powered kitchen assistant that turns natural language into robot actions using GPT-OSS with NVIDIA Isaac GR00T and the SO-100 arm. <a href="https://devpost.com/software/robochef-gpt-oss-powered-kitchen-assistant" target="_blank">View project</a></p>
