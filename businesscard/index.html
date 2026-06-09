@@ -37,6 +37,7 @@
             min-height: 100vh;
             display: flex;
             flex-direction: column;
+            padding-bottom: 104px;
         }
 
         .header {
@@ -156,8 +157,15 @@
         }
 
         .save-btn-wrapper {
-            padding: 8px 24px 32px;
-            margin-top: auto;
+            position: fixed;
+            left: 50vw;
+            bottom: 0;
+            z-index: 10;
+            width: min(100vw, 440px);
+            padding: 12px 24px calc(16px + env(safe-area-inset-bottom));
+            margin-top: 0;
+            transform: translateX(-50%);
+            background: linear-gradient(to top, #0a0a0a 72%, rgba(10, 10, 10, 0));
         }
 
         .save-btn {
@@ -201,7 +209,7 @@
             }
 
             .save-btn-wrapper {
-                padding-bottom: 24px;
+                padding-bottom: calc(16px + env(safe-area-inset-bottom));
             }
         }
     </style>
