@@ -7,6 +7,7 @@ Start here:
 - https://voic.ro/blog/
 
 Best articles:
+- https://voic.ro/blog/3d-printer-caricature.html
 - https://voic.ro/blog/camera-story.html
 - https://voic.ro/blog/ai-powered-f1-leaderboard.html
 - https://voic.ro/blog/my-first-year-at-rebeldot.html
