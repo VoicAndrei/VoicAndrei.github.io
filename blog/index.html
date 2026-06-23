@@ -4,7 +4,7 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
-<html>
+<html lang="en">
 	<head>
 		<title>Blog - Voic Andrei</title>
 		<meta charset="utf-8" />
@@ -21,6 +21,7 @@
 		<meta name="twitter:description" content="Articles by Voic Andrei about AI engineering, robotics, project building, and technical experiments." />
 		<meta name="twitter:image" content="https://voic.ro/images/sitethumbnail-modified.png" />
 		<link rel="stylesheet" href="../assets/css/main.css" />
+		<link rel="stylesheet" href="../assets/css/i18n.css" />
 		<link rel="icon" type="image/png" href="../images/sitethumbnail-modified.png">
 		<!-- Google tag (gtag.js) -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-PF57JWBKRV"></script>
@@ -41,12 +42,26 @@
 		</script>
 	</head>
 	<body class="is-preload">
+		<!-- Language switcher -->
+			<div id="lang-switcher" class="lang-switcher">
+				<svg class="lang-switcher-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 2a10 10 0 100 20 10 10 0 000-20zm6.93 6h-2.95a15.7 15.7 0 00-1.38-3.56A8.03 8.03 0 0118.93 8zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14a7.96 7.96 0 010-4h3.38a16.6 16.6 0 000 4H4.26zm.81 2h2.95c.32 1.25.78 2.45 1.38 3.56A8.03 8.03 0 015.07 16zm2.95-8H5.07a8.03 8.03 0 014.33-3.56A15.7 15.7 0 008.02 8zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82A13.7 13.7 0 0112 19.96zM14.34 14H9.66a14.6 14.6 0 010-4h4.68a14.6 14.6 0 010 4zm.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 01-4.33 3.56zM16.36 14a16.6 16.6 0 000-4h3.38a7.96 7.96 0 010 4h-3.38z"/></svg>
+				<label for="lang-select" class="lang-switcher-label">Language</label>
+				<select id="lang-select" aria-label="Select language">
+					<option value="en">English</option>
+					<option value="ro">Română</option>
+					<option value="de">Deutsch</option>
+					<option value="es">Español</option>
+					<option value="fr">Français</option>
+					<option value="zh">中文</option>
+				</select>
+			</div>
+
 
 		<!-- Header -->
 			<header id="header">
 				<div class="inner">
 					<a href="../" class="image avatar"><img src="../images/headshot_ok.png" alt="Voic Andrei" /></a>
-					<h1><strong>I am Voic Andrei</strong>, a passionate<br />
+					<h1 data-i18n="header.title"><strong>I am Voic Andrei</strong>, a passionate<br />
 					developer and professional<br />
 					based in Romania.</h1>
 				</div>
@@ -58,12 +73,12 @@
 				<!-- One -->
 					<section id="one">
 						<header class="major">
-							<h2>Blog<br />
+							<h2 data-i18n="one.heading">Blog<br />
 							Thoughts & Ideas</h2>
 						</header>
-						<p>Welcome to my blog! Here I share my thoughts and insights about technology, engineering, and AI projects.</p>
+						<p data-i18n="one.intro">Welcome to my blog! Here I share my thoughts and insights about technology, engineering, and AI projects.</p>
 						<ul class="actions">
-							<li><a href="../" class="button">Back to Home</a></li>
+							<li><a href="../" class="button" data-i18n="one.back">Back to Home</a></li>
 						</ul>
 					</section>
 
@@ -74,11 +89,11 @@
 								<a href="3d-printer-caricature.html" class="image fit thumb">
 									<img src="../images/blog_3d_printer_caricature/printer-drawing-face.jpg" alt="An Ender 5 Pro 3D printer drawing a line-art caricature of a face with a marker" />
 								</a>
-								<h3><a href="3d-printer-caricature.html">Our 3D printer draws caricatures now</a></h3>
-								<p><time datetime="2026-06-17">June 17, 2026</time></p>
-								<p>Two of us spent an afternoon turning an Ender 5 into a portrait machine that draws a gleefully exaggerated version of your face in marker. The best part was getting it to talk to the printer.</p>
+								<h3 data-i18n="post.printer.title"><a href="3d-printer-caricature.html">Our 3D printer draws caricatures now</a></h3>
+								<p><time datetime="2026-06-17" data-i18n="post.printer.date">June 17, 2026</time></p>
+								<p data-i18n="post.printer.desc">Two of us spent an afternoon turning an Ender 5 into a portrait machine that draws a gleefully exaggerated version of your face in marker. The best part was getting it to talk to the printer.</p>
 								<ul class="actions">
-									<li><a href="3d-printer-caricature.html" class="button">Read More</a></li>
+									<li><a href="3d-printer-caricature.html" class="button" data-i18n="post.printer.more">Read More</a></li>
 								</ul>
 							</article>
 						</div>
@@ -88,11 +103,11 @@
 								<a href="camera-story.html" class="image fit thumb">
 									<img src="../images/blog_camera_story/20260606_top_down_camera.png" alt="Robot arm table setup with cameras and colored cubes" />
 								</a>
-								<h3><a href="camera-story.html">The agent looked at the cameras and figured out left from right</a></h3>
-								<p><time datetime="2026-06-16">June 16, 2026</time></p>
-								<p>We told a coding agent to run our robot setup. We never told it how to tell two identical cameras apart. So it looked.</p>
+								<h3 data-i18n="post.camera.title"><a href="camera-story.html">The agent looked at the cameras and figured out left from right</a></h3>
+								<p><time datetime="2026-06-16" data-i18n="post.camera.date">June 16, 2026</time></p>
+								<p data-i18n="post.camera.desc">We told a coding agent to run our robot setup. We never told it how to tell two identical cameras apart. So it looked.</p>
 								<ul class="actions">
-									<li><a href="camera-story.html" class="button">Read More</a></li>
+									<li><a href="camera-story.html" class="button" data-i18n="post.camera.more">Read More</a></li>
 								</ul>
 							</article>
 						</div>
@@ -102,11 +117,11 @@
 								<a href="building-crayo-in-3-days.html" class="image fit thumb">
 									<img src="../images/projects/crayo.png" alt="Building Crayo in 3 Days" />
 								</a>
-								<h3><a href="building-crayo-in-3-days.html">Building Crayo in 3 Days: From Claude Design to First Paying Stranger</a></h3>
-								<p><time datetime="2026-05-17">May 17, 2026</time></p>
-								<p>How I built Crayo, a SaaS that turns photos into AI-generated coloring book PDFs, in three days. From a Claude Design prototype to a live Stripe-backed product, and my first 2 euros from a complete stranger.</p>
+								<h3 data-i18n="post.crayo.title"><a href="building-crayo-in-3-days.html">Building Crayo in 3 Days: From Claude Design to First Paying Stranger</a></h3>
+								<p><time datetime="2026-05-17" data-i18n="post.crayo.date">May 17, 2026</time></p>
+								<p data-i18n="post.crayo.desc">How I built Crayo, a SaaS that turns photos into AI-generated coloring book PDFs, in three days. From a Claude Design prototype to a live Stripe-backed product, and my first 2 euros from a complete stranger.</p>
 								<ul class="actions">
-									<li><a href="building-crayo-in-3-days.html" class="button">Read More</a></li>
+									<li><a href="building-crayo-in-3-days.html" class="button" data-i18n="post.crayo.more">Read More</a></li>
 								</ul>
 							</article>
 						</div>
@@ -116,11 +131,11 @@
 								<a href="my-first-year-at-rebeldot.html" class="image fit thumb">
 									<img src="../images/blog_1_year_at_rebeldot/me_at_rebel_times.png" alt="My First Year at RebelDot" />
 								</a>
-								<h3><a href="my-first-year-at-rebeldot.html">My First Year at RebelDot</a></h3>
-								<p><time datetime="2025-10-30">October 30, 2025</time></p>
-								<p>A reflection on my first year at RebelDot - from intern to AI Engineer, building projects, winning hackathons, speaking at events, and exploring the intersection of AI, robotics, and creativity.</p>
+								<h3 data-i18n="post.rebeldot.title"><a href="my-first-year-at-rebeldot.html">My First Year at RebelDot</a></h3>
+								<p><time datetime="2025-10-30" data-i18n="post.rebeldot.date">October 30, 2025</time></p>
+								<p data-i18n="post.rebeldot.desc">A reflection on my first year at RebelDot - from intern to AI Engineer, building projects, winning hackathons, speaking at events, and exploring the intersection of AI, robotics, and creativity.</p>
 								<ul class="actions">
-									<li><a href="my-first-year-at-rebeldot.html" class="button">Read More</a></li>
+									<li><a href="my-first-year-at-rebeldot.html" class="button" data-i18n="post.rebeldot.more">Read More</a></li>
 								</ul>
 							</article>
 						</div>
@@ -130,11 +145,11 @@
 								<a href="ai-powered-f1-leaderboard.html" class="image fit thumb">
 									<img src="../images/projects/f1-leaderboard-shop.jpeg" alt="F1 Leaderboard with AI" />
 								</a>
-								<h3><a href="ai-powered-f1-leaderboard.html">Building an F1 Racing Leaderboard with AI: A Complete Solution Created by Code Assistants</a></h3>
-								<p><time datetime="2025-07-25">July 25, 2025</time></p>
-								<p>How I built a complete, production-ready F1 racing simulator leaderboard system using only AI coding assistants. From architectural planning with Gemini 2.5 Pro to code generation with Claude Sonnet 3.7 in Cursor - a real-world case study in AI-powered development.</p>
+								<h3 data-i18n="post.f1.title"><a href="ai-powered-f1-leaderboard.html">Building an F1 Racing Leaderboard with AI: A Complete Solution Created by Code Assistants</a></h3>
+								<p><time datetime="2025-07-25" data-i18n="post.f1.date">July 25, 2025</time></p>
+								<p data-i18n="post.f1.desc">How I built a complete, production-ready F1 racing simulator leaderboard system using only AI coding assistants. From architectural planning with Gemini 2.5 Pro to code generation with Claude Sonnet 3.7 in Cursor - a real-world case study in AI-powered development.</p>
 								<ul class="actions">
-									<li><a href="ai-powered-f1-leaderboard.html" class="button">Read More</a></li>
+									<li><a href="ai-powered-f1-leaderboard.html" class="button" data-i18n="post.f1.more">Read More</a></li>
 								</ul>
 							</article>
 						</div>
@@ -142,10 +157,10 @@
 
 				<!-- Navigation -->
 					<section id="navigation">
-						<h2>Explore More</h2>
+						<h2 data-i18n="nav.heading">Explore More</h2>
 						<ul class="actions">
-							<li><a href="../" class="button primary">Home</a></li>
-							<li><a href="../instagram/" class="button">Voicstagram</a></li>
+							<li><a href="../" class="button primary" data-i18n="nav.home">Home</a></li>
+							<li><a href="../instagram/" class="button" data-i18n="nav.voicstagram">Voicstagram</a></li>
 						</ul>
 					</section>
 
@@ -173,5 +188,7 @@
 			<script src="../assets/js/util.js"></script>
 			<script src="../assets/js/main.js"></script>
 
-	</body>
+				<script src="../assets/js/i18n/blog-index.js"></script>
+			<script src="../assets/js/i18n.js"></script>
+</body>
 </html> 

@@ -4,7 +4,7 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
-<html>
+<html lang="en">
 	<head>
 		<title>Our 3D printer draws caricatures now - Voic Andrei</title>
 		<meta charset="utf-8" />
@@ -21,6 +21,7 @@
 		<meta name="twitter:description" content="Two of us spent an afternoon turning an Ender 5 Pro into a caricature machine that draws exaggerated portraits in marker. The best part was watching the agent work out how to drive the printer over USB on its own." />
 		<meta name="twitter:image" content="https://voic.ro/images/blog_3d_printer_caricature/printer-drawing-face.jpg" />
 		<link rel="stylesheet" href="../assets/css/main.css" />
+		<link rel="stylesheet" href="../assets/css/i18n.css" />
 		<link rel="icon" type="image/png" href="../images/sitethumbnail-modified.png">
 		<style>
 			.plotter-dek {
@@ -141,12 +142,26 @@
 		</script>
 	</head>
 	<body class="is-preload">
+		<!-- Language switcher -->
+			<div id="lang-switcher" class="lang-switcher">
+				<svg class="lang-switcher-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 2a10 10 0 100 20 10 10 0 000-20zm6.93 6h-2.95a15.7 15.7 0 00-1.38-3.56A8.03 8.03 0 0118.93 8zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14a7.96 7.96 0 010-4h3.38a16.6 16.6 0 000 4H4.26zm.81 2h2.95c.32 1.25.78 2.45 1.38 3.56A8.03 8.03 0 015.07 16zm2.95-8H5.07a8.03 8.03 0 014.33-3.56A15.7 15.7 0 008.02 8zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82A13.7 13.7 0 0112 19.96zM14.34 14H9.66a14.6 14.6 0 010-4h4.68a14.6 14.6 0 010 4zm.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 01-4.33 3.56zM16.36 14a16.6 16.6 0 000-4h3.38a7.96 7.96 0 010 4h-3.38z"/></svg>
+				<label for="lang-select" class="lang-switcher-label">Language</label>
+				<select id="lang-select" aria-label="Select language">
+					<option value="en">English</option>
+					<option value="ro">Română</option>
+					<option value="de">Deutsch</option>
+					<option value="es">Español</option>
+					<option value="fr">Français</option>
+					<option value="zh">中文</option>
+				</select>
+			</div>
+
 
 		<!-- Header -->
 			<header id="header">
 				<div class="inner">
 					<a href="../" class="image avatar"><img src="../images/headshot_ok.png" alt="Voic Andrei" /></a>
-					<h1><strong>I am Voic Andrei</strong>, a passionate<br />
+					<h1 data-i18n="headerIntro"><strong>I am Voic Andrei</strong>, a passionate<br />
 					developer and professional<br />
 					based in Romania.</h1>
 				</div>
@@ -158,70 +173,70 @@
 				<!-- Article -->
 					<section>
 						<header class="major">
-							<h1>Our 3D printer draws caricatures now</h1>
-							<p><time datetime="2026-06-17">June 17, 2026</time></p>
+							<h1 data-i18n="title">Our 3D printer draws caricatures now</h1>
+							<p><time datetime="2026-06-17" data-i18n="date">June 17, 2026</time></p>
 						</header>
 
-						<p class="plotter-dek">Two of us spent an afternoon turning an Ender 5 into a portrait machine. It draws a gleefully exaggerated version of whoever sits in front of it, in marker. The best part was getting it to talk to the printer.</p>
+						<p class="plotter-dek" data-i18n="dek">Two of us spent an afternoon turning an Ender 5 into a portrait machine. It draws a gleefully exaggerated version of whoever sits in front of it, in marker. The best part was getting it to talk to the printer.</p>
 
-						<p>Point a camera at someone, wait a couple of minutes, and our Ender 5 Pro starts dragging a marker across paper, working out a wildly exaggerated version of their face. Big head, big ears, bigger nose. When it finishes it letters REBEL DOT in the corner like a signature.</p>
+						<p data-i18n="p1">Point a camera at someone, wait a couple of minutes, and our Ender 5 Pro starts dragging a marker across paper, working out a wildly exaggerated version of their face. Big head, big ears, bigger nose. When it finishes it letters REBEL DOT in the corner like a signature.</p>
 
 						<figure class="plotter-figure">
 							<span class="image fit"><img src="../images/blog_3d_printer_caricature/printer-drawing-face.jpg" alt="An Ender 5 Pro 3D printer partway through a drawing, a whiteboard marker clamped to the print head next to the hot end, drawing a line-art caricature of a face with glasses on white paper." /></span>
-							<figcaption>The Ender 5 Pro partway through a drawing. The hot end is still bolted on; the marker just rides next to it, and the printer never heats up.</figcaption>
+							<figcaption data-i18n="fig1cap">The Ender 5 Pro partway through a drawing. The hot end is still bolted on; the marker just rides next to it, and the printer never heats up.</figcaption>
 						</figure>
 
-						<p>The pipeline is short. A photo goes to an image model that comes back with a heavily exaggerated, line-only drawing. We trace that into vector paths, convert the paths to Marlin G-code, and send it to the printer, which never heats up or extrudes a thing. The marker lifts and drops, the bed and gantry handle the rest.</p>
+						<p data-i18n="p2">The pipeline is short. A photo goes to an image model that comes back with a heavily exaggerated, line-only drawing. We trace that into vector paths, convert the paths to Marlin G-code, and send it to the printer, which never heats up or extrudes a thing. The marker lifts and drops, the bed and gantry handle the rest.</p>
 
 						<div class="plotter-pair">
 							<figure>
-								<span class="plotter-tag before">The photo</span>
+								<span class="plotter-tag before" data-i18n="tagBefore">The photo</span>
 								<span class="image fit"><img src="../images/blog_3d_printer_caricature/input-photo.jpg" alt="A selfie of a young man with glasses and a short beard, taken in an office in front of a window." loading="lazy" /></span>
 							</figure>
 							<figure>
-								<span class="plotter-tag after">What it drew</span>
+								<span class="plotter-tag after" data-i18n="tagAfter">What it drew</span>
 								<span class="image fit"><img src="../images/blog_3d_printer_caricature/finished-caricature.jpg" alt="The finished pen-plotted caricature: the same man as exaggerated black line art with oversized ears, big glasses and a long nose, REBEL DOT lettered above." loading="lazy" /></span>
 							</figure>
 						</div>
-						<p class="plotter-paircap">Left: the photo we fed in. Right: what the printer handed back. That's a real likeness out of surprisingly few lines.</p>
+						<p class="plotter-paircap" data-i18n="paircap">Left: the photo we fed in. Right: what the printer handed back. That's a real likeness out of surprisingly few lines.</p>
 
-						<p>From "let's try this" to the first real drawing took about four hours. Two of us split the work: one took the side that makes the caricature and turns it into pen strokes, the other took the printer. We stitched the halves together and it ran.</p>
+						<p data-i18n="p3">From "let's try this" to the first real drawing took about four hours. Two of us split the work: one took the side that makes the caricature and turns it into pen strokes, the other took the printer. We stitched the halves together and it ran.</p>
 
-						<p>The bit I keep retelling is the printer half. It was plugged into the machine over USB and nothing else was set up. The instruction to the agent was roughly:</p>
+						<p data-i18n="p4">The bit I keep retelling is the printer half. It was plugged into the machine over USB and nothing else was set up. The instruction to the agent was roughly:</p>
 
-						<blockquote>I've connected a 3D printer over USB. Figure it out and make it draw this.</blockquote>
+						<blockquote data-i18n="quote1">I've connected a 3D printer over USB. Figure it out and make it draw this.</blockquote>
 
-						<p>We didn't give it a port, a baud rate, or the name of a library. It worked through the USB serial devices one at a time, sent each one a firmware query, and watched for the one that answered like the Ender's Marlin board. It opened that port without resetting the board, so the home position and pen height we'd set by hand survived. Then it streamed the G-code line by line, waiting for the printer to say <code>ok</code> after every move so it never overran the buffer.</p>
+						<p data-i18n="p5">We didn't give it a port, a baud rate, or the name of a library. It worked through the USB serial devices one at a time, sent each one a firmware query, and watched for the one that answered like the Ender's Marlin board. It opened that port without resetting the board, so the home position and pen height we'd set by hand survived. Then it streamed the G-code line by line, waiting for the printer to say <code>ok</code> after every move so it never overran the buffer.</p>
 
-						<blockquote>And the printer started drawing.</blockquote>
+						<blockquote data-i18n="quote2">And the printer started drawing.</blockquote>
 
 						<figure class="plotter-figure">
 							<video class="plotter-video" controls preload="metadata" playsinline poster="../images/blog_3d_printer_caricature/drawing-poster.jpg">
 								<source src="../images/blog_3d_printer_caricature/drawing.mp4" type="video/mp4" />
 								Your browser can't play embedded video. <a href="../images/blog_3d_printer_caricature/drawing.mp4">Watch the clip</a>.
 							</video>
-							<figcaption>The marker lifts between strokes and drops back down to draw. Pen up, pen down, the same trick plotters have used for decades.</figcaption>
+							<figcaption data-i18n="fig2cap">The marker lifts between strokes and drops back down to draw. Pen up, pen down, the same trick plotters have used for decades.</figcaption>
 						</figure>
 
 						<figure class="plotter-figure">
 							<span class="image fit"><img src="../images/blog_3d_printer_caricature/pen-head-closeup.jpg" alt="Close-up of the print head: a Board Master whiteboard marker clamped to the carriage right next to the hot end, its tip touching the paper." loading="lazy" /></span>
-							<figcaption>The hardware side of it: a whiteboard marker clamped to the carriage, right next to the hot end.</figcaption>
+							<figcaption data-i18n="fig3cap">The hardware side of it: a whiteboard marker clamped to the carriage, right next to the hot end.</figcaption>
 						</figure>
 
-						<p>Nobody handed it a runbook. We didn't name the port, the firmware, or the trick about not resetting the board. We said figure it out, and it did, on hardware it had never seen, first try. Writing code that compiles is one thing. Watching it reach down a USB cable and correctly drive a physical machine you only mentioned in passing is another. Our office cameras pulled almost the same stunt <a href="/blog/camera-story.html">a couple of weeks ago</a>. I'm starting to think this is just what the good agents do now.</p>
+						<p data-i18n="p6">Nobody handed it a runbook. We didn't name the port, the firmware, or the trick about not resetting the board. We said figure it out, and it did, on hardware it had never seen, first try. Writing code that compiles is one thing. Watching it reach down a USB cable and correctly drive a physical machine you only mentioned in passing is another. Our office cameras pulled almost the same stunt <a href="/blog/camera-story.html">a couple of weeks ago</a>. I'm starting to think this is just what the good agents do now.</p>
 
-						<p>The caricatures come out gloriously ugly, and that's the point. Four hours, two people, and a 3D printer that draws faces in marker. Easily one of the most fun things we've built. &#128512;</p>
+						<p data-i18n="p7">The caricatures come out gloriously ugly, and that's the point. Four hours, two people, and a 3D printer that draws faces in marker. Easily one of the most fun things we've built. &#128512;</p>
 
 						<hr />
 
-						<p class="plotter-foot">The printer is an Ender 5 Pro running Marlin, with a whiteboard marker clamped to the print head next to the (unused) hot end. Caricatures come from an image model (Nano Banana 2), get vectorized to SVG, then converted to Marlin G-code. The agent located the board by sending <code>M115</code> to each <code>/dev/ttyUSB*</code> and matching the firmware reply, opened the serial port with DTR/RTS held low so the board wouldn't reboot and lose its hand-set origin, and streamed the G-code line by line with an <code>ok</code> handshake. Built at RebelDot on 13 June 2026.</p>
+						<p class="plotter-foot" data-i18n="foot">The printer is an Ender 5 Pro running Marlin, with a whiteboard marker clamped to the print head next to the (unused) hot end. Caricatures come from an image model (Nano Banana 2), get vectorized to SVG, then converted to Marlin G-code. The agent located the board by sending <code>M115</code> to each <code>/dev/ttyUSB*</code> and matching the firmware reply, opened the serial port with DTR/RTS held low so the board wouldn't reboot and lose its hand-set origin, and streamed the G-code line by line with an <code>ok</code> handshake. Built at RebelDot on 13 June 2026.</p>
 
-						<h3>Keep Reading</h3>
-						<p>Continue with <a href="/blog/">the blog index</a>, read <a href="/blog/camera-story.html">how the agent figured out left from right on our robot cameras</a>, or <a href="/blog/building-crayo-in-3-days.html">how I built Crayo in 3 days</a>.</p>
+						<h3 data-i18n="keepReading">Keep Reading</h3>
+						<p data-i18n="keepReadingBody">Continue with <a href="/blog/">the blog index</a>, read <a href="/blog/camera-story.html">how the agent figured out left from right on our robot cameras</a>, or <a href="/blog/building-crayo-in-3-days.html">how I built Crayo in 3 days</a>.</p>
 						<ul class="actions">
-							<li><a href="/" class="button primary">Back to Home</a></li>
-							<li><a href="/blog/" class="button">More Blog Posts</a></li>
-							<li><a href="/blog/camera-story.html" class="button">Related Article</a></li>
+							<li><a href="/" class="button primary" data-i18n="btnHome">Back to Home</a></li>
+							<li><a href="/blog/" class="button" data-i18n="btnBlog">More Blog Posts</a></li>
+							<li><a href="/blog/camera-story.html" class="button" data-i18n="btnRelated">Related Article</a></li>
 						</ul>
 					</section>
 
@@ -249,5 +264,7 @@
 			<script src="../assets/js/util.js"></script>
 			<script src="../assets/js/main.js"></script>
 
-	</body>
+				<script src="../assets/js/i18n/blog-3dprinter.js"></script>
+			<script src="../assets/js/i18n.js"></script>
+</body>
 </html>

@@ -4,7 +4,7 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
-<html>
+<html lang="en">
 	<head>
 		<title>Building Crayo in 3 Days: From Claude Design to First Paying Stranger - Voic Andrei</title>
 		<meta charset="utf-8" />
@@ -21,6 +21,7 @@
 		<meta name="twitter:description" content="How I built Crayo, a SaaS that turns photos into AI-generated coloring book PDFs, in three days. From a Claude Design prototype to a live Stripe-backed product, and my first 2 euros from a complete stranger." />
 		<meta name="twitter:image" content="https://voic.ro/images/projects/crayo.png" />
 		<link rel="stylesheet" href="../assets/css/main.css" />
+		<link rel="stylesheet" href="../assets/css/i18n.css" />
 		<link rel="icon" type="image/png" href="../images/sitethumbnail-modified.png">
 		<script type="application/ld+json">
 			{
@@ -56,6 +57,20 @@
 		</script>
 	</head>
 	<body class="is-preload">
+		<!-- Language switcher -->
+			<div id="lang-switcher" class="lang-switcher">
+				<svg class="lang-switcher-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 2a10 10 0 100 20 10 10 0 000-20zm6.93 6h-2.95a15.7 15.7 0 00-1.38-3.56A8.03 8.03 0 0118.93 8zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14a7.96 7.96 0 010-4h3.38a16.6 16.6 0 000 4H4.26zm.81 2h2.95c.32 1.25.78 2.45 1.38 3.56A8.03 8.03 0 015.07 16zm2.95-8H5.07a8.03 8.03 0 014.33-3.56A15.7 15.7 0 008.02 8zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82A13.7 13.7 0 0112 19.96zM14.34 14H9.66a14.6 14.6 0 010-4h4.68a14.6 14.6 0 010 4zm.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 01-4.33 3.56zM16.36 14a16.6 16.6 0 000-4h3.38a7.96 7.96 0 010 4h-3.38z"/></svg>
+				<label for="lang-select" class="lang-switcher-label">Language</label>
+				<select id="lang-select" aria-label="Select language">
+					<option value="en">English</option>
+					<option value="ro">Română</option>
+					<option value="de">Deutsch</option>
+					<option value="es">Español</option>
+					<option value="fr">Français</option>
+					<option value="zh">中文</option>
+				</select>
+			</div>
+
 
 		<!-- Header -->
 			<header id="header">
@@ -73,94 +88,94 @@
 				<!-- Article -->
 					<section>
 						<header class="major">
-							<h1>Building Crayo in 3 Days: From Claude Design to First Paying Stranger</h1>
-							<p><time datetime="2026-05-17">May 17, 2026</time></p>
+							<h1 data-i18n="title">Building Crayo in 3 Days: From Claude Design to First Paying Stranger</h1>
+							<p data-i18n="date"><time datetime="2026-05-17">May 17, 2026</time></p>
 						</header>
 
 						<span class="image fit"><img src="../images/projects/crayo.png" alt="Crayo - AI Coloring Book SaaS" /></span>
 
-						<h2>Two euros from a stranger</h2>
-						<p>A few days after I quietly launched <a href="https://crayo.ro" target="_blank">crayo.ro</a>, my phone buzzed with a Stripe notification. A complete stranger, someone I had never met or sold to directly, had paid me about 2 euros for a personalized coloring book made from their own photos.</p>
+						<h2 data-i18n="h.euros">Two euros from a stranger</h2>
+						<p data-i18n="p.euros1">A few days after I quietly launched <a href="https://crayo.ro" target="_blank">crayo.ro</a>, my phone buzzed with a Stripe notification. A complete stranger, someone I had never met or sold to directly, had paid me about 2 euros for a personalized coloring book made from their own photos.</p>
 
-						<p>It is a tiny number, but it made me genuinely happy. Someone looked at my product, decided it was worth their money, and paid for it. That is the part I cared about.</p>
+						<p data-i18n="p.euros2">It is a tiny number, but it made me genuinely happy. Someone looked at my product, decided it was worth their money, and paid for it. That is the part I cared about.</p>
 
-						<h2>What Crayo is</h2>
-						<p><strong>Crayo</strong> is a small Romanian-language SaaS that turns any photo into a personalized, AI-generated coloring book PDF. You upload pictures of your kid, your dog, a family moment, anything you want. You pay through Stripe. You get a printable PDF of clean, kid-friendly coloring pages generated from your images. The whole product is in Romanian, priced in lei, targeted at Romanian parents.</p>
+						<h2 data-i18n="h.what">What Crayo is</h2>
+						<p data-i18n="p.what1"><strong>Crayo</strong> is a small Romanian-language SaaS that turns any photo into a personalized, AI-generated coloring book PDF. You upload pictures of your kid, your dog, a family moment, anything you want. You pay through Stripe. You get a printable PDF of clean, kid-friendly coloring pages generated from your images. The whole product is in Romanian, priced in lei, targeted at Romanian parents.</p>
 
-						<p>Pricing today is intentionally simple: up to 20 photos for 9.90 lei. I am not optimizing for margin at this stage. I am optimizing for the smallest possible price that still requires a real Stripe transaction, so that the first customer is a genuine commercial signal and not a favor from someone who knows me.</p>
+						<p data-i18n="p.what2">Pricing today is intentionally simple: up to 20 photos for 9.90 lei. I am not optimizing for margin at this stage. I am optimizing for the smallest possible price that still requires a real Stripe transaction, so that the first customer is a genuine commercial signal and not a favor from someone who knows me.</p>
 
-						<h2>Why I built it at all</h2>
-						<p>Honestly, I started Crayo to see what Claude Design could do. Anthropic Labs released it in April 2026 and I wanted a real, end-to-end project to put it through. The plan was to spend an afternoon prototyping the idea, look at the result, and move on.</p>
+						<h2 data-i18n="h.why">Why I built it at all</h2>
+						<p data-i18n="p.why1">Honestly, I started Crayo to see what Claude Design could do. Anthropic Labs released it in April 2026 and I wanted a real, end-to-end project to put it through. The plan was to spend an afternoon prototyping the idea, look at the result, and move on.</p>
 
-						<p>Once I saw what came out of that afternoon, I decided to ship it instead. I also gave myself a personal challenge: build a SaaS that actually gets at least one paying customer from outside my network. Not friends, not family, not generous coworkers. A real stranger paying real money for a real product. That challenge is what made me push past the prototype and actually ship it.</p>
+						<p data-i18n="p.why2">Once I saw what came out of that afternoon, I decided to ship it instead. I also gave myself a personal challenge: build a SaaS that actually gets at least one paying customer from outside my network. Not friends, not family, not generous coworkers. A real stranger paying real money for a real product. That challenge is what made me push past the prototype and actually ship it.</p>
 
-						<h2>Three days, end to end</h2>
-						<p>The entire technical build took three days. Domain, frontend, backend, image generation pipeline, payments, deployment, analytics. The timeline is not me being fast. The timeline is the workflow.</p>
+						<h2 data-i18n="h.threedays">Three days, end to end</h2>
+						<p data-i18n="p.threedays1">The entire technical build took three days. Domain, frontend, backend, image generation pipeline, payments, deployment, analytics. The timeline is not me being fast. The timeline is the workflow.</p>
 
-						<h3>Phase 1: Prototyping in Claude Design</h3>
-						<p>I started inside <a href="https://www.anthropic.com/news/claude-design-anthropic-labs" target="_blank">Claude Design</a>, the visual prototyping tool Anthropic Labs released in April 2026. The premise is simple. You describe a product in natural language and Claude builds a first version of the interface. You then refine through conversation, inline comments, direct edits, and custom sliders. It is powered by Claude Opus 4.7, and crucially, the outputs are designed to be handed off to Claude Code for real implementation.</p>
+						<h3 data-i18n="h.phase1">Phase 1: Prototyping in Claude Design</h3>
+						<p data-i18n="p.phase1a">I started inside <a href="https://www.anthropic.com/news/claude-design-anthropic-labs" target="_blank">Claude Design</a>, the visual prototyping tool Anthropic Labs released in April 2026. The premise is simple. You describe a product in natural language and Claude builds a first version of the interface. You then refine through conversation, inline comments, direct edits, and custom sliders. It is powered by Claude Opus 4.7, and crucially, the outputs are designed to be handed off to Claude Code for real implementation.</p>
 
-						<p>I spent the first chunk of day one in there. I told Claude Design who the customer was, a Romanian parent who wants a personalized coloring book made from photos of their kid, and watched it produce a real, clickable landing page in Romanian: hero, before/after, pricing tiers, FAQ, footer. I refined the layout, tightened the copy, picked the palette, and adjusted the spacing. I ended up with a landing page I would have been embarrassed to build by hand in the same amount of time.</p>
+						<p data-i18n="p.phase1b">I spent the first chunk of day one in there. I told Claude Design who the customer was, a Romanian parent who wants a personalized coloring book made from photos of their kid, and watched it produce a real, clickable landing page in Romanian: hero, before/after, pricing tiers, FAQ, footer. I refined the layout, tightened the copy, picked the palette, and adjusted the spacing. I ended up with a landing page I would have been embarrassed to build by hand in the same amount of time.</p>
 
-						<p>By the end of that session I did not have a one-page spec. I had a working, polished, opinionated front-end prototype, including the visual identity for the brand, sitting in Claude Design and ready to be handed over.</p>
+						<p data-i18n="p.phase1c">By the end of that session I did not have a one-page spec. I had a working, polished, opinionated front-end prototype, including the visual identity for the brand, sitting in Claude Design and ready to be handed over.</p>
 
-						<h3>Phase 2: Handoff to Claude Code</h3>
-						<p>Then I handed it to <strong>Claude Code</strong> and let it build out the rest: pulling the Claude Design prototype into a real Vite + React project, wiring the photo upload, building the Hono backend, integrating Vertex AI Gemini for image generation, hooking up Stripe Checkout, configuring Cloud Run, Firestore, GCS lifecycle rules, the Telegram notification bot, the GitHub Actions deploy to Cloudflare Pages, and the analytics consent flow.</p>
+						<h3 data-i18n="h.phase2">Phase 2: Handoff to Claude Code</h3>
+						<p data-i18n="p.phase2a">Then I handed it to <strong>Claude Code</strong> and let it build out the rest: pulling the Claude Design prototype into a real Vite + React project, wiring the photo upload, building the Hono backend, integrating Vertex AI Gemini for image generation, hooking up Stripe Checkout, configuring Cloud Run, Firestore, GCS lifecycle rules, the Telegram notification bot, the GitHub Actions deploy to Cloudflare Pages, and the analytics consent flow.</p>
 
-						<p>From there it was a loop. I described the next slice of behavior, Claude Code implemented it, I tested it, we iterated. The build proceeded as a sequence of well-scoped tickets, each one small enough to verify before moving on. By the end of day three I had a deployed, payment-accepting product on a custom domain.</p>
+						<p data-i18n="p.phase2b">From there it was a loop. I described the next slice of behavior, Claude Code implemented it, I tested it, we iterated. The build proceeded as a sequence of well-scoped tickets, each one small enough to verify before moving on. By the end of day three I had a deployed, payment-accepting product on a custom domain.</p>
 
-						<p>The handoff itself was the part I did not expect to enjoy as much as I did. Claude Design produced the surface the customer sees, Claude Code produced everything behind it, and the two tools fit together as one continuous workflow rather than two separate products glued at the seams.</p>
+						<p data-i18n="p.phase2c">The handoff itself was the part I did not expect to enjoy as much as I did. Claude Design produced the surface the customer sees, Claude Code produced everything behind it, and the two tools fit together as one continuous workflow rather than two separate products glued at the seams.</p>
 
-						<h2>The stack</h2>
-						<p>Nothing here is novel. I picked managed services everywhere I could.</p>
+						<h2 data-i18n="h.stack">The stack</h2>
+						<p data-i18n="p.stack1">Nothing here is novel. I picked managed services everywhere I could.</p>
 						<ul>
-							<li><strong>Frontend</strong>: Vite + React 18, deployed on <strong>Cloudflare Pages</strong> with auto-deploy from GitHub on every push to <code>main</code>. Zero infrastructure to manage, pushes go live in under a minute.</li>
-							<li><strong>Backend</strong>: <strong>Hono</strong> on Node 20, TypeScript with strict mode on, deployed to <strong>Google Cloud Run</strong> in the <code>europe-west3</code> region (Frankfurt). Close to Romanian users, scales to zero, costs almost nothing while traffic is small.</li>
-							<li><strong>Database</strong>: <strong>Firestore</strong>. One collection per logical type. No migrations, no schema files, no DB cluster to operate.</li>
-							<li><strong>Storage</strong>: <strong>Google Cloud Storage</strong>. Two buckets, one for incoming user uploads with a strict 72-hour TTL, one for finished orders.</li>
-							<li><strong>Image generation</strong>: <strong>Vertex AI Gemini</strong> (the latest image-preview model) as the primary pipeline, with an OpenAI image model wired in as a fallback for resilience.</li>
-							<li><strong>Payments</strong>: <strong>Stripe Checkout</strong>. Card data never touches my servers. Stripe handles the whole payment surface and I just receive a webhook telling me the order is paid.</li>
-							<li><strong>Notifications</strong>: a Telegram bot pings my phone whenever something interesting happens, like an order being placed, a generation finishing, or a webhook firing. It works as a dead-simple ops dashboard.</li>
-							<li><strong>Analytics</strong>: Cloudflare Web Analytics (cookieless, GDPR-friendly), with Meta Pixel, CAPI, and GA4 prepared behind a Consent Mode v2 cookie banner for when traffic justifies it.</li>
+							<li data-i18n="li.frontend"><strong>Frontend</strong>: Vite + React 18, deployed on <strong>Cloudflare Pages</strong> with auto-deploy from GitHub on every push to <code>main</code>. Zero infrastructure to manage, pushes go live in under a minute.</li>
+							<li data-i18n="li.backend"><strong>Backend</strong>: <strong>Hono</strong> on Node 20, TypeScript with strict mode on, deployed to <strong>Google Cloud Run</strong> in the <code>europe-west3</code> region (Frankfurt). Close to Romanian users, scales to zero, costs almost nothing while traffic is small.</li>
+							<li data-i18n="li.database"><strong>Database</strong>: <strong>Firestore</strong>. One collection per logical type. No migrations, no schema files, no DB cluster to operate.</li>
+							<li data-i18n="li.storage"><strong>Storage</strong>: <strong>Google Cloud Storage</strong>. Two buckets, one for incoming user uploads with a strict 72-hour TTL, one for finished orders.</li>
+							<li data-i18n="li.imagegen"><strong>Image generation</strong>: <strong>Vertex AI Gemini</strong> (the latest image-preview model) as the primary pipeline, with an OpenAI image model wired in as a fallback for resilience.</li>
+							<li data-i18n="li.payments"><strong>Payments</strong>: <strong>Stripe Checkout</strong>. Card data never touches my servers. Stripe handles the whole payment surface and I just receive a webhook telling me the order is paid.</li>
+							<li data-i18n="li.notifications"><strong>Notifications</strong>: a Telegram bot pings my phone whenever something interesting happens, like an order being placed, a generation finishing, or a webhook firing. It works as a dead-simple ops dashboard.</li>
+							<li data-i18n="li.analytics"><strong>Analytics</strong>: Cloudflare Web Analytics (cookieless, GDPR-friendly), with Meta Pixel, CAPI, and GA4 prepared behind a Consent Mode v2 cookie banner for when traffic justifies it.</li>
 						</ul>
 
-						<p>None of these choices are clever. They are deliberately boring, because boring infrastructure is the kind that leaves me alone.</p>
+						<p data-i18n="p.stack2">None of these choices are clever. They are deliberately boring, because boring infrastructure is the kind that leaves me alone.</p>
 
-						<h2>Security, because the product processes children's photos</h2>
-						<p>This part I want to be explicit about. The core use case for Crayo is parents uploading photos of their kids. Some of those photos are family memories that nobody else should ever see. I treated that as a hard requirement from the very first design conversation, not a feature I would add later.</p>
+						<h2 data-i18n="h.security">Security, because the product processes children's photos</h2>
+						<p data-i18n="p.security1">This part I want to be explicit about. The core use case for Crayo is parents uploading photos of their kids. Some of those photos are family memories that nobody else should ever see. I treated that as a hard requirement from the very first design conversation, not a feature I would add later.</p>
 
-						<p>What that looks like concretely:</p>
+						<p data-i18n="p.security2">What that looks like concretely:</p>
 						<ul>
-							<li><strong>Payments are completely off-platform.</strong> All checkout happens on Stripe. Card numbers, billing details, CVV. None of it ever touches a Crayo server, log, or database. I cannot leak data I never had.</li>
-							<li><strong>Uploaded photos auto-delete.</strong> User uploads land in a Cloud Storage bucket with a <strong>72-hour lifecycle rule</strong>. After that window, Google itself purges them. There is no admin action required and no way for me to forget.</li>
-							<li><strong>Photos are not used to train anything.</strong> The Vertex AI image endpoints I use are not training pipelines. A child's photo goes in, a coloring page comes out, and the source image is dropped on the 72-hour timer.</li>
-							<li><strong>Secrets live in Google Secret Manager.</strong> Stripe keys, API credentials, webhook signing secrets. None of them are in the repo, none of them are in environment files committed anywhere, and the Cloud Run service binds them at runtime via <code>--set-secrets</code>.</li>
-							<li><strong>HTTPS-only, everywhere.</strong> Cloudflare in front of the static site, Google-managed certs in front of Cloud Run.</li>
-							<li><strong>GDPR consent before any tracking.</strong> The consent banner blocks Meta Pixel, GA4, and any non-essential tags until the user opts in. Cloudflare Web Analytics is the only thing that runs without consent, because it is cookieless and aggregate.</li>
+							<li data-i18n="li.sec.payments"><strong>Payments are completely off-platform.</strong> All checkout happens on Stripe. Card numbers, billing details, CVV. None of it ever touches a Crayo server, log, or database. I cannot leak data I never had.</li>
+							<li data-i18n="li.sec.autodelete"><strong>Uploaded photos auto-delete.</strong> User uploads land in a Cloud Storage bucket with a <strong>72-hour lifecycle rule</strong>. After that window, Google itself purges them. There is no admin action required and no way for me to forget.</li>
+							<li data-i18n="li.sec.notrain"><strong>Photos are not used to train anything.</strong> The Vertex AI image endpoints I use are not training pipelines. A child's photo goes in, a coloring page comes out, and the source image is dropped on the 72-hour timer.</li>
+							<li data-i18n="li.sec.secrets"><strong>Secrets live in Google Secret Manager.</strong> Stripe keys, API credentials, webhook signing secrets. None of them are in the repo, none of them are in environment files committed anywhere, and the Cloud Run service binds them at runtime via <code>--set-secrets</code>.</li>
+							<li data-i18n="li.sec.https"><strong>HTTPS-only, everywhere.</strong> Cloudflare in front of the static site, Google-managed certs in front of Cloud Run.</li>
+							<li data-i18n="li.sec.gdpr"><strong>GDPR consent before any tracking.</strong> The consent banner blocks Meta Pixel, GA4, and any non-essential tags until the user opts in. Cloudflare Web Analytics is the only thing that runs without consent, because it is cookieless and aggregate.</li>
 						</ul>
 
-						<p>None of this is exotic. It is the version of "default to safe" that I can live with given what people are uploading.</p>
+						<p data-i18n="p.security3">None of this is exotic. It is the version of "default to safe" that I can live with given what people are uploading.</p>
 
-						<h2>Why three days is the headline, not the tech</h2>
-						<p>The interesting thing about Crayo is not the stack. The stack is whatever the stack is. The interesting thing is that the cost of going from "I have an idea over morning coffee" to "a stranger paid me for it" has collapsed.</p>
+						<h2 data-i18n="h.headline">Why three days is the headline, not the tech</h2>
+						<p data-i18n="p.headline1">The interesting thing about Crayo is not the stack. The stack is whatever the stack is. The interesting thing is that the cost of going from "I have an idea over morning coffee" to "a stranger paid me for it" has collapsed.</p>
 
-						<p>A few years ago, this build would have been a multi-week project. I would have spent days on auth, days on image generation pipelines, days fighting with a payment integration. Today the bottleneck has moved entirely off of typing code and onto the things AI cannot do for me: deciding what to build, talking to real users, understanding the market, and taking the legal risk of putting a business in the world.</p>
+						<p data-i18n="p.headline2">A few years ago, this build would have been a multi-week project. I would have spent days on auth, days on image generation pipelines, days fighting with a payment integration. Today the bottleneck has moved entirely off of typing code and onto the things AI cannot do for me: deciding what to build, talking to real users, understanding the market, and taking the legal risk of putting a business in the world.</p>
 
-						<h2>What is next</h2>
-						<p>Crayo is at the start of its life. Right now I am in the acquisition phase: running a small Meta Ads campaign, watching the analytics, A/B testing the landing page, and reading every piece of feedback I get from real customers. The next milestone is not a fancier feature. It is the tenth paying stranger, and then the hundredth.</p>
+						<h2 data-i18n="h.next">What is next</h2>
+						<p data-i18n="p.next1">Crayo is at the start of its life. Right now I am in the acquisition phase: running a small Meta Ads campaign, watching the analytics, A/B testing the landing page, and reading every piece of feedback I get from real customers. The next milestone is not a fancier feature. It is the tenth paying stranger, and then the hundredth.</p>
 
-						<p>To speed that loop up, I set up a Claude routine that runs every day. It pulls the previous day's ad performance from Meta, drafts new creative, and either tweaks the campaign or makes changes to the crayo.ro site based on what it sees. I am genuinely curious to see how this goes.</p>
+						<p data-i18n="p.next2">To speed that loop up, I set up a Claude routine that runs every day. It pulls the previous day's ad performance from Meta, drafts new creative, and either tweaks the campaign or makes changes to the crayo.ro site based on what it sees. I am genuinely curious to see how this goes.</p>
 
-						<p>That first 2-euro Stripe notification from a stranger is still the part I keep thinking about. It made the whole thing feel real.</p>
+						<p data-i18n="p.next3">That first 2-euro Stripe notification from a stranger is still the part I keep thinking about. It made the whole thing feel real.</p>
 
-						<p>If you have kids, a dog, or a memory you want turned into a coloring book, <a href="https://crayo.ro" target="_blank">crayo.ro</a> is live. And if you are sitting on an idea wondering whether you can ship it, with the right tools, three days is probably enough.</p>
+						<p data-i18n="p.next4">If you have kids, a dog, or a memory you want turned into a coloring book, <a href="https://crayo.ro" target="_blank">crayo.ro</a> is live. And if you are sitting on an idea wondering whether you can ship it, with the right tools, three days is probably enough.</p>
 
-						<h3>Keep Reading</h3>
-						<p>Continue with <a href="/blog/">the blog index</a>, read how we <a href="/blog/3d-printer-caricature.html">turned a 3D printer into a caricature artist</a>, or <a href="/blog/ai-powered-f1-leaderboard.html">how I built an F1 leaderboard with AI</a>.</p>
+						<h3 data-i18n="h.keepreading">Keep Reading</h3>
+						<p data-i18n="p.keepreading">Continue with <a href="/blog/">the blog index</a>, read how we <a href="/blog/3d-printer-caricature.html">turned a 3D printer into a caricature artist</a>, or <a href="/blog/ai-powered-f1-leaderboard.html">how I built an F1 leaderboard with AI</a>.</p>
 						<ul class="actions">
-							<li><a href="/" class="button primary">Back to Home</a></li>
-							<li><a href="/blog/" class="button">More Blog Posts</a></li>
-							<li><a href="https://crayo.ro" target="_blank" class="button">Visit Crayo</a></li>
+							<li><a href="/" class="button primary" data-i18n="cta.home">Back to Home</a></li>
+							<li><a href="/blog/" class="button" data-i18n="cta.blog">More Blog Posts</a></li>
+							<li><a href="https://crayo.ro" target="_blank" class="button" data-i18n="cta.crayo">Visit Crayo</a></li>
 						</ul>
 					</section>
 
@@ -188,5 +203,7 @@
 			<script src="../assets/js/util.js"></script>
 			<script src="../assets/js/main.js"></script>
 
-	</body>
+				<script src="../assets/js/i18n/blog-crayo.js"></script>
+			<script src="../assets/js/i18n.js"></script>
+</body>
 </html>

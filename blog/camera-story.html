@@ -4,7 +4,7 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
-<html>
+<html lang="en">
 	<head>
 		<title>The agent looked at the cameras and figured out left from right - Voic Andrei</title>
 		<meta charset="utf-8" />
@@ -21,6 +21,7 @@
 		<meta name="twitter:description" content="We told a coding agent to run our robot setup. We never told it how to tell two identical cameras apart. So it looked." />
 		<meta name="twitter:image" content="https://voic.ro/images/blog_camera_story/20260606_top_down_camera.png" />
 		<link rel="stylesheet" href="../assets/css/main.css" />
+		<link rel="stylesheet" href="../assets/css/i18n.css" />
 		<link rel="icon" type="image/png" href="../images/sitethumbnail-modified.png">
 		<style>
 			.camera-story-dek {
@@ -127,6 +128,20 @@
 		</script>
 	</head>
 	<body class="is-preload">
+		<!-- Language switcher -->
+			<div id="lang-switcher" class="lang-switcher">
+				<svg class="lang-switcher-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 2a10 10 0 100 20 10 10 0 000-20zm6.93 6h-2.95a15.7 15.7 0 00-1.38-3.56A8.03 8.03 0 0118.93 8zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14a7.96 7.96 0 010-4h3.38a16.6 16.6 0 000 4H4.26zm.81 2h2.95c.32 1.25.78 2.45 1.38 3.56A8.03 8.03 0 015.07 16zm2.95-8H5.07a8.03 8.03 0 014.33-3.56A15.7 15.7 0 008.02 8zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82A13.7 13.7 0 0112 19.96zM14.34 14H9.66a14.6 14.6 0 010-4h4.68a14.6 14.6 0 010 4zm.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 01-4.33 3.56zM16.36 14a16.6 16.6 0 000-4h3.38a7.96 7.96 0 010 4h-3.38z"/></svg>
+				<label for="lang-select" class="lang-switcher-label">Language</label>
+				<select id="lang-select" aria-label="Select language">
+					<option value="en">English</option>
+					<option value="ro">Română</option>
+					<option value="de">Deutsch</option>
+					<option value="es">Español</option>
+					<option value="fr">Français</option>
+					<option value="zh">中文</option>
+				</select>
+			</div>
+
 
 		<!-- Header -->
 			<header id="header">
@@ -144,35 +159,35 @@
 				<!-- Article -->
 					<section>
 						<header class="major">
-							<h1>The agent looked at the cameras and figured out left from right</h1>
-							<p><time datetime="2026-06-16">June 16, 2026</time></p>
+							<h1 data-i18n="title">The agent looked at the cameras and figured out left from right</h1>
+							<p><time datetime="2026-06-16" data-i18n="date">June 16, 2026</time></p>
 						</header>
 
-						<p class="camera-story-dek">We told a coding agent to run our robot setup. We never told it how to tell two identical cameras apart. So it looked.</p>
+						<p class="camera-story-dek" data-i18n="dek">We told a coding agent to run our robot setup. We never told it how to tell two identical cameras apart. So it looked.</p>
 
-						<p>We're building a robot-arm setup at the office. Two arms on a white table, red and green cubes, a bucket. Three USB cameras: one looking down at the whole table, one on each gripper.</p>
+						<p data-i18n="p1">We're building a robot-arm setup at the office. Two arms on a white table, red and green cubes, a bucket. Three USB cameras: one looking down at the whole table, one on each gripper.</p>
 
 						<figure class="camera-story-figure">
 							<span class="image fit"><img src="../images/blog_camera_story/20260606_top_down_camera.png" alt="Top-down view of the table: two orange robot arms, red and green cubes in the upper left, black bucket in the top right." /></span>
-							<figcaption>The top-down camera (<code>/dev/video0</code>). Both arms, the cubes up in the left, the bucket top right. The easy one.</figcaption>
+							<figcaption data-i18n="fig1">The top-down camera (<code>/dev/video0</code>). Both arms, the cubes up in the left, the bucket top right. The easy one.</figcaption>
 						</figure>
 
-						<p>Anyone who has touched a rig like this knows the worst part of the job: working out which camera is which. Linux hands you <code>/dev/video0</code>, <code>/dev/video2</code>, <code>/dev/video4</code> and nothing else. The two gripper cameras are the same model, so on paper they're identical. The usual fix is dumb but reliable: unplug one, see which feed goes black, stick tape on it, repeat.</p>
+						<p data-i18n="p2">Anyone who has touched a rig like this knows the worst part of the job: working out which camera is which. Linux hands you <code>/dev/video0</code>, <code>/dev/video2</code>, <code>/dev/video4</code> and nothing else. The two gripper cameras are the same model, so on paper they're identical. The usual fix is dumb but reliable: unplug one, see which feed goes black, stick tape on it, repeat.</p>
 
-						<p>We asked the agent to run the data-collection process. That was the whole instruction. We said we needed the top camera and the left gripper, and we never even told it which device was which.</p>
+						<p data-i18n="p3">We asked the agent to run the data-collection process. That was the whole instruction. We said we needed the top camera and the left gripper, and we never even told it which device was which.</p>
 
-						<p>It listed the video devices, noticed the odd indices were just metadata nodes, and figured there were three real cameras. It tried to grab a frame from all three at once and one of them timed out. It didn't stop or ask for help. It worked out that opening three identical webcams together had maxed out the USB bus, and that the stubborn one would be fine on its own. So it grabbed the frames it could, captured the difficult camera separately, copied the images over SSH to its own machine, and then it did the thing that made us stop.</p>
+						<p data-i18n="p4">It listed the video devices, noticed the odd indices were just metadata nodes, and figured there were three real cameras. It tried to grab a frame from all three at once and one of them timed out. It didn't stop or ask for help. It worked out that opening three identical webcams together had maxed out the USB bus, and that the stubborn one would be fine on its own. So it grabbed the frames it could, captured the difficult camera separately, copied the images over SSH to its own machine, and then it did the thing that made us stop.</p>
 
-						<blockquote>It opened the pictures and looked at them.</blockquote>
+						<blockquote data-i18n="quote">It opened the pictures and looked at them.</blockquote>
 
 						<figure class="camera-story-figure">
 							<span class="image fit"><img src="../images/blog_camera_story/20260606_camera_session_log.png" alt="Terminal log from the coding session: three cameras detected, video4 timed out, the frames copied over SSH, and the agent reading them to identify each view." loading="lazy" /></span>
-							<figcaption>The actual session. Three cameras found, <code>video4</code> timed out when all three opened at once, the frames got copied over SSH, and it started reading them one at a time.</figcaption>
+							<figcaption data-i18n="fig2">The actual session. Three cameras found, <code>video4</code> timed out when all three opened at once, the frames got copied over SSH, and it started reading them one at a time.</figcaption>
 						</figure>
 
-						<p><code>/dev/video0</code> was easy: the whole table from above, both arms, cubes in the upper left, bucket top right. Top camera, done.</p>
+						<p data-i18n="p5"><code>/dev/video0</code> was easy: the whole table from above, both arms, cubes in the upper left, bucket top right. Top camera, done.</p>
 
-						<p>The two gripper cameras were the problem. Nearly identical close-ups, orange gripper, white table. Nothing in the metadata tells you left from right.</p>
+						<p data-i18n="p6">The two gripper cameras were the problem. Nearly identical close-ups, orange gripper, white table. Nothing in the metadata tells you left from right.</p>
 
 						<div class="camera-story-pair">
 							<figure>
@@ -184,31 +199,31 @@
 								<span class="image fit"><img src="../images/blog_camera_story/20260606_video4_gripper.png" alt="Close-up from the other gripper camera: same orange gripper and white table, but red and green cubes are visible in the corner of the frame." loading="lazy" /></span>
 							</figure>
 						</div>
-						<p class="camera-story-paircap">Same camera model, same gripper, same white table. The only difference that matters: the one on the right (<code>/dev/video4</code>) can see the cubes. So that's the left gripper.</p>
+						<p class="camera-story-paircap" data-i18n="paircap">Same camera model, same gripper, same white table. The only difference that matters: the one on the right (<code>/dev/video4</code>) can see the cubes. So that's the left gripper.</p>
 
-						<p>So it read the scene instead. The top view put the cubes on the left side of the table. One gripper camera had those same red and green cubes sitting in the corner of its frame. The other was looking at empty table toward the bucket. So the camera that can see the cubes is the left gripper, the one we wanted. The other is the right one. Ignore it.</p>
+						<p data-i18n="p7">So it read the scene instead. The top view put the cubes on the left side of the table. One gripper camera had those same red and green cubes sitting in the corner of its frame. The other was looking at empty table toward the bucket. So the camera that can see the cubes is the left gripper, the one we wanted. The other is the right one. Ignore it.</p>
 
 						<figure class="camera-story-figure">
 							<span class="image fit"><img src="../images/blog_camera_story/20260606_camera_identification_summary.png" alt="Terminal log: a table of what each camera sees, concluding that video4 is the left gripper because it is the one that can see the cubes, and video2 is the right gripper to ignore." loading="lazy" /></span>
-							<figcaption>Its own summary, and the call: <code>video4</code> is the left gripper, because it's the only one of the two that can see the cubes.</figcaption>
+							<figcaption data-i18n="fig3">Its own summary, and the call: <code>video4</code> is the left gripper, because it's the only one of the two that can see the cubes.</figcaption>
 						</figure>
 
-						<p>Then it did one more sensible thing. It didn't just assume it had it right. It told us its answer and asked one question: was the left gripper the one looking at the cubes? Yes. It had it.</p>
+						<p data-i18n="p8">Then it did one more sensible thing. It didn't just assume it had it right. It told us its answer and asked one question: was the left gripper the one looking at the cubes? Yes. It had it.</p>
 
-						<p>Nobody taught it that. We didn't say "take photos," or "use the cubes as a landmark," or "the cubes are on the left." It came up with the method a careful person would use anyway: get some evidence, look at it, reason from what's actually in front of you, then check before you commit. It treated the cameras as eyes.</p>
+						<p data-i18n="p9">Nobody taught it that. We didn't say "take photos," or "use the cubes as a landmark," or "the cubes are on the left." It came up with the method a careful person would use anyway: get some evidence, look at it, reason from what's actually in front of you, then check before you commit. It treated the cameras as eyes.</p>
 
-						<p>The robot arms will do their demo, and that will look impressive. But the part worth remembering is an AI squinting at a photo of a table, working out left from right by where the cubes were. &#128512;</p>
+						<p data-i18n="p10">The robot arms will do their demo, and that will look impressive. But the part worth remembering is an AI squinting at a photo of a table, working out left from right by where the cubes were. &#128512;</p>
 
 						<hr />
 
-						<p class="camera-story-foot">The three table photos are the actual frames the agent captured and looked at on 6 June 2026, pulled straight off the robot box. The two dark screenshots are from the session itself. The grippers are SO-101 arms. The timeout it worked around was a real USB-2.0 bandwidth limit from three uncompressed camera streams sharing one bus.</p>
+						<p class="camera-story-foot" data-i18n="foot">The three table photos are the actual frames the agent captured and looked at on 6 June 2026, pulled straight off the robot box. The two dark screenshots are from the session itself. The grippers are SO-101 arms. The timeout it worked around was a real USB-2.0 bandwidth limit from three uncompressed camera streams sharing one bus.</p>
 
-						<h3>Keep Reading</h3>
-						<p>Continue with <a href="/blog/">the blog index</a>, read how we <a href="/blog/3d-printer-caricature.html">turned a 3D printer into a caricature artist</a>, or <a href="/blog/building-crayo-in-3-days.html">how I built Crayo in 3 days</a>.</p>
+						<h3 data-i18n="keepreading">Keep Reading</h3>
+						<p data-i18n="related">Continue with <a href="/blog/">the blog index</a>, read how we <a href="/blog/3d-printer-caricature.html">turned a 3D printer into a caricature artist</a>, or <a href="/blog/building-crayo-in-3-days.html">how I built Crayo in 3 days</a>.</p>
 						<ul class="actions">
-							<li><a href="/" class="button primary">Back to Home</a></li>
-							<li><a href="/blog/" class="button">More Blog Posts</a></li>
-							<li><a href="/blog/3d-printer-caricature.html" class="button">Related Article</a></li>
+							<li><a href="/" class="button primary" data-i18n="btn.home">Back to Home</a></li>
+							<li><a href="/blog/" class="button" data-i18n="btn.blog">More Blog Posts</a></li>
+							<li><a href="/blog/3d-printer-caricature.html" class="button" data-i18n="btn.related">Related Article</a></li>
 						</ul>
 					</section>
 
@@ -236,5 +251,7 @@
 			<script src="../assets/js/util.js"></script>
 			<script src="../assets/js/main.js"></script>
 
-	</body>
+				<script src="../assets/js/i18n/blog-camera.js"></script>
+			<script src="../assets/js/i18n.js"></script>
+</body>
 </html>
