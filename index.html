@@ -4,7 +4,7 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
-<html>
+<html lang="en">
 	<head>
 		<title>Voic Andrei - Personal Website</title>
 		<meta charset="utf-8" />
@@ -21,6 +21,7 @@
 		<meta name="twitter:description" content="Portfolio and personal site for Voic Andrei, featuring AI, robotics, embedded systems, drone projects, awards, and engineering writing." />
 		<meta name="twitter:image" content="https://voic.ro/images/sitethumbnail-modified.png" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/i18n.css" />
 		<link rel="icon" type="image/png" href="images/sitethumbnail-modified.png">
 		<script type="application/ld+json">
 			{
@@ -71,11 +72,26 @@
 	</head>
 	<body class="is-preload">
 
+		<!-- Language switcher -->
+			<div id="lang-switcher" class="lang-switcher">
+				<svg class="lang-switcher-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 2a10 10 0 100 20 10 10 0 000-20zm6.93 6h-2.95a15.7 15.7 0 00-1.38-3.56A8.03 8.03 0 0118.93 8zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14a7.96 7.96 0 010-4h3.38a16.6 16.6 0 000 4H4.26zm.81 2h2.95c.32 1.25.78 2.45 1.38 3.56A8.03 8.03 0 015.07 16zm2.95-8H5.07a8.03 8.03 0 014.33-3.56A15.7 15.7 0 008.02 8zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82A13.7 13.7 0 0112 19.96zM14.34 14H9.66a14.6 14.6 0 010-4h4.68a14.6 14.6 0 010 4zm.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 01-4.33 3.56zM16.36 14a16.6 16.6 0 000-4h3.38a7.96 7.96 0 010 4h-3.38z"/></svg>
+				<label for="lang-select" class="lang-switcher-label">Language</label>
+				<select id="lang-select" aria-label="Select language">
+					<option value="en">English</option>
+					<option value="ro">Română</option>
+					<option value="de">Deutsch</option>
+					<option value="es">Español</option>
+					<option value="fr">Français</option>
+					<option value="zh">中文</option>
+				</select>
+			</div>
+
+
 		<!-- Header -->
 			<header id="header">
 				<div class="inner">
 					<a href="#" class="image avatar"><img src="images/headshot_ok.png" alt="Voic Andrei" /></a>
-					<h1><strong>I am Voic Andrei</strong>, a passionate<br />
+					<h1 data-i18n="header.tagline"><strong>I am Voic Andrei</strong>, a passionate<br />
 					developer and professional<br />
 					based in Romania.</h1>
 				</div>
@@ -87,200 +103,200 @@
 				<!-- One -->
 					<section id="one">
 						<header class="major">
-							<h2>Bringing Ideas to Life<br />
+							<h2 data-i18n="one.heading">Bringing Ideas to Life<br />
 							Through Technology</h2>
 						</header>
-						<p>I am an engineer with expertise in embedded systems, drone technology, and artificial intelligence. I hold a bachelor's degree in Automation from the Technical University of Cluj-Napoca and am currently pursuing a Master's in Applied Computational Intelligence at Babeș-Bolyai University. My interdisciplinary background in electrical engineering, software development, and AI enables me to craft integrated solutions that connect hardware and software seamlessly.
+						<p data-i18n="one.intro">I am an engineer with expertise in embedded systems, drone technology, and artificial intelligence. I hold a bachelor's degree in Automation from the Technical University of Cluj-Napoca and am currently pursuing a Master's in Applied Computational Intelligence at Babeș-Bolyai University. My interdisciplinary background in electrical engineering, software development, and AI enables me to craft integrated solutions that connect hardware and software seamlessly.
 						I am passionate about leveraging my skills to develop innovative solutions that address real-world challenges, particularly in the fields of AI and drone technology.</p>
 						<ul class="actions">
-						<li><a href="images/CV_Voic_Andrei_Florin_27_April_2026.pdf" class="button" target="_blank">Grab a copy of my CV</a></li>
-							<li><a href="/blog/" class="button">Blog</a></li>
+						<li><a href="images/CV_Voic_Andrei_Florin_27_April_2026.pdf" class="button" target="_blank" data-i18n="one.cta_cv">Grab a copy of my CV</a></li>
+							<li><a href="/blog/" class="button" data-i18n="one.cta_blog">Blog</a></li>
 							<li><a href="instagram/" class="button">Voicstagram</a></li>
 						</ul>
 					</section>
 
 				<!-- Projects -->
 					<section id="two" class="lightbox-gallery">
-						<h2>Projects</h2>
+						<h2 data-i18n="projects.heading">Projects</h2>
 						<div class="row">
 							<article class="col-6 col-12-xsmall work-item">
 								<a href="images/projects/crayo_screenshot.png" class="image fit thumb"><img src="images/projects/crayo_screenshot.png" alt="Crayo - AI Coloring Book SaaS" /></a>
-								<h3>Crayo - AI Coloring Book SaaS</h3>
-								<p>Romanian-language AI coloring book SaaS that turns uploaded photos into personalized printable PDFs. Customers pay through Stripe and receive a custom AI-generated coloring book, built with React, Hono, Google Cloud Run, Firestore, GCS, and Vertex AI. It was the project that made me my first internet dollar. <a href="https://crayo.ro" target="_blank">Check out the website</a></p>
+								<h3 data-i18n="projects.crayo.title">Crayo - AI Coloring Book SaaS</h3>
+								<p data-i18n="projects.crayo.desc">Romanian-language AI coloring book SaaS that turns uploaded photos into personalized printable PDFs. Customers pay through Stripe and receive a custom AI-generated coloring book, built with React, Hono, Google Cloud Run, Firestore, GCS, and Vertex AI. It was the project that made me my first internet dollar. <a href="https://crayo.ro" target="_blank">Check out the website</a></p>
 							</article>
 							<article class="col-6 col-12-xsmall work-item">
 								<a href="images/projects/siteacum.png" class="image fit thumb"><img src="images/projects/siteacum.png" alt="Siteacum - Automated Website SaaS" /></a>
-								<h3>Siteacum - Automated Website SaaS</h3>
-								<p>AI-powered platform that auto-generates professional websites for small local businesses in Romania. Sources leads from Google Maps, enriches them with real business photos and reviews, then uses an agentic AI pipeline to produce a finished, mobile-ready React website — all before the business owner pays. Built with React, Supabase, Google Cloud Run, and Gemini. <a href="https://siteacum.ro" target="_blank">Check out the website</a></p>
+								<h3 data-i18n="projects.siteacum.title">Siteacum - Automated Website SaaS</h3>
+								<p data-i18n="projects.siteacum.desc">AI-powered platform that auto-generates professional websites for small local businesses in Romania. Sources leads from Google Maps, enriches them with real business photos and reviews, then uses an agentic AI pipeline to produce a finished, mobile-ready React website — all before the business owner pays. Built with React, Supabase, Google Cloud Run, and Gemini. <a href="https://siteacum.ro" target="_blank">Check out the website</a></p>
 							</article>
 							<article class="col-6 col-12-xsmall work-item">
 								<a href="images/projects/surroundly_project.png" class="image fit thumb"><img src="images/projects/surroundly_project.png" alt="Surroundly - Immersive VR YouTube Experience" /></a>
-								<h3>Surroundly - Immersive VR YouTube Experience</h3>
-								<p>Transforming YouTube into an immersive VR experience for Meta Quest using AI. Surroundly analyzes video content to generate matching 360° skyboxes and interactive 3D objects, turning passive viewing into spatial presence. Built with Meta Spatial SDK, Kotlin, and a custom AI pipeline. <a href="https://www.youtube.com/watch?v=nsQPHOu-D7M" target="_blank">Watch the demo</a></p>
+								<h3 data-i18n="projects.surroundly.title">Surroundly - Immersive VR YouTube Experience</h3>
+								<p data-i18n="projects.surroundly.desc">Transforming YouTube into an immersive VR experience for Meta Quest using AI. Surroundly analyzes video content to generate matching 360° skyboxes and interactive 3D objects, turning passive viewing into spatial presence. Built with Meta Spatial SDK, Kotlin, and a custom AI pipeline. <a href="https://www.youtube.com/watch?v=nsQPHOu-D7M" target="_blank">Watch the demo</a></p>
 							</article>
 							<article class="col-6 col-12-xsmall work-item">
 								<a href="images/projects/ArduinoQuadcopter.jpg" class="image fit thumb"><img src="images/projects/ArduinoQuadcopter.jpg" alt="Arduino Quadcopter" /></a>
-								<h3>Arduino Quadcopter</h3>
-								<p>Followed Joop Brokking tutorial and created my first flying project using an Arduino, a gyroscope, a receiver, a transmitter, four ESCs, four motors, a 3S Li-Po battery. The first project where I used soldering.</p>
+								<h3 data-i18n="projects.arduino_quad.title">Arduino Quadcopter</h3>
+								<p data-i18n="projects.arduino_quad.desc">Followed Joop Brokking tutorial and created my first flying project using an Arduino, a gyroscope, a receiver, a transmitter, four ESCs, four motors, a 3S Li-Po battery. The first project where I used soldering.</p>
 							</article>
 							<article class="col-6 col-12-xsmall work-item">
 								<a href="images/projects/SmartThermostat.jpg" class="image fit thumb"><img src="images/projects/SmartThermostat.jpg" alt="Smart Thermostat" /></a>
-								<h3>Smart Thermostat</h3>
-								<p>ESP8266 thermostat for controlling temperature through internet, using a real-time database from Firebase.</p>
+								<h3 data-i18n="projects.thermostat.title">Smart Thermostat</h3>
+								<p data-i18n="projects.thermostat.desc">ESP8266 thermostat for controlling temperature through internet, using a real-time database from Firebase.</p>
 							</article>
 							<article class="col-6 col-12-xsmall work-item">
 								<a href="images/projects/Hexacopter.jpg" class="image fit thumb"><img src="images/projects/Hexacopter.jpg" alt="Hexacopter" /></a>
-								<h3>Hexacopter</h3>
-								<p>Uses a Pixhawk 2.4.8 flight controller, based on a STM32. By integrating an automatically generated pre-defined flight mission input, this prototype successfully demonstrates autonomous flight capabilities.</p>
+								<h3 data-i18n="projects.hexacopter.title">Hexacopter</h3>
+								<p data-i18n="projects.hexacopter.desc">Uses a Pixhawk 2.4.8 flight controller, based on a STM32. By integrating an automatically generated pre-defined flight mission input, this prototype successfully demonstrates autonomous flight capabilities.</p>
 							</article>
 							<article class="col-6 col-12-xsmall work-item">
 								<a href="images/projects/PLCReaderWithDB.jpg" class="image fit thumb"><img src="images/projects/PLCReaderWithDB.jpg" alt="PLC Reader with DB" /></a>
-								<h3>PLC Reader with DB</h3>
-								<p>A Windows Forms application designed to establish a connection with a PLC, enabling the user to select specific memory locations, and automatically store the extracted data in a local database at user-defined time intervals. Additionally, the application enables the generation of data outputs within specified time ranges in PDF or CSV formats for enhanced reporting and analysis.</p>
+								<h3 data-i18n="projects.plc.title">PLC Reader with DB</h3>
+								<p data-i18n="projects.plc.desc">A Windows Forms application designed to establish a connection with a PLC, enabling the user to select specific memory locations, and automatically store the extracted data in a local database at user-defined time intervals. Additionally, the application enables the generation of data outputs within specified time ranges in PDF or CSV formats for enhanced reporting and analysis.</p>
 							</article>
 							<article class="col-6 col-12-xsmall work-item">
 								<a href="images/projects/ITEC2024MazeSolver.jpg" class="image fit thumb"><img src="images/projects/ITEC2024MazeSolver.jpg" alt="ITEC 2024 Maze Solver" /></a>
-								<h3>ITEC 2024 Maze Solver and Mapper</h3>
-								<p>Our team designed and built a robot equipped with ultrasonic sensors and a STM32, utilizing Bluetooth for communication. The project involved programming the robot to navigate and map complex mazes effectively. Our practical and efficient approach led to our team winning first place in the competition.</p>
+								<h3 data-i18n="projects.maze2024.title">ITEC 2024 Maze Solver and Mapper</h3>
+								<p data-i18n="projects.maze2024.desc">Our team designed and built a robot equipped with ultrasonic sensors and a STM32, utilizing Bluetooth for communication. The project involved programming the robot to navigate and map complex mazes effectively. Our practical and efficient approach led to our team winning first place in the competition.</p>
 							</article>
 							<article class="col-6 col-12-xsmall work-item">
 								<a href="images/projects/6DOFRobot.jpg" class="image fit thumb"><img src="images/projects/6DOFRobot.jpg" alt="6-DOF Robotic Arm" /></a>
-								<h3>6-DOF Robotic Arm</h3>
-								<p>Built a 6-DOF robotic arm from a DIY kit won at ITEC 2024. The project focused on assembling the mechanical parts, wiring servo motors, and programming basic movements using an Arduino. While not overly complex, it provided hands-on experience with robotic arm mechanics and basic control principles.</p>
+								<h3 data-i18n="projects.arm.title">6-DOF Robotic Arm</h3>
+								<p data-i18n="projects.arm.desc">Built a 6-DOF robotic arm from a DIY kit won at ITEC 2024. The project focused on assembling the mechanical parts, wiring servo motors, and programming basic movements using an Arduino. While not overly complex, it provided hands-on experience with robotic arm mechanics and basic control principles.</p>
 							</article>
 							<article class="col-6 col-12-xsmall work-item">
 								<a href="images/projects/STM32Quadcopter.jpg" class="image fit thumb"><img src="images/projects/STM32Quadcopter.jpg" alt="STM32 Flight Controller" /></a>
-								<h3>STM32 Flight Controller</h3>
-								<p>Designed and built a custom flight controller, starting with the electrical schematics, followed by PCB design and soldering. Combined the hardware with firmware development to achieve stable flight and precise control. This project was a great learning experience in circuit design and embedded systems.</p>
+								<h3 data-i18n="projects.stm32fc.title">STM32 Flight Controller</h3>
+								<p data-i18n="projects.stm32fc.desc">Designed and built a custom flight controller, starting with the electrical schematics, followed by PCB design and soldering. Combined the hardware with firmware development to achieve stable flight and precise control. This project was a great learning experience in circuit design and embedded systems.</p>
 							</article>
 							<article class="col-6 col-12-xsmall work-item">
 								<a href="images/projects/AnalogDevicesInternship.jpg" class="image fit thumb"><img src="images/projects/AnalogDevicesInternship.jpg" alt="Analog Devices Internship Project" /></a>
-								<h3>Analog Devices Internship Project</h3>
-								<p>Developed an accelerometer system using USB-C, a Linear Voltage Regulator, an ADXL Accelerometer, Differential Operational Amplifiers, an AD5592R ADC, and FPGA connectors. Designed the circuit schematic, optimized PCB layout, soldered components, developed a custom Linux driver for SPI communication, and created applications in C and Python for data retrieval and visualization. <a href="https://www.canva.com/design/DAFppT8dTg4/J_LfDK-I4AsbbVzp5bYXzQ/view?utm_content=DAFppT8dTg4&utm_campaign=designshare&utm_medium=link&utm_source=editor#1" target="_blank">View project details</a></p>
+								<h3 data-i18n="projects.analog.title">Analog Devices Internship Project</h3>
+								<p data-i18n="projects.analog.desc">Developed an accelerometer system using USB-C, a Linear Voltage Regulator, an ADXL Accelerometer, Differential Operational Amplifiers, an AD5592R ADC, and FPGA connectors. Designed the circuit schematic, optimized PCB layout, soldered components, developed a custom Linux driver for SPI communication, and created applications in C and Python for data retrieval and visualization. <a href="https://www.canva.com/design/DAFppT8dTg4/J_LfDK-I4AsbbVzp5bYXzQ/view?utm_content=DAFppT8dTg4&utm_campaign=designshare&utm_medium=link&utm_source=editor#1" target="_blank">View project details</a></p>
 							</article>
 					<article class="col-6 col-12-xsmall work-item">
 						<a href="images/projects/lantic.jpg" class="image fit thumb"><img src="images/projects/lantic.jpg" alt="Lantic.ro Website" /></a>
-						<h3>Lantic.ro Website</h3>
-						<p>AI-built brochure experience with landing, despre noi, and contact pages (Google Maps, phone, email, address), plus a GitHub-driven product catalog. Features a "Solicită ofertă" form routed to comenzi@lantic.ro and a contact form that emails office@lantic.ro. <a href="https://lantic.ro" target="_blank">Check out the website</a></p>
+						<h3 data-i18n="projects.lantic.title">Lantic.ro Website</h3>
+						<p data-i18n="projects.lantic.desc">AI-built brochure experience with landing, despre noi, and contact pages (Google Maps, phone, email, address), plus a GitHub-driven product catalog. Features a "Solicită ofertă" form routed to comenzi@lantic.ro and a contact form that emails office@lantic.ro. <a href="https://lantic.ro" target="_blank">Check out the website</a></p>
 					</article>
 							<article class="col-6 col-12-xsmall work-item">
 								<a href="images/projects/landgame.jpg" class="image fit thumb"><img src="images/projects/landgame.jpg" alt="Landgame Platform" /></a>
-								<h3>Landgame.ro Platform</h3>
-								<p>Full-stack booking platform with loyalty program, admin panel, internationalization, and complex pricing logic, built with React, Supabase, and Tailwind CSS. Developed end-to-end exclusively using AI tools (Claude Code, Lovable, Cursor, Codex). <a href="https://landgame.ro" target="_blank">Check out the website</a></p>
+								<h3 data-i18n="projects.landgame.title">Landgame.ro Platform</h3>
+								<p data-i18n="projects.landgame.desc">Full-stack booking platform with loyalty program, admin panel, internationalization, and complex pricing logic, built with React, Supabase, and Tailwind CSS. Developed end-to-end exclusively using AI tools (Claude Code, Lovable, Cursor, Codex). <a href="https://landgame.ro" target="_blank">Check out the website</a></p>
 							</article>
 							<article class="col-6 col-12-xsmall work-item">
 								<a href="images/projects/robochef.jpg" class="image fit thumb"><img src="images/projects/robochef.jpg" alt="RoboChef - GPT-OSS Kitchen Assistant" /></a>
-								<h3>RoboChef - GPT-OSS Kitchen Assistant</h3>
-								<p>AI-powered kitchen assistant that turns natural language into robot actions using GPT-OSS with NVIDIA Isaac GR00T and the SO-100 arm. <a href="https://devpost.com/software/robochef-gpt-oss-powered-kitchen-assistant" target="_blank">View project</a></p>
+								<h3 data-i18n="projects.robochef.title">RoboChef - GPT-OSS Kitchen Assistant</h3>
+								<p data-i18n="projects.robochef.desc">AI-powered kitchen assistant that turns natural language into robot actions using GPT-OSS with NVIDIA Isaac GR00T and the SO-100 arm. <a href="https://devpost.com/software/robochef-gpt-oss-powered-kitchen-assistant" target="_blank">View project</a></p>
 							</article>
 							<article class="col-6 col-12-xsmall work-item">
 								<a href="images/projects/itec2025mazesolver.jpg" class="image fit thumb"><img src="images/projects/itec2025mazesolver.jpg" alt="ITEC 2025 Maze Solver" /></a>
-								<h3>ITEC 2025 Maze Solver - Enhanced Version</h3>
-								<p>We improved our 2024 version to make it more robust, smaller, better code, cleaner wiring, and we finally got the robot to do both tasks. This enhanced maze solver showcases our continuous improvement in robotics engineering and problem-solving capabilities.</p>
+								<h3 data-i18n="projects.maze2025.title">ITEC 2025 Maze Solver - Enhanced Version</h3>
+								<p data-i18n="projects.maze2025.desc">We improved our 2024 version to make it more robust, smaller, better code, cleaner wiring, and we finally got the robot to do both tasks. This enhanced maze solver showcases our continuous improvement in robotics engineering and problem-solving capabilities.</p>
 							</article>
 							<article class="col-6 col-12-xsmall work-item">
 								<a href="images/projects/remarcdent.jpg" class="image fit thumb"><img src="images/projects/remarcdent.jpg" alt="Remarcdent.ro Website" /></a>
-								<h3>Remarcdent.ro Website</h3>
-								<p>Clean, responsive presentation website for a dental clinic, focused on clear service presentation and easy content updates. Features modern design with appointment booking, services showcase, pricing, and team sections. <a href="https://remarcdent.ro" target="_blank">Check out the website</a></p>
+								<h3 data-i18n="projects.remarcdent.title">Remarcdent.ro Website</h3>
+								<p data-i18n="projects.remarcdent.desc">Clean, responsive presentation website for a dental clinic, focused on clear service presentation and easy content updates. Features modern design with appointment booking, services showcase, pricing, and team sections. <a href="https://remarcdent.ro" target="_blank">Check out the website</a></p>
 							</article>
 						</div>
 					</section>
 
 				<!-- Awards -->
 					<section id="awards" class="lightbox-gallery">
-						<h2>Awards & Recognition</h2>
+						<h2 data-i18n="awards.heading">Awards & Recognition</h2>
 						<div class="row">
 							<article class="col-6 col-12-xsmall work-item">
 								<a href="images/awards/openaihackathon.jpg" class="image fit thumb"><img src="images/awards/openaihackathon.jpg" alt="OpenAI Open Model Hackathon" /></a>
-								<h3>OpenAI Open Model Hackathon Winner</h3>
-								<p>Won Best Overall prize ($10,000 USD) at OpenAI's Open Model Hackathon with Alexandru Luci for RoboChef, an AI-powered kitchen assistant combining GPT-OSS reasoning with NVIDIA Isaac GR00T and SO-100 robotic arm to execute natural language cooking instructions. <a href="https://devpost.com/software/robochef-gpt-oss-powered-kitchen-assistant" target="_blank">View project</a></p>
+								<h3 data-i18n="awards.openai.title">OpenAI Open Model Hackathon Winner</h3>
+								<p data-i18n="awards.openai.desc">Won Best Overall prize ($10,000 USD) at OpenAI's Open Model Hackathon with Alexandru Luci for RoboChef, an AI-powered kitchen assistant combining GPT-OSS reasoning with NVIDIA Isaac GR00T and SO-100 robotic arm to execute natural language cooking instructions. <a href="https://devpost.com/software/robochef-gpt-oss-powered-kitchen-assistant" target="_blank">View project</a></p>
 							</article>
 							<article class="col-6 col-12-xsmall work-item">
 								<a href="images/awards/nasamentor.jpg" class="image fit thumb"><img src="images/awards/nasamentor.jpg" alt="NASA Space Apps Mentor" /></a>
-								<h3>NASA Space Apps Mentor</h3>
-								<p>Mentor at NASA Space Apps Challenge Cluj-Napoca 2025, supporting teams with AI, robotics, and product guidance.</p>
+								<h3 data-i18n="awards.nasa.title">NASA Space Apps Mentor</h3>
+								<p data-i18n="awards.nasa.desc">Mentor at NASA Space Apps Challenge Cluj-Napoca 2025, supporting teams with AI, robotics, and product guidance.</p>
 							</article>
 							<article class="col-6 col-12-xsmall work-item">
 								<a href="images/awards/itec2025.jpg" class="image fit thumb"><img src="images/awards/itec2025.jpg" alt="ITEC 2025" /></a>
-								<h3>ITEC 2025 Embedded Challenge Winner</h3>
-								<p>Won the Embedded challenge at iTEC 2025 Hackathon in Timișoara with Diana-Nicoleta Trif. Our robot successfully mapped and solved mazes from any given start to end points, being the only one to complete all tasks despite using low-cost components.</p>
+								<h3 data-i18n="awards.itec2025.title">ITEC 2025 Embedded Challenge Winner</h3>
+								<p data-i18n="awards.itec2025.desc">Won the Embedded challenge at iTEC 2025 Hackathon in Timișoara with Diana-Nicoleta Trif. Our robot successfully mapped and solved mazes from any given start to end points, being the only one to complete all tasks despite using low-cost components.</p>
 							</article>
 							<article class="col-6 col-12-xsmall work-item">
 								<a href="images/awards/mindcraft.jpg" class="image fit thumb"><img src="images/awards/mindcraft.jpg" alt="Huge if Real BRD" /></a>
-								<h3>Huge if Real BRD Episode</h3>
-								<p>Participated and achieved recognition in BRD's Huge if Real initiative, highlighting entrepreneurial and technical capabilities. <a href="https://www.youtube.com/watch?v=GgeAACTfDI0" target="_blank">Watch the episode</a></p>
+								<h3 data-i18n="awards.brd.title">Huge if Real BRD Episode</h3>
+								<p data-i18n="awards.brd.desc">Participated and achieved recognition in BRD's Huge if Real initiative, highlighting entrepreneurial and technical capabilities. <a href="https://www.youtube.com/watch?v=GgeAACTfDI0" target="_blank">Watch the episode</a></p>
 							</article>
 							<article class="col-6 col-12-xsmall work-item">
 								<a href="images/awards/viaclujtv.jpg" class="image fit thumb"><img src="images/awards/viaclujtv.jpg" alt="ViaClujTV Interview" /></a>
-								<h3>ViaClujTV IT Report Interview</h3>
-								<p>Featured on IT Report, discussing our emergency medical drone project. The interview covered the project's inception, team composition, technical challenges, and future plans. Hosted by Alexandra Ardelean and powered by Axon Soft. <a href="https://www.youtube.com/watch?v=C1V9CzapsNY&t=2s" target="_blank">Watch the interview</a></p>
+								<h3 data-i18n="awards.viacluj.title">ViaClujTV IT Report Interview</h3>
+								<p data-i18n="awards.viacluj.desc">Featured on IT Report, discussing our emergency medical drone project. The interview covered the project's inception, team composition, technical challenges, and future plans. Hosted by Alexandra Ardelean and powered by Axon Soft. <a href="https://www.youtube.com/watch?v=C1V9CzapsNY&t=2s" target="_blank">Watch the interview</a></p>
 							</article>
 							<article class="col-6 col-12-xsmall work-item">
 								<a href="images/awards/itec2024.jpg" class="image fit thumb"><img src="images/awards/itec2024.jpg" alt="ITEC 2024" /></a>
-								<h3>ITEC 2024 Embedded Challenge Winner</h3>
-								<p>Led the winning team in developing an autonomous maze-solving robot, demonstrating excellence in both hardware integration and software development.</p>
+								<h3 data-i18n="awards.itec2024.title">ITEC 2024 Embedded Challenge Winner</h3>
+								<p data-i18n="awards.itec2024.desc">Led the winning team in developing an autonomous maze-solving robot, demonstrating excellence in both hardware integration and software development.</p>
 							</article>
 							<article class="col-6 col-12-xsmall work-item">
 								<a href="images/awards/yettel.jpg" class="image fit thumb"><img src="images/awards/yettel.jpg" alt="Yettel Hackathon" /></a>
-								<h3>Yettel Hackathon Winner</h3>
-								<p>Successfully competed and won (€2,500 EUR) in the Yettel Hackathon, showcasing innovative problem-solving skills and technical expertise.</p>
+								<h3 data-i18n="awards.yettel.title">Yettel Hackathon Winner</h3>
+								<p data-i18n="awards.yettel.desc">Successfully competed and won (€2,500 EUR) in the Yettel Hackathon, showcasing innovative problem-solving skills and technical expertise.</p>
 							</article>
 							<article class="col-6 col-12-xsmall work-item">
 								<a href="images/awards/protv.jpg" class="image fit thumb"><img src="images/awards/protv.jpg" alt="ProTV iLikeIT" /></a>
-								<h3>Featured on ProTV iLikeIT</h3>
-								<p>Project featured on Romania's leading tech TV show, demonstrating the innovative approach to emergency medical response using drone technology. <a href="https://stirileprotv.ro/stiri/ilikeit/ilikeit-proiect-al-unor-studenti-din-cluj-dotarea-serviciilor-medicale-de-urgenta-cu-drone.html" target="_blank">Watch the interview</a></p>
+								<h3 data-i18n="awards.protv.title">Featured on ProTV iLikeIT</h3>
+								<p data-i18n="awards.protv.desc">Project featured on Romania's leading tech TV show, demonstrating the innovative approach to emergency medical response using drone technology. <a href="https://stirileprotv.ro/stiri/ilikeit/ilikeit-proiect-al-unor-studenti-din-cluj-dotarea-serviciilor-medicale-de-urgenta-cu-drone.html" target="_blank">Watch the interview</a></p>
 							</article>
 						</div>
 					</section>
 
 				<!-- Stands -->
 					<section id="stands" class="lightbox-gallery">
-						<h2>Event Stands & Exhibitions</h2>
+						<h2 data-i18n="stands.heading">Event Stands & Exhibitions</h2>
 						<div class="row">
 							<article class="col-6 col-12-xsmall work-item">
 								<a href="images/stands/creic.jpg" class="image fit thumb"><img src="images/stands/creic.jpg" alt="CREIC Stand" /></a>
-								<h3>CREIC Stand</h3>
+								<h3 data-i18n="stands.creic.title">CREIC Stand</h3>
 							</article>
 							<article class="col-6 col-12-xsmall work-item">
 								<a href="images/stands/innovationstand.jpg" class="image fit thumb"><img src="images/stands/innovationstand.jpg" alt="Innovation Labs Startup Fair" /></a>
-								<h3>Startup Fair at Innovation Labs</h3>
+								<h3 data-i18n="stands.startupfair.title">Startup Fair at Innovation Labs</h3>
 							</article>
 							<article class="col-6 col-12-xsmall work-item">
 								<a href="images/stands/iotstudentchallenge.jpg" class="image fit thumb"><img src="images/stands/iotstudentchallenge.jpg" alt="IoT Student Challenge" /></a>
-								<h3>IoT Student Challenge Stand</h3>
+								<h3 data-i18n="stands.iot.title">IoT Student Challenge Stand</h3>
 							</article>
 							<article class="col-6 col-12-xsmall work-item">
 								<a href="images/stands/innowavesummitstand.jpg" class="image fit thumb"><img src="images/stands/innowavesummitstand.jpg" alt="Innowave Summit" /></a>
-								<h3>Innowave Summit Stand</h3>
+								<h3 data-i18n="stands.innowave.title">Innowave Summit Stand</h3>
 							</article>
 						</div>
 					</section>
 
 				<!-- Three -->
 					<section id="three">
-						<h2>Get In Touch</h2>
-						<p>Feel free to reach out if you'd like to discuss collaboration opportunities, technical projects, or just want to connect!</p>
+						<h2 data-i18n="contact.heading">Get In Touch</h2>
+						<p data-i18n="contact.intro">Feel free to reach out if you'd like to discuss collaboration opportunities, technical projects, or just want to connect!</p>
 						<div class="row">
 							<div class="col-8 col-12-small">
 								<form action="https://formspree.io/f/xwpvvnro" method="POST">
 									<div class="row gtr-uniform gtr-50">
-										<div class="col-6 col-12-xsmall"><input type="text" name="name" id="name" placeholder="Name" required /></div>
-										<div class="col-6 col-12-xsmall"><input type="email" name="email" id="email" placeholder="Email" required /></div>
-										<div class="col-12"><textarea name="message" id="message" placeholder="Message" rows="4" required></textarea></div>
+										<div class="col-6 col-12-xsmall"><input type="text" name="name" id="name" placeholder="Name" data-i18n-placeholder="contact.form.name" required /></div>
+										<div class="col-6 col-12-xsmall"><input type="email" name="email" id="email" placeholder="Email" data-i18n-placeholder="contact.form.email" required /></div>
+										<div class="col-12"><textarea name="message" id="message" placeholder="Message" data-i18n-placeholder="contact.form.message" rows="4" required></textarea></div>
 									</div>
 									<ul class="actions" style="margin-top: 2em;">
-										<li><input type="submit" value="Send Message" class="primary" /></li>
+										<li><input type="submit" value="Send Message" data-i18n-value="contact.form.submit" class="primary" /></li>
 									</ul>
 								</form>
 							</div>
 							<div class="col-4 col-12-small">
 								<ul class="labeled-icons">
 									<li>
-										<h3 class="icon solid fa-mobile-alt"><span class="label">Phone</span></h3>
+										<h3 class="icon solid fa-mobile-alt"><span class="label" data-i18n="contact.label.phone">Phone</span></h3>
 										+40734635686
 									</li>
 									<li>
-										<h3 class="icon solid fa-envelope"><span class="label">Email</span></h3>
+										<h3 class="icon solid fa-envelope"><span class="label" data-i18n="contact.label.email">Email</span></h3>
 										<a href="mailto:andrei@voic.ro">andrei@voic.ro</a>
 									</li>
 								</ul>
@@ -629,6 +645,8 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="assets/js/i18n-translations.js"></script>
+			<script src="assets/js/i18n.js"></script>
 
 	</body>
 </html>
