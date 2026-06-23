@@ -1,43 +1,36 @@
-/* Language switcher (added for multi-language support; not part of the Strata theme). */
+/* Language selector — lives in the site footer (added for multi-language support). */
 
-.lang-switcher {
-	position: fixed;
-	top: 1em;
-	right: 1em;
-	z-index: 999; /* sits above page content but below the poptrox lightbox overlay (1000) */
-	display: -webkit-flex;
-	display: -ms-flexbox;
-	display: flex;
+.lang-select-wrap {
+	display: -webkit-inline-flex;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
 	-webkit-align-items: center;
 	-ms-flex-align: center;
 	align-items: center;
-	padding: 0.4em 0.55em;
-	background-color: rgba(255, 255, 255, 0.94);
-	border-radius: 2em;
-	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.18);
+	margin: 1.5em 0 0 0;
+	color: rgba(255, 255, 255, 0.5);
 	font-family: 'Source Sans Pro', Helvetica, sans-serif;
-	-webkit-backdrop-filter: blur(6px);
-	backdrop-filter: blur(6px);
-	-webkit-transition: box-shadow 0.2s ease-in-out;
-	transition: box-shadow 0.2s ease-in-out;
+	font-size: 0.9em;
+	-webkit-transition: color 0.2s ease-in-out;
+	transition: color 0.2s ease-in-out;
 }
 
-.lang-switcher:hover {
-	box-shadow: 0 3px 14px rgba(0, 0, 0, 0.26);
+.lang-select-wrap:hover {
+	color: rgba(255, 255, 255, 0.85);
 }
 
-.lang-switcher .lang-switcher-icon {
-	width: 1.15em;
-	height: 1.15em;
-	margin-right: 0.25em;
-	color: #49bf9d;
+.lang-select-wrap .lang-switcher-icon {
+	width: 1em;
+	height: 1em;
+	margin-right: 0.4em;
+	color: currentColor;
 	-webkit-flex: 0 0 auto;
 	-ms-flex: 0 0 auto;
 	flex: 0 0 auto;
 }
 
 /* Visually hidden, still read by screen readers. */
-.lang-switcher .lang-switcher-label {
+.lang-select-wrap .lang-switcher-label {
 	position: absolute;
 	width: 1px;
 	height: 1px;
@@ -49,45 +42,39 @@
 	border: 0;
 }
 
-.lang-switcher select {
+/* Override the Strata theme's full-width grey <select> styling. */
+.lang-select-wrap select {
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
-	border: none;
-	background-color: transparent;
-	color: #555;
-	font-family: inherit;
-	font-size: 0.9em;
-	font-weight: 400;
-	line-height: 1.4;
+	display: inline-block;
+	width: auto;
 	height: auto;
 	margin: 0;
-	padding: 0 1.35em 0 0.15em;
+	padding: 0 1.25em 0 0.15em;
+	border: none;
+	border-radius: 0;
+	background-color: transparent;
+	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath fill='%23bbb3ae' d='M0 0l5 6 5-6z'/%3E%3C/svg%3E");
+	background-size: 0.6em;
+	background-repeat: no-repeat;
+	background-position: right 0.1em center;
+	color: inherit;
+	font-family: inherit;
+	font-size: inherit;
+	line-height: 1.4;
+	text-overflow: clip;
 	cursor: pointer;
 	outline: none;
-	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath fill='%239a9a9a' d='M0 0l5 6 5-6z'/%3E%3C/svg%3E");
-	background-repeat: no-repeat;
-	background-position: right 0.25em center;
 }
 
-.lang-switcher select:focus {
-	color: #49bf9d;
+.lang-select-wrap select:focus {
+	border: none;
+	color: rgba(255, 255, 255, 0.95);
 }
 
-.lang-switcher select option {
-	color: #555;
-}
-
-@media screen and (max-width: 480px) {
-
-	.lang-switcher {
-		top: 0.5em;
-		right: 0.5em;
-		padding: 0.35em 0.5em;
-	}
-
-	.lang-switcher select {
-		font-size: 0.85em;
-	}
-
+/* Native dropdown menu uses OS styling — keep options readable. */
+.lang-select-wrap select option {
+	color: #1f1815;
+	background-color: #ffffff;
 }

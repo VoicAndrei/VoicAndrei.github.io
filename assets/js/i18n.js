@@ -99,40 +99,6 @@
 		return DEFAULT_LANG;
 	}
 
-	// Hide the switcher while the poptrox lightbox is open, so it can't overlap
-	// the viewer. poptrox keeps a persistent .poptrox-overlay on <body> and just
-	// toggles its visibility, so we react to that element's style changes (not its
-	// mere existence, and not body-wide mutations which would fire on parallax).
-	function watchLightbox(switcher) {
-		if (!switcher || !window.MutationObserver) { return; }
-
-		var attached = null;
-
-		function isOpen(ov) {
-			if (!ov) { return false; }
-			var cs = window.getComputedStyle(ov);
-			return cs.display !== 'none' && cs.visibility !== 'hidden' && parseFloat(cs.opacity || '1') > 0.01;
-		}
-
-		function sync() {
-			switcher.style.display = isOpen(document.querySelector('.poptrox-overlay')) ? 'none' : '';
-		}
-
-		function attach() {
-			var ov = document.querySelector('.poptrox-overlay');
-			if (ov && ov !== attached) {
-				attached = ov;
-				new MutationObserver(sync).observe(ov, { attributes: true, attributeFilter: ['style', 'class'] });
-			}
-			sync();
-		}
-
-		// poptrox initialises on window load (after this runs), so watch for the
-		// overlay being created, then track its open/closed state.
-		new MutationObserver(attach).observe(document.body, { childList: true });
-		attach();
-	}
-
 	function init() {
 		captureEnglish();
 
@@ -146,8 +112,6 @@
 				apply(select.value);
 			});
 		}
-
-		watchLightbox(document.getElementById('lang-switcher'));
 
 		if (initial !== DEFAULT_LANG) {
 			apply(initial);
