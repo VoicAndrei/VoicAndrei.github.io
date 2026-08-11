@@ -1,0 +1,365 @@
+<!DOCTYPE HTML>
+<!--
+	Strata by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html lang="en">
+	<head>
+		<title>I built my own Frameo, and it works like a Golf 4 - Voic Andrei</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="A digital photo frame wanted a subscription before it would send more than ten photos at a time. It also cost more than the tablet I replaced it with." />
+		<link rel="canonical" href="https://voic.ro/blog/i-built-my-own-frameo.html" />
+		<meta property="og:title" content="I built my own Frameo, and it works like a Golf 4 - Voic Andrei" />
+		<meta property="og:description" content="A digital photo frame wanted a subscription before it would send more than ten photos at a time. It also cost more than the tablet I replaced it with." />
+		<meta property="og:type" content="article" />
+		<meta property="og:url" content="https://voic.ro/blog/i-built-my-own-frameo.html" />
+		<meta property="og:image" content="https://voic.ro/images/blog_frameo_clone/claude-code-provisioning-tablet.jpg" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content="I built my own Frameo, and it works like a Golf 4 - Voic Andrei" />
+		<meta name="twitter:description" content="A digital photo frame wanted a subscription before it would send more than ten photos at a time. It also cost more than the tablet I replaced it with." />
+		<meta name="twitter:image" content="https://voic.ro/images/blog_frameo_clone/claude-code-provisioning-tablet.jpg" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<link rel="stylesheet" href="../assets/css/i18n.css" />
+		<link rel="icon" type="image/png" href="../images/sitethumbnail-modified.png">
+		<style>
+			.frame-story-dek {
+				color: #787878;
+				font-size: 1.15em;
+				line-height: 1.5;
+				margin: 0 0 2em 0;
+			}
+
+			.frame-story-figure {
+				margin: 0 0 2em 0;
+			}
+
+			.frame-story-figure .image.fit {
+				margin-bottom: 0.75em;
+			}
+
+			.frame-story-figure img {
+				border: solid 1px rgba(144, 144, 144, 0.25);
+				border-radius: 0.35em;
+			}
+
+			.frame-story-figure figcaption,
+			.frame-story-paircap,
+			.frame-story-foot {
+				color: #787878;
+				font-size: 0.9em;
+				line-height: 1.5;
+			}
+
+			/* Portrait phone screenshots: never let them run the full column width. */
+			.frame-story-shot {
+				margin-left: auto;
+				margin-right: auto;
+				max-width: 340px;
+			}
+
+			.frame-story-pair {
+				align-items: start;
+				display: grid;
+				gap: 1em;
+				grid-template-columns: repeat(2, minmax(0, 1fr));
+				margin: 2em auto 0.75em auto;
+				max-width: 700px;
+			}
+
+			.frame-story-pair figure {
+				margin: 0;
+			}
+
+			.frame-story-pair .image.fit {
+				margin-bottom: 0;
+			}
+
+			.frame-story-pair img {
+				border: solid 1px rgba(144, 144, 144, 0.25);
+				border-radius: 0.35em;
+			}
+
+			/* Price comparison cards. */
+			.frame-story-vs {
+				display: grid;
+				gap: 1em;
+				grid-template-columns: repeat(2, minmax(0, 1fr));
+				margin: 0 0 2em 0;
+			}
+
+			.frame-story-card {
+				border: solid 1px rgba(144, 144, 144, 0.35);
+				border-radius: 0.35em;
+				padding: 1.25em 1.25em 0.5em 1.25em;
+			}
+
+			.frame-story-card.loser {
+				background: #fbf0f0;
+				border-color: rgba(197, 62, 62, 0.35);
+			}
+
+			.frame-story-card.winner {
+				background: #f0f7f3;
+				border-color: rgba(11, 110, 79, 0.3);
+			}
+
+			.frame-story-card h4 {
+				margin-bottom: 0.15em;
+			}
+
+			.frame-story-price {
+				display: block;
+				font-size: 1.6em;
+				font-weight: 700;
+				letter-spacing: -0.01em;
+				line-height: 1.2;
+				margin-bottom: 0.5em;
+			}
+
+			.frame-story-card.loser .frame-story-price {
+				color: #c53e3e;
+			}
+
+			.frame-story-card.winner .frame-story-price {
+				color: #0b6e4f;
+			}
+
+			.frame-story-card ul {
+				font-size: 0.9em;
+				list-style: none;
+				padding-left: 0;
+			}
+
+			.frame-story-card li {
+				border-top: solid 1px rgba(144, 144, 144, 0.25);
+				padding: 0.5em 0;
+			}
+
+			.frame-story-card li:first-child {
+				border-top: 0;
+			}
+
+			@media screen and (max-width: 736px) {
+				.frame-story-pair,
+				.frame-story-vs {
+					grid-template-columns: 1fr;
+				}
+
+				.frame-story-pair figure {
+					margin-left: auto;
+					margin-right: auto;
+					max-width: 340px;
+				}
+			}
+		</style>
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "Article",
+				"headline": "I built my own Frameo, and it works like a Golf 4",
+				"author": {
+					"@type": "Person",
+					"name": "Voic Andrei"
+				},
+				"datePublished": "2026-08-11",
+				"description": "A digital photo frame wanted a subscription before it would send more than ten photos at a time. It also cost more than the tablet I replaced it with.",
+				"image": "https://voic.ro/images/blog_frameo_clone/claude-code-provisioning-tablet.jpg",
+				"mainEntityOfPage": "https://voic.ro/blog/i-built-my-own-frameo.html"
+			}
+		</script>
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-PF57JWBKRV"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'G-PF57JWBKRV');
+		</script>
+		<!-- Microsoft Clarity -->
+		<script type="text/javascript">
+			(function(c,l,a,r,i,t,y){
+				c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+				t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+				y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+			})(window, document, "clarity", "script", "vb0nay37b9");
+		</script>
+	</head>
+	<body class="is-preload">
+
+
+		<!-- Header -->
+			<header id="header">
+				<div class="inner">
+					<a href="../" class="image avatar"><img src="../images/headshot_ok.png" alt="Voic Andrei" /></a>
+					<h1><strong>I am Voic Andrei</strong>, a passionate<br />
+					developer and professional<br />
+					based in Romania.</h1>
+				</div>
+			</header>
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- Article -->
+					<section>
+						<header class="major">
+							<h1 data-i18n="title">I built my own Frameo, and it works like a Golf 4</h1>
+							<p><time datetime="2026-08-11" data-i18n="date">August 11, 2026</time></p>
+						</header>
+
+						<p class="frame-story-dek" data-i18n="dek">A digital photo frame wanted a subscription before it would send more than ten photos at a time. It also cost more than the tablet I replaced it with.</p>
+
+						<p data-i18n="p1">My grandparents have a digital photo frame. The pitch is perfect and I still believe in it: you take a picture, it appears on their wall, and nobody has to install anything, learn anything, or press anything. That is the entire product. It has one job.</p>
+
+						<p data-i18n="p2">Then I tried to send them a weekend.</p>
+
+						<figure class="frame-story-figure frame-story-shot">
+							<span class="image fit"><img src="../images/blog_frameo_clone/frameo-10-photo-limit.jpg" alt="Frameo app photo picker with ten photos selected and a message reading: Select up to 10 photos at once. Upgrade to Frameo+." /></span>
+							<figcaption data-i18n="fig.limit">Ten selected, and a message explaining that ten is where I stop. Underneath it, in red, the cure.</figcaption>
+						</figure>
+
+						<p data-i18n="p3">Ten photos. I had about eighty pictures from two days, so that is eight rounds of: open the app, tap ten thumbnails, write a caption, send, wait, start again. There is a button under that message that makes the problem disappear, and it wants money every year.</p>
+
+						<p data-i18n="p4">I would not mind a cap on something exotic. Getting photos onto the frame is not exotic. It <em>is</em> the product. This is a kettle that boils 200 ml until you subscribe.</p>
+
+						<p data-i18n="p5">And it talks. It talks constantly.</p>
+
+						<div class="frame-story-pair">
+							<figure>
+								<span class="image fit"><img src="../images/blog_frameo_clone/frameo-profile-nag.jpg" alt="Frameo dialog reading: Make your photos more personal. Add a profile photo that will appear along with your photo and caption on the recipient's frame." loading="lazy" /></span>
+							</figure>
+							<figure>
+								<span class="image fit"><img src="../images/blog_frameo_clone/frameo-premium-upsell.jpg" alt="Frameo Premium screen reading: More than a photo frame, listing calendar sync, countdowns and timed view, with a Try Premium for 14 days button." loading="lazy" /></span>
+							</figure>
+						</div>
+						<p class="frame-story-paircap" data-i18n="paircap">Left: I am sending a photograph to my own grandmother, and it would like me to introduce myself first. Right: "More than a photo frame." I wanted it to be exactly a photo frame.</p>
+
+						<p data-i18n="p6">Calendar sync. Countdowns to birthdays and events. Timed view. Cloud backup. Fourteen days free. Not one of those is a thing I have ever wanted from a picture on a wall.</p>
+
+						<p data-i18n="p7">Then I looked at what the hardware costs.</p>
+
+						<div class="frame-story-vs">
+							<div class="frame-story-card loser">
+								<h4 data-i18n="vs.a.title">The frame</h4>
+								<span class="frame-story-price" data-i18n="vs.a.price">~700 lei</span>
+								<ul>
+									<li data-i18n="vs.a.1">A screen, and a plastic surround for the screen</li>
+									<li data-i18n="vs.a.2">No camera, no microphone, no battery</li>
+									<li data-i18n="vs.a.3">Ten photos per send, unless you subscribe</li>
+								</ul>
+							</div>
+							<div class="frame-story-card winner">
+								<h4 data-i18n="vs.b.title">A used Samsung tablet, OLX</h4>
+								<span class="frame-story-price" data-i18n="vs.b.price">500 lei</span>
+								<ul>
+									<li data-i18n="vs.b.1">Bigger, sharper screen</li>
+									<li data-i18n="vs.b.2">Camera, microphone, speakers, battery</li>
+									<li data-i18n="vs.b.3">A real computer, and 200 lei cheaper</li>
+								</ul>
+							</div>
+						</div>
+
+						<p data-i18n="p8">This annoyed me a lot. The frame is the weaker machine and the more expensive one. It is a display, and it is outclassed by a second-hand tablet that has a camera, a microphone, a battery and a nicer panel, for two hundred lei less.</p>
+
+						<p data-i18n="p9">So the hardware was never the expensive part. The expensive part was the software's opinion about me.</p>
+
+						<h2 data-i18n="h.build">So I built my own</h2>
+
+						<p data-i18n="p10">The photos live on a laptop of mine that was already running in the corner 24/7, so the marginal cost of running the whole thing is a few lei of electricity a year. The tablet loads exactly one page, in kiosk mode, forever. No app store account, no cloud service, no plan, no tier.</p>
+
+						<p data-i18n="p11">This is the point where the project stopped being a project and became a conversation. I opened Claude Code, mostly because I had usage left before the reset and wanted to spend it, and Codex or any other agent would have done the same job. I described what I wanted the tablet to be, leaned on the <code>/goal</code> command, and it went from there.</p>
+
+						<figure class="frame-story-figure">
+							<span class="image fit"><img src="../images/blog_frameo_clone/claude-code-provisioning-tablet.jpg" alt="A tablet connected by USB cable to a laptop running Claude Code. The tablet shows a kiosk settings screen with Device Owner Active, blocking overlays, and a note that tapping twelve times within 1.5 seconds returns to settings." loading="lazy" /></span>
+							<figcaption data-i18n="fig.claude">One USB cable and a coding agent doing the boring part. On the tablet: device owner active, blocking overlays configured, and the way back in.</figcaption>
+						</figure>
+
+						<p data-i18n="p12">I plugged the tablet into the laptop with a USB cable, and it did the rest over adb. Device owner mode, the kiosk configuration, blocking the overlays that would let somebody wander out of the app, and the escape hatch for when I need to get back in: twelve taps anywhere on the screen within 1.5 seconds. That is about eight taps a second, which it worked out on its own was effectively impossible to hit by accident. Between steps it took screenshots of the tablet and read them to check its own work. I went to sleep.</p>
+
+						<h2 data-i18n="h.golf">The Golf 4 rule</h2>
+
+						<blockquote data-i18n="quote">It should work like a Golf 4. You get in, you turn the key, you drive.</blockquote>
+
+						<p data-i18n="p13">That was the design document, and everything else falls out of it. No ads. No subscription. No notifications. No updates, ever. No account. No "rate this app". No profile picture. No trial of anything. It shows photos. When you touch it, it does the one other thing it does.</p>
+
+						<h2 data-i18n="h.call">The thing Frameo cannot sell me at any price</h2>
+
+						<p data-i18n="p14">My grandparents own a smartphone. It lives in a drawer. Not because they cannot work it, but because a modern phone is exactly what I have spent this entire post complaining about: notifications, updates, forty icons, six different ways to answer a call and a punishment for choosing the wrong one. So it stays in the drawer.</p>
+
+						<p data-i18n="p15">So the frame is also a video phone. When someone rings, the photos vanish and the whole screen becomes the call. One green button. <strong>RĂSPUNDE</strong>. That is the entire interface.</p>
+
+						<p data-i18n="p16">The details underneath are boring on purpose:</p>
+
+						<ul>
+							<li data-i18n="rule1">The answer button is <strong>2.4 times the area</strong> of the decline button, with a 27 mm dead zone between them. Nothing on that screen is sized in pixels. Everything is in real millimetres, worked out from the tablet's actual physical screen size.</li>
+							<li data-i18n="rule2"><strong>Single tap only.</strong> No swipe, no double-tap, no long-press, no drag, no pinch, no scroll. Every one of those is a fresh way to fail in front of your grandmother.</li>
+							<li data-i18n="rule3">If she declines by accident, the same green button stays on screen for another five seconds. A wrong tap costs one tap.</li>
+							<li data-i18n="rule4">If something breaks, <strong>nothing is ever written on the screen</strong>. No error, no code, no dialog. It quietly repairs itself and goes back to the photos. An error message on a wall is just a broken wall.</li>
+						</ul>
+
+						<h2 data-i18n="h.worth">Was it worth it?</h2>
+
+						<p data-i18n="p17">The subscription I got so worked up about is only around 17 dollars a year, so let me be straight with you: this was never about the money. It was about being told no by a screen.</p>
+
+						<p data-i18n="p18">And this is the part where I am supposed to admit that it cost me a month of evenings instead. It did not. My own time in this was about an hour. Driving out to meet the man selling the tablet took roughly as long as building the thing did, which should tell you where the real work has moved.</p>
+
+						<p data-i18n="p19">The genuine article costs more than the tablet and still cannot do a video call at any price. And nothing on that wall is ever going to ask my grandmother for a profile picture.</p>
+
+						<p data-i18n="p20">It comes back on by itself after a power cut. It does not update. It does not want anything from me. Golf 4. &#128512;</p>
+
+						<hr />
+
+						<p class="frame-story-foot" data-i18n="foot">The three Frameo screenshots are from the app on my own phone in August 2026, two of them cropped. The photo of the tablet and the laptop is a real Claude Code session provisioning the tablet over USB. The frame runs a self-hosted photo backend and a WebRTC video-call path on a laptop that was already on 24/7, and the tablet is a second-hand Samsung off OLX.</p>
+
+						<h3 data-i18n="keepreading">Keep Reading</h3>
+						<p data-i18n="related">Continue with <a href="/blog/">the blog index</a>, read how <a href="/blog/camera-story.html">an agent worked out left from right by looking at the cameras</a>, or <a href="/blog/3d-printer-caricature.html">how we turned a 3D printer into a caricature artist</a>.</p>
+						<ul class="actions">
+							<li><a href="/" class="button primary" data-i18n="btn.home">Back to Home</a></li>
+							<li><a href="/blog/" class="button" data-i18n="btn.blog">More Blog Posts</a></li>
+							<li><a href="/blog/camera-story.html" class="button" data-i18n="btn.related">Related Article</a></li>
+						</ul>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					<ul class="icons">
+						<li><a href="https://www.facebook.com/vilk.coco" class="icon brands fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="https://www.linkedin.com/in/voic-andrei-622781212/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+						<li><a href="mailto:andrei@voic.ro" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+					</ul>
+					<div class="lang-select-wrap">
+						<svg class="lang-switcher-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 2a10 10 0 100 20 10 10 0 000-20zm6.93 6h-2.95a15.7 15.7 0 00-1.38-3.56A8.03 8.03 0 0118.93 8zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14a7.96 7.96 0 010-4h3.38a16.6 16.6 0 000 4H4.26zm.81 2h2.95c.32 1.25.78 2.45 1.38 3.56A8.03 8.03 0 015.07 16zm2.95-8H5.07a8.03 8.03 0 014.33-3.56A15.7 15.7 0 008.02 8zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82A13.7 13.7 0 0112 19.96zM14.34 14H9.66a14.6 14.6 0 010-4h4.68a14.6 14.6 0 010 4zm.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 01-4.33 3.56zM16.36 14a16.6 16.6 0 000-4h3.38a7.96 7.96 0 010 4h-3.38z"/></svg>
+						<label for="lang-select" class="lang-switcher-label">Language</label>
+						<select id="lang-select" aria-label="Select language">
+							<option value="en">English</option>
+							<option value="ro">Română</option>
+							<option value="de">Deutsch</option>
+							<option value="es">Español</option>
+							<option value="fr">Français</option>
+							<option value="zh">中文</option>
+						</select>
+					</div>
+					<ul class="copyright">
+						<li>&copy; Voic Andrei</li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/jquery.poptrox.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+
+				<script src="../assets/js/i18n/blog-frameo.js"></script>
+			<script src="../assets/js/i18n.js"></script>
+</body>
+</html>
