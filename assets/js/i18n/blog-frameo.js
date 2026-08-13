@@ -269,7 +269,7 @@ window.I18N_TRANSLATIONS = {
 		"p20": "停电之后它会自己回来。它不更新。它不向我索取任何东西。高尔夫 4。&#128512;",
 		"foot": "三张 Frameo 截图来自我自己手机上的应用，摄于 2026 年 8 月，其中两张做了裁剪。平板与笔记本的照片，是一次真实的 Claude Code 会话通过 USB 配置平板。相框运行在一台本来就 24 小时开机的笔记本上，使用自托管的照片后端和 WebRTC 视频通话链路；平板是二手三星。",
 		"keepreading": "继续阅读",
-		"related": "继续浏览<a href=\"/blog/\">博客索引</a>，读一读<a href=\"/blog/camera-story.html\">智能体如何靠观察摄像头分辨左右</a>，或者<a href=\"/blog/3d-printer-caricature.html\">我们如何把 3D 打印机变成漫画家</a>。",
+		"related": "继续浏览<a href=\"/blog/\">博客索引</a>，读一读<a href=\"/blog/camera-story\">智能体如何靠观察摄像头分辨左右</a>，或者<a href=\"/blog/3d-printer-caricature\">我们如何把 3D 打印机变成漫画家</a>。",
 		"btn.home": "返回首页",
 		"btn.blog": "更多博客文章",
 		"btn.related": "相关文章"

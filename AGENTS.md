@@ -4,7 +4,7 @@
 The root `index.html` renders the main personal site. Subdirectories `blog/`, `cabana/`, `instagram/`, and `onyx-internship-test/` host niche pages; keep new sections in their own folder and mirror the existing link structure. Shared assets live in `assets/` (compiled CSS in `assets/css`, authored Sass in `assets/sass`, ES5 scripts in `assets/js`, fonts in `assets/webfonts`). Place images in `images/` or the relevant gallery subfolder; large photo sets under `instagram/photos` should retain the timestamped naming used today.
 
 ## Build, Test, and Development Commands
-`python3 -m http.server 8000` — serve the site locally from the repo root and preview via http://localhost:8000/.
+`python3 serve.py 8000` — serve the site locally from the repo root and preview via http://localhost:8000/. Use this rather than `python3 -m http.server`: it resolves extensionless URLs (`/blog/camera-story` → `blog/camera-story.html`) the same way GitHub Pages does, so local links match production.
 `sass assets/sass/main.scss assets/css/main.css` — rebuild the primary stylesheet after changing any Sass partial.
 `sass --watch assets/sass/main.scss:assets/css/main.css` — watch Sass sources and auto-compile while iterating on styles.
 

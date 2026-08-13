@@ -289,7 +289,7 @@ window.I18N_TRANSLATIONS = {
 		"p.next3": "那第一条来自陌生人的 2 欧元 Stripe 通知，至今仍是我不停回想的部分。它让这整件事感觉真实了起来。",
 		"p.next4": "如果你有孩子、有一只狗，或有一段想变成涂色书的回忆，<a href=\"https://crayo.ro\" target=\"_blank\">crayo.ro</a> 已经上线了。而如果你正抱着一个想法，纠结自己能否把它做出来，那么有了合适的工具，三天大概就够了。",
 		"h.keepreading": "继续阅读",
-		"p.keepreading": "继续阅读 <a href=\"/blog/\">博客索引</a>，看看我们如何 <a href=\"/blog/3d-printer-caricature.html\">把一台 3D 打印机变成了漫画艺术家</a>，或者 <a href=\"/blog/ai-powered-f1-leaderboard.html\">我如何用 AI 构建了一个 F1 排行榜</a>。",
+		"p.keepreading": "继续阅读 <a href=\"/blog/\">博客索引</a>，看看我们如何 <a href=\"/blog/3d-printer-caricature\">把一台 3D 打印机变成了漫画艺术家</a>，或者 <a href=\"/blog/ai-powered-f1-leaderboard\">我如何用 AI 构建了一个 F1 排行榜</a>。",
 		"cta.home": "返回首页",
 		"cta.blog": "更多博客文章",
 		"cta.crayo": "访问 Crayo"

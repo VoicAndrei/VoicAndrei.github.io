@@ -10,11 +10,11 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<meta name="description" content="Two of us spent an afternoon turning an Ender 5 Pro into a caricature machine that draws exaggerated portraits in marker. The best part was watching the agent work out how to drive the printer over USB on its own." />
-		<link rel="canonical" href="https://voic.ro/blog/3d-printer-caricature.html" />
+		<link rel="canonical" href="https://voic.ro/blog/3d-printer-caricature" />
 		<meta property="og:title" content="Our 3D printer draws caricatures now - Voic Andrei" />
 		<meta property="og:description" content="Two of us spent an afternoon turning an Ender 5 Pro into a caricature machine that draws exaggerated portraits in marker. The best part was watching the agent work out how to drive the printer over USB on its own." />
 		<meta property="og:type" content="article" />
-		<meta property="og:url" content="https://voic.ro/blog/3d-printer-caricature.html" />
+		<meta property="og:url" content="https://voic.ro/blog/3d-printer-caricature" />
 		<meta property="og:image" content="https://voic.ro/images/blog_3d_printer_caricature/printer-drawing-face.jpg" />
 		<meta name="twitter:card" content="summary_large_image" />
 		<meta name="twitter:title" content="Our 3D printer draws caricatures now - Voic Andrei" />
@@ -120,7 +120,7 @@
 				"datePublished": "2026-06-17",
 				"description": "Two of us spent an afternoon turning an Ender 5 Pro into a caricature machine that draws exaggerated portraits in marker. The best part was watching the agent work out how to drive the printer over USB on its own.",
 				"image": "https://voic.ro/images/blog_3d_printer_caricature/printer-drawing-face.jpg",
-				"mainEntityOfPage": "https://voic.ro/blog/3d-printer-caricature.html"
+				"mainEntityOfPage": "https://voic.ro/blog/3d-printer-caricature"
 			}
 		</script>
 		<!-- Google tag (gtag.js) -->
@@ -210,7 +210,7 @@
 							<figcaption data-i18n="fig3cap">The hardware side of it: a whiteboard marker clamped to the carriage, right next to the hot end.</figcaption>
 						</figure>
 
-						<p data-i18n="p6">Nobody handed it a runbook. We didn't name the port, the firmware, or the trick about not resetting the board. We said figure it out, and it did, on hardware it had never seen, first try. Writing code that compiles is one thing. Watching it reach down a USB cable and correctly drive a physical machine you only mentioned in passing is another. Our office cameras pulled almost the same stunt <a href="/blog/camera-story.html">a couple of weeks ago</a>. I'm starting to think this is just what the good agents do now.</p>
+						<p data-i18n="p6">Nobody handed it a runbook. We didn't name the port, the firmware, or the trick about not resetting the board. We said figure it out, and it did, on hardware it had never seen, first try. Writing code that compiles is one thing. Watching it reach down a USB cable and correctly drive a physical machine you only mentioned in passing is another. Our office cameras pulled almost the same stunt <a href="/blog/camera-story">a couple of weeks ago</a>. I'm starting to think this is just what the good agents do now.</p>
 
 						<p data-i18n="p7">The caricatures come out gloriously ugly, and that's the point. Four hours, two people, and a 3D printer that draws faces in marker. Easily one of the most fun things we've built. &#128512;</p>
 
@@ -219,11 +219,11 @@
 						<p class="plotter-foot" data-i18n="foot">The printer is an Ender 5 Pro running Marlin, with a whiteboard marker clamped to the print head next to the (unused) hot end. Caricatures come from an image model (Nano Banana 2), get vectorized to SVG, then converted to Marlin G-code. The agent located the board by sending <code>M115</code> to each <code>/dev/ttyUSB*</code> and matching the firmware reply, opened the serial port with DTR/RTS held low so the board wouldn't reboot and lose its hand-set origin, and streamed the G-code line by line with an <code>ok</code> handshake. Built at RebelDot on 13 June 2026.</p>
 
 						<h3 data-i18n="keepReading">Keep Reading</h3>
-						<p data-i18n="keepReadingBody">Continue with <a href="/blog/">the blog index</a>, read <a href="/blog/camera-story.html">how the agent figured out left from right on our robot cameras</a>, or <a href="/blog/building-crayo-in-3-days.html">how I built Crayo in 3 days</a>.</p>
+						<p data-i18n="keepReadingBody">Continue with <a href="/blog/">the blog index</a>, read <a href="/blog/camera-story">how the agent figured out left from right on our robot cameras</a>, or <a href="/blog/building-crayo-in-3-days">how I built Crayo in 3 days</a>.</p>
 						<ul class="actions">
 							<li><a href="/" class="button primary" data-i18n="btnHome">Back to Home</a></li>
 							<li><a href="/blog/" class="button" data-i18n="btnBlog">More Blog Posts</a></li>
-							<li><a href="/blog/camera-story.html" class="button" data-i18n="btnRelated">Related Article</a></li>
+							<li><a href="/blog/camera-story" class="button" data-i18n="btnRelated">Related Article</a></li>
 						</ul>
 					</section>
 

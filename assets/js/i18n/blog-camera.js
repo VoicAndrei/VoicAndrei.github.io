@@ -134,7 +134,7 @@ window.I18N_TRANSLATIONS = {
 		"p10": "机械臂会完成它们的演示，那看起来会很令人印象深刻。但真正值得记住的部分，是一个 AI 眯着眼看一张桌子的照片，靠方块所在的位置分辨出了左右。&#128512;",
 		"foot": "这三张桌子的照片是智能体在 2026 年 6 月 6 日真实捕获并查看的帧，直接从机器人主机上拉取下来。两张深色截图来自会话本身。夹爪是 SO-101 机械臂。它绕开的那次超时，是三路未压缩的摄像头流共用一条总线所造成的真实 USB-2.0 带宽限制。",
 		"keepreading": "继续阅读",
-		"related": "继续浏览<a href=\"/blog/\">博客目录</a>，读一读我们如何<a href=\"/blog/3d-printer-caricature.html\">把一台 3D 打印机变成漫画艺术家</a>，或者<a href=\"/blog/building-crayo-in-3-days.html\">我如何在 3 天内打造出 Crayo</a>。",
+		"related": "继续浏览<a href=\"/blog/\">博客目录</a>，读一读我们如何<a href=\"/blog/3d-printer-caricature\">把一台 3D 打印机变成漫画艺术家</a>，或者<a href=\"/blog/building-crayo-in-3-days\">我如何在 3 天内打造出 Crayo</a>。",
 		"btn.home": "返回首页",
 		"btn.blog": "更多博客文章",
 		"btn.related": "相关文章"

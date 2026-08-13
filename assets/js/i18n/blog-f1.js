@@ -539,7 +539,7 @@ window.I18N_TRANSLATIONS = {
     "p.conclusion.2": "这套 F1 排行榜系统至今仍在生产环境中成功运行，处理着真实的遥测数据，并提供专业的赛车体验。它证明了，问题不再是「AI 能否构建真正的软件？」，而是「有了 AI 作为开发伙伴，我们接下来还会构建出哪些了不起的东西？」",
     "p.conclusion.3": "AI 辅助开发的时代并非即将到来——它已经来临，而且比我们想象的更加强大。",
     "h.keepreading": "继续阅读",
-    "p.keepreading": "继续浏览<a href=\"/blog/\">博客索引</a>，阅读<a href=\"/blog/my-first-year-at-rebeldot.html\">我在 RebelDot 的第一年</a>，或返回<a href=\"/\">主页</a>查看项目与奖项。",
+    "p.keepreading": "继续浏览<a href=\"/blog/\">博客索引</a>，阅读<a href=\"/blog/my-first-year-at-rebeldot\">我在 RebelDot 的第一年</a>，或返回<a href=\"/\">主页</a>查看项目与奖项。",
     "cta.home": "返回主页",
     "cta.blog": "更多博客文章",
     "cta.related": "相关文章"

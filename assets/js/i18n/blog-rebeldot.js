@@ -254,7 +254,7 @@ window.I18N_TRANSLATIONS = {
 		"p.reflections2": "我学到了坚持胜过完美，真正的成长发生在你坚持出现、保持好奇、永不停止创造的时候。让这个地方与众不同的，是每个人都如此支持——不仅支持我在 RebelDot 的工作，也支持我在工作之外所追求的项目和热爱。无论是无人机摄影测量、黑客马拉松，还是在活动中演讲，我始终都感受到被鼓励去探索、去全方位地成长。",
 		"p.reflections3": "最重要的是，我意识到自己很幸运——因为我每天在这里所做的事情，即使没有人付钱给我，我也会乐意去做。愿迎来又一年的探索、创新，以及构建精彩事物。",
 		"h.keepreading": "继续阅读",
-		"p.keepreading": "继续浏览<a href=\"/blog/\">博客索引</a>，阅读<a href=\"/blog/ai-powered-f1-leaderboard.html\">用 AI 构建 F1 赛车排行榜</a>，或返回<a href=\"/\">主页</a>查看项目与奖项。",
+		"p.keepreading": "继续浏览<a href=\"/blog/\">博客索引</a>，阅读<a href=\"/blog/ai-powered-f1-leaderboard\">用 AI 构建 F1 赛车排行榜</a>，或返回<a href=\"/\">主页</a>查看项目与奖项。",
 		"btn.home": "返回主页",
 		"btn.more": "更多博客文章",
 		"btn.related": "相关文章"
