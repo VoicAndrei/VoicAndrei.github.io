@@ -10,6 +10,7 @@ Best articles:
 - https://voic.ro/blog/i-built-my-own-frameo
 - https://voic.ro/blog/3d-printer-caricature
 - https://voic.ro/blog/camera-story
+- https://voic.ro/blog/building-crayo-in-3-days
 - https://voic.ro/blog/ai-powered-f1-leaderboard
 - https://voic.ro/blog/my-first-year-at-rebeldot
 
