@@ -1,5 +1,6 @@
 window.I18N_TRANSLATIONS = {
 	"ro": {
+		"nav.back": "Înapoi la blog",
 		"meta.title": "Agentul s-a uitat la camere și a dedus stânga de dreapta - Voic Andrei",
 		"meta.description": "I-am cerut unui agent de programare să ruleze configurația noastră robotică. Nu i-am spus niciodată cum să deosebească două camere identice. Așa că s-a uitat.",
 		"title": "Agentul s-a uitat la camere și a dedus stânga de dreapta",
@@ -22,12 +23,13 @@ window.I18N_TRANSLATIONS = {
 		"p10": "Brațele robotice își vor face demonstrația și asta va părea impresionant. Dar partea care merită reținută e un AI care se uită mijind ochii la poza unei mese, deducând stânga de dreapta după unde erau cuburile. &#128512;",
 		"foot": "Cele trei poze cu masa sunt cadrele reale pe care agentul le-a captat și la care s-a uitat pe 6 iunie 2026, trase direct de pe cutia robotului. Cele două capturi de ecran întunecate sunt din sesiunea propriu-zisă. Gripperele sunt brațe SO-101. Timeout-ul pe care l-a ocolit a fost o limită reală de lățime de bandă USB-2.0 cauzată de trei fluxuri video necomprimate care împărțeau aceeași magistrală.",
 		"keepreading": "Continuă lectura",
-		"related": "Continuă cu <a href=\"/blog/\">indexul blogului</a>, citește cum am <a href=\"/blog/3d-printer-caricature.html\">transformat o imprimantă 3D într-un artist caricaturist</a>, sau <a href=\"/blog/building-crayo-in-3-days.html\">cum am construit Crayo în 3 zile</a>.",
+		"related": "Continuă cu <a href=\"/blog/\">indexul blogului</a>, citește cum am <a href=\"/blog/3d-printer-caricature\">transformat o imprimantă 3D într-un artist caricaturist</a>, sau <a href=\"/blog/building-crayo-in-3-days\">cum am construit Crayo în 3 zile</a>.",
 		"btn.home": "Înapoi la pagina principală",
 		"btn.blog": "Mai multe articole de blog",
 		"btn.related": "Articol înrudit"
 	},
 	"de": {
+		"nav.back": "Zurück zum Blog",
 		"meta.title": "Der Agent schaute auf die Kameras und erkannte links von rechts - Voic Andrei",
 		"meta.description": "Wir baten einen Coding-Agenten, unser Roboter-Setup zu betreiben. Wir haben ihm nie gesagt, wie er zwei identische Kameras unterscheiden soll. Also schaute er hin.",
 		"title": "Der Agent schaute auf die Kameras und erkannte links von rechts",
@@ -50,12 +52,13 @@ window.I18N_TRANSLATIONS = {
 		"p10": "Die Roboterarme werden ihre Demo machen, und das wird beeindruckend aussehen. Aber der Teil, der es wert ist, in Erinnerung zu bleiben, ist eine KI, die blinzelnd auf ein Foto eines Tisches schaut und anhand der Position der Würfel links von rechts herausfindet. &#128512;",
 		"foot": "Die drei Tischfotos sind die tatsächlichen Bilder, die der Agent am 6. Juni 2026 erfasst und betrachtet hat, direkt von der Roboter-Box gezogen. Die beiden dunklen Screenshots stammen aus der Sitzung selbst. Die Greifer sind SO-101-Arme. Das Timeout, das er umging, war eine echte USB-2.0-Bandbreitengrenze durch drei unkomprimierte Kamerastreams, die sich einen Bus teilten.",
 		"keepreading": "Weiterlesen",
-		"related": "Mach weiter mit <a href=\"/blog/\">dem Blog-Index</a>, lies, wie wir <a href=\"/blog/3d-printer-caricature.html\">einen 3D-Drucker in einen Karikaturzeichner verwandelt haben</a>, oder <a href=\"/blog/building-crayo-in-3-days.html\">wie ich Crayo in 3 Tagen gebaut habe</a>.",
+		"related": "Mach weiter mit <a href=\"/blog/\">dem Blog-Index</a>, lies, wie wir <a href=\"/blog/3d-printer-caricature\">einen 3D-Drucker in einen Karikaturzeichner verwandelt haben</a>, oder <a href=\"/blog/building-crayo-in-3-days\">wie ich Crayo in 3 Tagen gebaut habe</a>.",
 		"btn.home": "Zurück zur Startseite",
 		"btn.blog": "Mehr Blog-Beiträge",
 		"btn.related": "Verwandter Artikel"
 	},
 	"es": {
+		"nav.back": "Volver al blog",
 		"meta.title": "El agente miró las cámaras y dedujo izquierda de derecha - Voic Andrei",
 		"meta.description": "Le pedimos a un agente de programación que ejecutara nuestra configuración robótica. Nunca le dijimos cómo distinguir dos cámaras idénticas. Así que miró.",
 		"title": "El agente miró las cámaras y dedujo izquierda de derecha",
@@ -78,12 +81,13 @@ window.I18N_TRANSLATIONS = {
 		"p10": "Los brazos robóticos harán su demostración, y eso resultará impresionante. Pero la parte que vale la pena recordar es una IA entrecerrando los ojos ante la foto de una mesa, deduciendo izquierda de derecha según dónde estaban los cubos. &#128512;",
 		"foot": "Las tres fotos de la mesa son los fotogramas reales que el agente capturó y miró el 6 de junio de 2026, sacados directamente de la caja del robot. Las dos capturas oscuras son de la propia sesión. Las pinzas son brazos SO-101. El timeout que sorteó fue un límite real de ancho de banda de USB-2.0 causado por tres flujos de cámara sin comprimir compartiendo un mismo bus.",
 		"keepreading": "Sigue leyendo",
-		"related": "Continúa con <a href=\"/blog/\">el índice del blog</a>, lee cómo <a href=\"/blog/3d-printer-caricature.html\">convertimos una impresora 3D en un artista caricaturista</a>, o <a href=\"/blog/building-crayo-in-3-days.html\">cómo construí Crayo en 3 días</a>.",
+		"related": "Continúa con <a href=\"/blog/\">el índice del blog</a>, lee cómo <a href=\"/blog/3d-printer-caricature\">convertimos una impresora 3D en un artista caricaturista</a>, o <a href=\"/blog/building-crayo-in-3-days\">cómo construí Crayo en 3 días</a>.",
 		"btn.home": "Volver al inicio",
 		"btn.blog": "Más entradas del blog",
 		"btn.related": "Artículo relacionado"
 	},
 	"fr": {
+		"nav.back": "Retour au blog",
 		"meta.title": "L'agent a regardé les caméras et a déduit la gauche de la droite - Voic Andrei",
 		"meta.description": "Nous avons demandé à un agent de codage de faire fonctionner notre installation robotique. Nous ne lui avons jamais dit comment distinguer deux caméras identiques. Alors il a regardé.",
 		"title": "L'agent a regardé les caméras et a déduit la gauche de la droite",
@@ -106,12 +110,13 @@ window.I18N_TRANSLATIONS = {
 		"p10": "Les bras robotiques feront leur démonstration, et cela paraîtra impressionnant. Mais la partie qui mérite d'être retenue, c'est une IA plissant les yeux devant la photo d'une table, déduisant la gauche de la droite d'après l'emplacement des cubes. &#128512;",
 		"foot": "Les trois photos de la table sont les images réelles que l'agent a capturées et regardées le 6 juin 2026, tirées directement du boîtier du robot. Les deux captures d'écran sombres proviennent de la session elle-même. Les pinces sont des bras SO-101. Le timeout qu'il a contourné était une vraie limite de bande passante USB-2.0 causée par trois flux de caméra non compressés partageant un même bus.",
 		"keepreading": "Continuer la lecture",
-		"related": "Continue avec <a href=\"/blog/\">l'index du blog</a>, lis comment nous avons <a href=\"/blog/3d-printer-caricature.html\">transformé une imprimante 3D en caricaturiste</a>, ou <a href=\"/blog/building-crayo-in-3-days.html\">comment j'ai construit Crayo en 3 jours</a>.",
+		"related": "Continue avec <a href=\"/blog/\">l'index du blog</a>, lis comment nous avons <a href=\"/blog/3d-printer-caricature\">transformé une imprimante 3D en caricaturiste</a>, ou <a href=\"/blog/building-crayo-in-3-days\">comment j'ai construit Crayo en 3 jours</a>.",
 		"btn.home": "Retour à l'accueil",
 		"btn.blog": "Plus d'articles de blog",
 		"btn.related": "Article connexe"
 	},
 	"zh": {
+		"nav.back": "返回博客",
 		"meta.title": "智能体看了看摄像头，分辨出了左右 - Voic Andrei",
 		"meta.description": "我们让一个编程智能体运行我们的机器人装置。我们从未告诉它如何区分两台一模一样的摄像头。于是它自己去看了。",
 		"title": "智能体看了看摄像头，分辨出了左右",

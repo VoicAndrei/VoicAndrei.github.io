@@ -1,5 +1,6 @@
 window.I18N_TRANSLATIONS = {
 	"ro": {
+		"nav.back": "Înapoi la blog",
 		"meta.title": "Mi-am construit propriul Frameo și merge ca un Golf 4 - Voic Andrei",
 		"meta.description": "O ramă foto digitală voia abonament ca să trimită mai mult de zece poze odată. Și costa mai mult decât tableta cu care am înlocuit-o.",
 		"title": "Mi-am construit propriul Frameo și merge ca un Golf 4",
@@ -49,12 +50,13 @@ window.I18N_TRANSLATIONS = {
 		"p20": "Pornește singură după o pană de curent. Nu se actualizează. Nu vrea nimic de la mine. Golf 4. &#128512;",
 		"foot": "Cele trei capturi din Frameo sunt din aplicația de pe telefonul meu, august 2026, două dintre ele decupate. Fotografia cu tableta și laptopul e o sesiune reală Claude Code care configurează tableta prin USB. Rama rulează un backend foto self-hosted și o cale de apel video WebRTC pe un laptop care oricum era pornit 24/7, iar tableta e o Samsung second-hand de pe OLX.",
 		"keepreading": "Continuă lectura",
-		"related": "Continuă cu <a href=\"/blog/\">indexul blogului</a>, citește cum <a href=\"/blog/camera-story.html\">un agent a dedus stânga de dreapta uitându-se la camere</a>, sau <a href=\"/blog/3d-printer-caricature.html\">cum am transformat o imprimantă 3D într-un artist caricaturist</a>.",
+		"related": "Continuă cu <a href=\"/blog/\">indexul blogului</a>, citește cum <a href=\"/blog/camera-story\">un agent a dedus stânga de dreapta uitându-se la camere</a>, sau <a href=\"/blog/3d-printer-caricature\">cum am transformat o imprimantă 3D într-un artist caricaturist</a>.",
 		"btn.home": "Înapoi la pagina principală",
 		"btn.blog": "Mai multe articole de blog",
 		"btn.related": "Articol înrudit"
 	},
 	"de": {
+		"nav.back": "Zurück zum Blog",
 		"meta.title": "Ich habe mir mein eigenes Frameo gebaut, und es läuft wie ein Golf 4 - Voic Andrei",
 		"meta.description": "Ein digitaler Bilderrahmen wollte ein Abo, bevor er mehr als zehn Fotos auf einmal verschickt. Und er kostete mehr als das Tablet, durch das ich ihn ersetzt habe.",
 		"title": "Ich habe mir mein eigenes Frameo gebaut, und es läuft wie ein Golf 4",
@@ -104,12 +106,13 @@ window.I18N_TRANSLATIONS = {
 		"p20": "Er kommt nach einem Stromausfall von selbst wieder. Er aktualisiert sich nicht. Er will nichts von mir. Golf 4. &#128512;",
 		"foot": "Die drei Frameo-Screenshots stammen aus der App auf meinem eigenen Telefon, August 2026, zwei davon beschnitten. Das Foto von Tablet und Laptop zeigt eine echte Claude-Code-Sitzung, die das Tablet über USB einrichtet. Der Rahmen läuft mit einem selbst gehosteten Foto-Backend und einem WebRTC-Videoanruf-Pfad auf einem Laptop, der ohnehin rund um die Uhr lief; das Tablet ist ein gebrauchtes Samsung.",
 		"keepreading": "Weiterlesen",
-		"related": "Weiter zum <a href=\"/blog/\">Blog-Index</a>, lies, wie <a href=\"/blog/camera-story.html\">ein Agent links von rechts unterschied, indem er sich die Kameras ansah</a>, oder <a href=\"/blog/3d-printer-caricature.html\">wie wir einen 3D-Drucker in einen Karikaturisten verwandelten</a>.",
+		"related": "Weiter zum <a href=\"/blog/\">Blog-Index</a>, lies, wie <a href=\"/blog/camera-story\">ein Agent links von rechts unterschied, indem er sich die Kameras ansah</a>, oder <a href=\"/blog/3d-printer-caricature\">wie wir einen 3D-Drucker in einen Karikaturisten verwandelten</a>.",
 		"btn.home": "Zurück zur Startseite",
 		"btn.blog": "Mehr Blogbeiträge",
 		"btn.related": "Verwandter Artikel"
 	},
 	"es": {
+		"nav.back": "Volver al blog",
 		"meta.title": "Me construí mi propio Frameo, y funciona como un Golf 4 - Voic Andrei",
 		"meta.description": "Un marco de fotos digital quería una suscripción antes de enviar más de diez fotos a la vez. Y costaba más que la tableta con la que lo sustituí.",
 		"title": "Me construí mi propio Frameo, y funciona como un Golf 4",
@@ -159,12 +162,13 @@ window.I18N_TRANSLATIONS = {
 		"p20": "Vuelve solo cuando se va la luz. No se actualiza. No quiere nada de mí. Golf 4. &#128512;",
 		"foot": "Las tres capturas de Frameo son de la app en mi propio teléfono, agosto de 2026, dos de ellas recortadas. La foto de la tableta y el portátil es una sesión real de Claude Code configurando la tableta por USB. El marco funciona con un backend de fotos autoalojado y una ruta de videollamada WebRTC en un portátil que ya estaba encendido 24/7, y la tableta es una Samsung de segunda mano.",
 		"keepreading": "Sigue leyendo",
-		"related": "Continúa con <a href=\"/blog/\">el índice del blog</a>, lee cómo <a href=\"/blog/camera-story.html\">un agente dedujo la izquierda de la derecha mirando las cámaras</a>, o <a href=\"/blog/3d-printer-caricature.html\">cómo convertimos una impresora 3D en un caricaturista</a>.",
+		"related": "Continúa con <a href=\"/blog/\">el índice del blog</a>, lee cómo <a href=\"/blog/camera-story\">un agente dedujo la izquierda de la derecha mirando las cámaras</a>, o <a href=\"/blog/3d-printer-caricature\">cómo convertimos una impresora 3D en un caricaturista</a>.",
 		"btn.home": "Volver al inicio",
 		"btn.blog": "Más artículos del blog",
 		"btn.related": "Artículo relacionado"
 	},
 	"fr": {
+		"nav.back": "Retour au blog",
 		"meta.title": "J'ai construit mon propre Frameo, et il marche comme une Golf 4 - Voic Andrei",
 		"meta.description": "Un cadre photo numérique voulait un abonnement avant d'envoyer plus de dix photos à la fois. Et il coûtait plus cher que la tablette par laquelle je l'ai remplacé.",
 		"title": "J'ai construit mon propre Frameo, et il marche comme une Golf 4",
@@ -214,12 +218,13 @@ window.I18N_TRANSLATIONS = {
 		"p20": "Il se rallume tout seul après une coupure de courant. Il ne se met pas à jour. Il ne veut rien de moi. Golf 4. &#128512;",
 		"foot": "Les trois captures Frameo viennent de l'application sur mon propre téléphone, en août 2026, dont deux recadrées. La photo de la tablette et du portable est une vraie session Claude Code qui configure la tablette par USB. Le cadre fonctionne avec un backend photo auto-hébergé et un chemin d'appel vidéo WebRTC sur un portable déjà allumé 24h/24, et la tablette est une Samsung d'occasion.",
 		"keepreading": "Continuer la lecture",
-		"related": "Continuez avec <a href=\"/blog/\">l'index du blog</a>, lisez comment <a href=\"/blog/camera-story.html\">un agent a déduit la gauche de la droite en regardant les caméras</a>, ou <a href=\"/blog/3d-printer-caricature.html\">comment nous avons transformé une imprimante 3D en caricaturiste</a>.",
+		"related": "Continuez avec <a href=\"/blog/\">l'index du blog</a>, lisez comment <a href=\"/blog/camera-story\">un agent a déduit la gauche de la droite en regardant les caméras</a>, ou <a href=\"/blog/3d-printer-caricature\">comment nous avons transformé une imprimante 3D en caricaturiste</a>.",
 		"btn.home": "Retour à l'accueil",
 		"btn.blog": "Plus d'articles",
 		"btn.related": "Article connexe"
 	},
 	"zh": {
+		"nav.back": "返回博客",
 		"meta.title": "我自己做了一个 Frameo，它像高尔夫 4 一样好用 - Voic Andrei",
 		"meta.description": "一个数码相框，要先订阅才肯一次发送超过十张照片。而它的价格，还比我用来取代它的平板更贵。",
 		"title": "我自己做了一个 Frameo，它像高尔夫 4 一样好用",

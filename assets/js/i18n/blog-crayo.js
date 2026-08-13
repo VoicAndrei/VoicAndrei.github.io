@@ -1,5 +1,6 @@
 window.I18N_TRANSLATIONS = {
 	"ro": {
+		"nav.back": "Înapoi la blog",
 		"meta.title": "Cum am construit Crayo în 3 zile: de la Claude Design la primul străin plătitor - Voic Andrei",
 		"meta.description": "Cum am construit Crayo, un SaaS care transformă pozele în PDF-uri cu cărți de colorat generate de AI, în trei zile. De la un prototip Claude Design la un produs live cu Stripe și primii mei 2 euro de la un complet necunoscut.",
 		"title": "Cum am construit Crayo în 3 zile: de la Claude Design la primul străin plătitor",
@@ -53,12 +54,13 @@ window.I18N_TRANSLATIONS = {
 		"p.next3": "Acea primă notificare Stripe de 2 euro de la un străin este în continuare partea la care tot revin cu gândul. A făcut ca totul să pară real.",
 		"p.next4": "Dacă ai copii, un câine sau o amintire pe care vrei să o transformi într-o carte de colorat, <a href=\"https://crayo.ro\" target=\"_blank\">crayo.ro</a> este live. Și dacă stai pe o idee întrebându-te dacă o poți lansa, cu instrumentele potrivite, trei zile sunt probabil de ajuns.",
 		"h.keepreading": "Continuă să citești",
-		"p.keepreading": "Continuă cu <a href=\"/blog/\">indexul blogului</a>, citește cum am <a href=\"/blog/3d-printer-caricature.html\">transformat o imprimantă 3D într-un artist caricaturist</a> sau <a href=\"/blog/ai-powered-f1-leaderboard.html\">cum am construit un clasament F1 cu AI</a>.",
+		"p.keepreading": "Continuă cu <a href=\"/blog/\">indexul blogului</a>, citește cum am <a href=\"/blog/3d-printer-caricature\">transformat o imprimantă 3D într-un artist caricaturist</a> sau <a href=\"/blog/ai-powered-f1-leaderboard\">cum am construit un clasament F1 cu AI</a>.",
 		"cta.home": "Înapoi la pagina principală",
 		"cta.blog": "Mai multe articole de blog",
 		"cta.crayo": "Vizitează Crayo"
 	},
 	"de": {
+		"nav.back": "Zurück zum Blog",
 		"meta.title": "Crayo in 3 Tagen gebaut: Von Claude Design zum ersten zahlenden Fremden - Voic Andrei",
 		"meta.description": "Wie ich Crayo, ein SaaS, das Fotos in KI-generierte Malbuch-PDFs verwandelt, in drei Tagen gebaut habe. Von einem Claude-Design-Prototyp zu einem live geschalteten, Stripe-gestützten Produkt und meinen ersten 2 Euro von einem völlig Fremden.",
 		"title": "Crayo in 3 Tagen gebaut: Von Claude Design zum ersten zahlenden Fremden",
@@ -112,12 +114,13 @@ window.I18N_TRANSLATIONS = {
 		"p.next3": "Diese erste 2-Euro-Stripe-Benachrichtigung von einem Fremden ist immer noch der Teil, an den ich ständig denken muss. Sie hat das Ganze real wirken lassen.",
 		"p.next4": "Wenn du Kinder, einen Hund oder eine Erinnerung hast, die du in ein Malbuch verwandeln möchtest, ist <a href=\"https://crayo.ro\" target=\"_blank\">crayo.ro</a> live. Und wenn du auf einer Idee sitzt und dich fragst, ob du sie launchen kannst, dann sind mit den richtigen Tools drei Tage wahrscheinlich genug.",
 		"h.keepreading": "Weiterlesen",
-		"p.keepreading": "Mach weiter mit <a href=\"/blog/\">dem Blog-Index</a>, lies, wie wir <a href=\"/blog/3d-printer-caricature.html\">einen 3D-Drucker in einen Karikaturisten verwandelt haben</a>, oder <a href=\"/blog/ai-powered-f1-leaderboard.html\">wie ich mit KI ein F1-Leaderboard gebaut habe</a>.",
+		"p.keepreading": "Mach weiter mit <a href=\"/blog/\">dem Blog-Index</a>, lies, wie wir <a href=\"/blog/3d-printer-caricature\">einen 3D-Drucker in einen Karikaturisten verwandelt haben</a>, oder <a href=\"/blog/ai-powered-f1-leaderboard\">wie ich mit KI ein F1-Leaderboard gebaut habe</a>.",
 		"cta.home": "Zurück zur Startseite",
 		"cta.blog": "Mehr Blogbeiträge",
 		"cta.crayo": "Crayo besuchen"
 	},
 	"es": {
+		"nav.back": "Volver al blog",
 		"meta.title": "Construyendo Crayo en 3 días: de Claude Design al primer desconocido que paga - Voic Andrei",
 		"meta.description": "Cómo construí Crayo, un SaaS que convierte fotos en PDF de libros para colorear generados con IA, en tres días. De un prototipo en Claude Design a un producto en vivo respaldado por Stripe, y mis primeros 2 euros de un completo desconocido.",
 		"title": "Construyendo Crayo en 3 días: de Claude Design al primer desconocido que paga",
@@ -171,12 +174,13 @@ window.I18N_TRANSLATIONS = {
 		"p.next3": "Esa primera notificación de Stripe de 2 euros de un desconocido sigue siendo la parte en la que no dejo de pensar. Hizo que todo se sintiera real.",
 		"p.next4": "Si tienes hijos, un perro o un recuerdo que quieras convertir en un libro para colorear, <a href=\"https://crayo.ro\" target=\"_blank\">crayo.ro</a> está en vivo. Y si estás sentado sobre una idea preguntándote si puedes lanzarla, con las herramientas adecuadas, tres días probablemente sean suficientes.",
 		"h.keepreading": "Sigue leyendo",
-		"p.keepreading": "Continúa con <a href=\"/blog/\">el índice del blog</a>, lee cómo <a href=\"/blog/3d-printer-caricature.html\">convertimos una impresora 3D en un artista caricaturista</a>, o <a href=\"/blog/ai-powered-f1-leaderboard.html\">cómo construí una tabla de clasificación de F1 con IA</a>.",
+		"p.keepreading": "Continúa con <a href=\"/blog/\">el índice del blog</a>, lee cómo <a href=\"/blog/3d-printer-caricature\">convertimos una impresora 3D en un artista caricaturista</a>, o <a href=\"/blog/ai-powered-f1-leaderboard\">cómo construí una tabla de clasificación de F1 con IA</a>.",
 		"cta.home": "Volver al inicio",
 		"cta.blog": "Más entradas del blog",
 		"cta.crayo": "Visitar Crayo"
 	},
 	"fr": {
+		"nav.back": "Retour au blog",
 		"meta.title": "Construire Crayo en 3 jours : de Claude Design au premier inconnu qui paie - Voic Andrei",
 		"meta.description": "Comment j'ai construit Crayo, un SaaS qui transforme des photos en PDF de livres de coloriage générés par IA, en trois jours. D'un prototype Claude Design à un produit en ligne adossé à Stripe, et mes premiers 2 euros d'un parfait inconnu.",
 		"title": "Construire Crayo en 3 jours : de Claude Design au premier inconnu qui paie",
@@ -230,12 +234,13 @@ window.I18N_TRANSLATIONS = {
 		"p.next3": "Cette première notification Stripe de 2 euros venant d'un inconnu reste la partie à laquelle je ne cesse de penser. Elle a rendu tout cela réel.",
 		"p.next4": "Si vous avez des enfants, un chien ou un souvenir que vous voulez transformer en livre de coloriage, <a href=\"https://crayo.ro\" target=\"_blank\">crayo.ro</a> est en ligne. Et si vous êtes assis sur une idée en vous demandant si vous pouvez la lancer, avec les bons outils, trois jours suffisent probablement.",
 		"h.keepreading": "Continuez votre lecture",
-		"p.keepreading": "Continuez avec <a href=\"/blog/\">l'index du blog</a>, lisez comment nous avons <a href=\"/blog/3d-printer-caricature.html\">transformé une imprimante 3D en caricaturiste</a>, ou <a href=\"/blog/ai-powered-f1-leaderboard.html\">comment j'ai construit un classement F1 avec l'IA</a>.",
+		"p.keepreading": "Continuez avec <a href=\"/blog/\">l'index du blog</a>, lisez comment nous avons <a href=\"/blog/3d-printer-caricature\">transformé une imprimante 3D en caricaturiste</a>, ou <a href=\"/blog/ai-powered-f1-leaderboard\">comment j'ai construit un classement F1 avec l'IA</a>.",
 		"cta.home": "Retour à l'accueil",
 		"cta.blog": "Plus d'articles de blog",
 		"cta.crayo": "Visiter Crayo"
 	},
 	"zh": {
+		"nav.back": "返回博客",
 		"meta.title": "三天打造 Crayo：从 Claude Design 到第一位付费的陌生人 - Voic Andrei",
 		"meta.description": "我如何在三天内打造 Crayo——一个把照片变成 AI 生成涂色书 PDF 的 SaaS。从一个 Claude Design 原型到一个由 Stripe 支撑的上线产品，以及我从一位完全陌生的人那里赚到的头 2 欧元。",
 		"title": "三天打造 Crayo：从 Claude Design 到第一位付费的陌生人",

@@ -1,5 +1,6 @@
 window.I18N_TRANSLATIONS = {
   "ro": {
+    "nav.back": "Înapoi la blog",
     "meta.title": "Construirea unui clasament de curse F1 cu AI: o soluție completă creată de asistenți de cod - Voic Andrei",
     "meta.description": "Cum am construit o aplicație completă de clasament pentru un simulator de curse F1 folosind exclusiv instrumente AI - Gemini 2.5 Pro pentru planificare și Claude Sonnet 3.7 în Cursor pentru dezvoltare.",
     "title": "Construirea unui clasament de curse F1 cu AI: o soluție completă creată de asistenți de cod",
@@ -103,12 +104,13 @@ window.I18N_TRANSLATIONS = {
     "p.conclusion.2": "Sistemul de clasament F1 continuă să funcționeze cu succes în producție, gestionând date reale de telemetrie și oferind experiențe de curse profesionale. El stă ca dovadă că întrebarea nu mai este „Poate AI-ul să construiască software real?”, ci mai degrabă „Ce lucruri uimitoare vom construi în continuare cu AI-ul ca partener de dezvoltare?”",
     "p.conclusion.3": "Era dezvoltării asistate de AI nu vine – este deja aici, și este mai puternică decât ne-am imaginat.",
     "h.keepreading": "Continuă lectura",
-    "p.keepreading": "Continuă cu <a href=\"/blog/\">indexul blogului</a>, citește <a href=\"/blog/my-first-year-at-rebeldot.html\">Primul meu an la RebelDot</a> sau întoarce-te la <a href=\"/\">pagina principală</a> pentru proiecte și premii.",
+    "p.keepreading": "Continuă cu <a href=\"/blog/\">indexul blogului</a>, citește <a href=\"/blog/my-first-year-at-rebeldot\">Primul meu an la RebelDot</a> sau întoarce-te la <a href=\"/\">pagina principală</a> pentru proiecte și premii.",
     "cta.home": "Înapoi la pagina principală",
     "cta.blog": "Mai multe articole de blog",
     "cta.related": "Articol asociat"
   },
   "de": {
+    "nav.back": "Zurück zum Blog",
     "meta.title": "Aufbau eines F1-Rennleaderboards mit KI: eine komplette, von Code-Assistenten erstellte Lösung - Voic Andrei",
     "meta.description": "Wie ich eine komplette Leaderboard-Anwendung für einen F1-Rennsimulator ausschließlich mit KI-Tools erstellt habe - Gemini 2.5 Pro für die Planung und Claude Sonnet 3.7 in Cursor für die Entwicklung.",
     "title": "Aufbau eines F1-Rennleaderboards mit KI: eine komplette, von Code-Assistenten erstellte Lösung",
@@ -212,12 +214,13 @@ window.I18N_TRANSLATIONS = {
     "p.conclusion.2": "Das F1-Leaderboard-System läuft weiterhin erfolgreich im Produktivbetrieb, verarbeitet echte Telemetriedaten und bietet professionelle Renn-Erlebnisse. Es ist der Beweis dafür, dass die Frage nicht mehr lautet „Kann KI echte Software bauen?“, sondern vielmehr „Welche erstaunlichen Dinge werden wir als Nächstes mit KI als Entwicklungspartner bauen?“",
     "p.conclusion.3": "Das Zeitalter der KI-gestützten Entwicklung kommt nicht – es ist bereits da, und es ist mächtiger, als wir es uns vorgestellt haben.",
     "h.keepreading": "Weiterlesen",
-    "p.keepreading": "Lesen Sie weiter mit <a href=\"/blog/\">dem Blog-Index</a>, lesen Sie <a href=\"/blog/my-first-year-at-rebeldot.html\">Mein erstes Jahr bei RebelDot</a> oder kehren Sie zur <a href=\"/\">Startseite</a> für Projekte und Auszeichnungen zurück.",
+    "p.keepreading": "Lesen Sie weiter mit <a href=\"/blog/\">dem Blog-Index</a>, lesen Sie <a href=\"/blog/my-first-year-at-rebeldot\">Mein erstes Jahr bei RebelDot</a> oder kehren Sie zur <a href=\"/\">Startseite</a> für Projekte und Auszeichnungen zurück.",
     "cta.home": "Zurück zur Startseite",
     "cta.blog": "Weitere Blogbeiträge",
     "cta.related": "Verwandter Artikel"
   },
   "es": {
+    "nav.back": "Volver al blog",
     "meta.title": "Construir un leaderboard de carreras F1 con IA: una solución completa creada por asistentes de código - Voic Andrei",
     "meta.description": "Cómo construí una aplicación completa de leaderboard para un simulador de carreras F1 usando únicamente herramientas de IA - Gemini 2.5 Pro para la planificación y Claude Sonnet 3.7 en Cursor para el desarrollo.",
     "title": "Construir un leaderboard de carreras F1 con IA: una solución completa creada por asistentes de código",
@@ -321,12 +324,13 @@ window.I18N_TRANSLATIONS = {
     "p.conclusion.2": "El sistema de leaderboard de F1 sigue funcionando con éxito en producción, manejando datos reales de telemetría y ofreciendo experiencias de carreras profesionales. Es la prueba de que la pregunta ya no es «¿Puede la IA construir software real?», sino más bien «¿Qué cosas asombrosas construiremos a continuación con la IA como socio de desarrollo?».",
     "p.conclusion.3": "La era del desarrollo asistido por IA no está llegando: ya está aquí, y es más poderosa de lo que imaginábamos.",
     "h.keepreading": "Sigue leyendo",
-    "p.keepreading": "Continúa con <a href=\"/blog/\">el índice del blog</a>, lee <a href=\"/blog/my-first-year-at-rebeldot.html\">Mi primer año en RebelDot</a> o vuelve a la <a href=\"/\">página de inicio</a> para ver proyectos y premios.",
+    "p.keepreading": "Continúa con <a href=\"/blog/\">el índice del blog</a>, lee <a href=\"/blog/my-first-year-at-rebeldot\">Mi primer año en RebelDot</a> o vuelve a la <a href=\"/\">página de inicio</a> para ver proyectos y premios.",
     "cta.home": "Volver al inicio",
     "cta.blog": "Más entradas del blog",
     "cta.related": "Artículo relacionado"
   },
   "fr": {
+    "nav.back": "Retour au blog",
     "meta.title": "Créer un classement de course F1 avec l'IA : une solution complète créée par des assistants de code - Voic Andrei",
     "meta.description": "Comment j'ai construit une application de classement complète pour un simulateur de course F1 en utilisant uniquement des outils d'IA - Gemini 2.5 Pro pour la planification et Claude Sonnet 3.7 dans Cursor pour le développement.",
     "title": "Créer un classement de course F1 avec l'IA : une solution complète créée par des assistants de code",
@@ -430,12 +434,13 @@ window.I18N_TRANSLATIONS = {
     "p.conclusion.2": "Le système de classement F1 continue de fonctionner avec succès en production, en gérant des données de télémétrie réelles et en offrant des expériences de course professionnelles. Il prouve que la question n'est plus « L'IA peut-elle construire de vrais logiciels ? » mais plutôt « Quelles choses extraordinaires construirons-nous ensuite avec l'IA comme partenaire de développement ? »",
     "p.conclusion.3": "L'ère du développement assisté par l'IA n'arrive pas – elle est déjà là, et elle est plus puissante que ce que nous imaginions.",
     "h.keepreading": "Poursuivez la lecture",
-    "p.keepreading": "Poursuivez avec <a href=\"/blog/\">l'index du blog</a>, lisez <a href=\"/blog/my-first-year-at-rebeldot.html\">Ma première année chez RebelDot</a>, ou revenez à la <a href=\"/\">page d'accueil</a> pour découvrir projets et récompenses.",
+    "p.keepreading": "Poursuivez avec <a href=\"/blog/\">l'index du blog</a>, lisez <a href=\"/blog/my-first-year-at-rebeldot\">Ma première année chez RebelDot</a>, ou revenez à la <a href=\"/\">page d'accueil</a> pour découvrir projets et récompenses.",
     "cta.home": "Retour à l'accueil",
     "cta.blog": "Plus d'articles de blog",
     "cta.related": "Article connexe"
   },
   "zh": {
+    "nav.back": "返回博客",
     "meta.title": "用 AI 打造 F1 赛车排行榜：一套完全由代码助手创建的完整方案 - Voic Andrei",
     "meta.description": "我如何仅使用 AI 工具构建了一个完整的 F1 赛车模拟器排行榜应用——用 Gemini 2.5 Pro 进行规划，并在 Cursor 中使用 Claude Sonnet 3.7 进行开发。",
     "title": "用 AI 打造 F1 赛车排行榜：一套完全由代码助手创建的完整方案",

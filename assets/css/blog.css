@@ -1,0 +1,33 @@
+/* Blog post chrome. Hand-authored plain CSS (not generated from assets/sass). */
+
+/* "Back to Home" link above the post title, mirroring the buttons at the end. */
+.post-back {
+	margin: 0 0 1.25em 0;
+	font-family: 'Source Sans Pro', Helvetica, sans-serif;
+	font-size: 0.9em;
+	line-height: 1;
+}
+
+.post-back a {
+	border-bottom: 0;
+	color: #b2b2b2;
+	-webkit-transition: color 0.2s ease-in-out;
+	transition: color 0.2s ease-in-out;
+}
+
+.post-back a:before {
+	content: '\2190';
+	display: inline-block;
+	margin-right: 0.5em;
+	-webkit-transition: -webkit-transform 0.2s ease-in-out;
+	transition: transform 0.2s ease-in-out;
+}
+
+.post-back a:hover {
+	color: #49bf9d;
+}
+
+.post-back a:hover:before {
+	-webkit-transform: translateX(-0.25em);
+	transform: translateX(-0.25em);
+}

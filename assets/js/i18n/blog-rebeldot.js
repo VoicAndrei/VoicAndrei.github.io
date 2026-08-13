@@ -1,5 +1,6 @@
 window.I18N_TRANSLATIONS = {
 	"ro": {
+		"nav.back": "Înapoi la blog",
 		"meta.title": "Primul meu an la RebelDot - Voic Andrei",
 		"meta.description": "O reflecție asupra primului meu an la RebelDot - de la intern la AI Engineer, construind proiecte, câștigând hackathoane, vorbind la evenimente și explorând intersecția dintre AI, robotică și creativitate.",
 		"header.tagline": "<strong>Sunt Voic Andrei</strong>, un dezvoltator<br />\n\t\t\t\t\t\tși profesionist pasionat<br />\n\t\t\t\t\t\tdin România.",
@@ -46,12 +47,13 @@ window.I18N_TRANSLATIONS = {
 		"p.reflections2": "Am învățat că consecvența bate perfecțiunea și că adevărata creștere se întâmplă atunci când ești prezent, rămâi curios și nu încetezi niciodată să creezi. Ceea ce face acest loc special este cât de mult te susțin toți — nu doar în munca pe care o fac la RebelDot, ci și în proiectele și pasiunile pe care le urmăresc în afara ei. Fie că e vorba de fotogrametrie cu drone, hackathoane sau prezentări la evenimente, m-am simțit mereu încurajat să explorez și să cresc în toate direcțiile.",
 		"p.reflections3": "Cel mai mult, mi-am dat seama că sunt norocos — pentru că lucrurile pe care le fac aici în fiecare zi sunt lucruri pe care le-aș face cu plăcere chiar dacă nimeni nu m-ar plăti pentru ele. Așadar, să trăiască încă un an de explorare, inovație și construire de lucruri uimitoare.",
 		"h.keepreading": "Continuă să citești",
-		"p.keepreading": "Continuă cu <a href=\"/blog/\">indexul blogului</a>, citește <a href=\"/blog/ai-powered-f1-leaderboard.html\">Construirea unui clasament de curse F1 cu AI</a> sau întoarce-te la <a href=\"/\">pagina principală</a> pentru proiecte și premii.",
+		"p.keepreading": "Continuă cu <a href=\"/blog/\">indexul blogului</a>, citește <a href=\"/blog/ai-powered-f1-leaderboard\">Construirea unui clasament de curse F1 cu AI</a> sau întoarce-te la <a href=\"/\">pagina principală</a> pentru proiecte și premii.",
 		"btn.home": "Înapoi la pagina principală",
 		"btn.more": "Mai multe articole",
 		"btn.related": "Articol asemănător"
 	},
 	"de": {
+		"nav.back": "Zurück zum Blog",
 		"meta.title": "Mein erstes Jahr bei RebelDot - Voic Andrei",
 		"meta.description": "Ein Rückblick auf mein erstes Jahr bei RebelDot - vom Praktikanten zum AI Engineer, der Projekte gebaut, Hackathons gewonnen, auf Veranstaltungen gesprochen und die Schnittstelle von AI, Robotik und Kreativität erkundet hat.",
 		"header.tagline": "<strong>Ich bin Voic Andrei</strong>, ein leidenschaftlicher<br />\n\t\t\t\t\t\tEntwickler und Profi<br />\n\t\t\t\t\t\taus Rumänien.",
@@ -98,12 +100,13 @@ window.I18N_TRANSLATIONS = {
 		"p.reflections2": "Ich habe gelernt, dass Beständigkeit Perfektion schlägt und dass echtes Wachstum geschieht, wenn man da ist, neugierig bleibt und nie aufhört zu erschaffen. Was diesen Ort besonders macht, ist, wie unterstützend alle sind — nicht nur bei der Arbeit, die ich bei RebelDot leiste, sondern auch bei den Projekten und Leidenschaften, denen ich außerhalb nachgehe. Ob Drohnen-Photogrammetrie, Hackathons oder Vorträge auf Veranstaltungen — ich habe mich immer ermutigt gefühlt, in jede Richtung zu erkunden und zu wachsen.",
 		"p.reflections3": "Vor allem habe ich erkannt, dass ich Glück habe — denn die Dinge, die ich hier jeden Tag tue, würde ich gerne auch tun, wenn mich niemand dafür bezahlen würde. Auf ein weiteres Jahr voller Erkundung, Innovation und dem Bauen großartiger Dinge.",
 		"h.keepreading": "Weiterlesen",
-		"p.keepreading": "Mach weiter mit <a href=\"/blog/\">dem Blog-Index</a>, lies <a href=\"/blog/ai-powered-f1-leaderboard.html\">Eine F1-Rennbestenliste mit AI bauen</a> oder kehre zur <a href=\"/\">Startseite</a> für Projekte und Auszeichnungen zurück.",
+		"p.keepreading": "Mach weiter mit <a href=\"/blog/\">dem Blog-Index</a>, lies <a href=\"/blog/ai-powered-f1-leaderboard\">Eine F1-Rennbestenliste mit AI bauen</a> oder kehre zur <a href=\"/\">Startseite</a> für Projekte und Auszeichnungen zurück.",
 		"btn.home": "Zurück zur Startseite",
 		"btn.more": "Mehr Blogbeiträge",
 		"btn.related": "Verwandter Artikel"
 	},
 	"es": {
+		"nav.back": "Volver al blog",
 		"meta.title": "Mi primer año en RebelDot - Voic Andrei",
 		"meta.description": "Una reflexión sobre mi primer año en RebelDot: de becario a AI Engineer, creando proyectos, ganando hackatones, hablando en eventos y explorando la intersección entre AI, robótica y creatividad.",
 		"header.tagline": "<strong>Soy Voic Andrei</strong>, un desarrollador<br />\n\t\t\t\t\t\ty profesional apasionado<br />\n\t\t\t\t\t\tradicado en Rumanía.",
@@ -150,12 +153,13 @@ window.I18N_TRANSLATIONS = {
 		"p.reflections2": "He aprendido que la constancia supera a la perfección y que el verdadero crecimiento ocurre cuando te presentas, mantienes la curiosidad y nunca dejas de crear. Lo que hace especial a este lugar es lo mucho que todos te apoyan: no solo en el trabajo que hago en RebelDot, sino también en los proyectos y pasiones que persigo fuera de él. Ya sea fotogrametría con drones, hackatones o charlas en eventos, siempre me he sentido animado a explorar y crecer en todas las direcciones.",
 		"p.reflections3": "Sobre todo, me he dado cuenta de que tengo suerte, porque las cosas que hago aquí cada día son cosas que haría con gusto incluso si nadie me pagara por ellas. Por otro año de exploración, innovación y construcción de cosas increíbles.",
 		"h.keepreading": "Sigue leyendo",
-		"p.keepreading": "Continúa con <a href=\"/blog/\">el índice del blog</a>, lee <a href=\"/blog/ai-powered-f1-leaderboard.html\">Cómo construir una clasificación de carreras F1 con AI</a> o vuelve a la <a href=\"/\">página principal</a> para ver proyectos y premios.",
+		"p.keepreading": "Continúa con <a href=\"/blog/\">el índice del blog</a>, lee <a href=\"/blog/ai-powered-f1-leaderboard\">Cómo construir una clasificación de carreras F1 con AI</a> o vuelve a la <a href=\"/\">página principal</a> para ver proyectos y premios.",
 		"btn.home": "Volver al inicio",
 		"btn.more": "Más entradas del blog",
 		"btn.related": "Artículo relacionado"
 	},
 	"fr": {
+		"nav.back": "Retour au blog",
 		"meta.title": "Ma première année chez RebelDot - Voic Andrei",
 		"meta.description": "Une réflexion sur ma première année chez RebelDot : de stagiaire à AI Engineer, en construisant des projets, en remportant des hackathons, en intervenant lors d'événements et en explorant l'intersection entre AI, robotique et créativité.",
 		"header.tagline": "<strong>Je suis Voic Andrei</strong>, un développeur<br />\n\t\t\t\t\t\tet professionnel passionné<br />\n\t\t\t\t\t\tbasé en Roumanie.",
@@ -202,12 +206,13 @@ window.I18N_TRANSLATIONS = {
 		"p.reflections2": "J'ai appris que la constance vaut mieux que la perfection, et que la véritable croissance se produit lorsqu'on est présent, qu'on reste curieux et qu'on ne cesse jamais de créer. Ce qui rend cet endroit spécial, c'est à quel point tout le monde est encourageant — non seulement pour le travail que je fais chez RebelDot, mais aussi pour les projets et passions que je poursuis en dehors. Que ce soit la photogrammétrie par drone, les hackathons ou les interventions lors d'événements, je me suis toujours senti encouragé à explorer et à grandir dans toutes les directions.",
 		"p.reflections3": "Surtout, j'ai réalisé que j'ai de la chance — parce que les choses que je fais ici chaque jour sont des choses que je ferais avec plaisir même si personne ne me payait pour cela. À une autre année d'exploration, d'innovation et de construction de choses formidables.",
 		"h.keepreading": "Poursuivez la lecture",
-		"p.keepreading": "Continuez avec <a href=\"/blog/\">l'index du blog</a>, lisez <a href=\"/blog/ai-powered-f1-leaderboard.html\">Créer un classement de course F1 avec l'AI</a>, ou revenez à la <a href=\"/\">page d'accueil</a> pour les projets et les récompenses.",
+		"p.keepreading": "Continuez avec <a href=\"/blog/\">l'index du blog</a>, lisez <a href=\"/blog/ai-powered-f1-leaderboard\">Créer un classement de course F1 avec l'AI</a>, ou revenez à la <a href=\"/\">page d'accueil</a> pour les projets et les récompenses.",
 		"btn.home": "Retour à l'accueil",
 		"btn.more": "Plus d'articles de blog",
 		"btn.related": "Article connexe"
 	},
 	"zh": {
+		"nav.back": "返回博客",
 		"meta.title": "我在 RebelDot 的第一年 - Voic Andrei",
 		"meta.description": "对我在 RebelDot 第一年的回顾——从实习生成长为 AI Engineer，构建项目、赢得黑客马拉松、在活动中演讲，并探索 AI、机器人技术与创造力的交汇点。",
 		"header.tagline": "<strong>我是 Voic Andrei</strong>，一名充满热情的<br />\n\t\t\t\t\t\t开发者与专业人士，<br />\n\t\t\t\t\t\t现居罗马尼亚。",
