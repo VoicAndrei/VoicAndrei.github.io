@@ -340,7 +340,8 @@ a:focus-visible,summary:focus-visible,input:focus-visible{outline:2px solid var(
 		{"date": "2026-10-03", "type": "strength", "time": "37:44"},
 		{"date": "2026-10-03", "type": "run", "km": 3.283, "time": "23:51", "hr": 160},
 		{"date": "2026-10-04", "type": "run", "km": 3.996, "time": "29:25", "hr": 168},
-		{"date": "2026-10-04", "type": "run", "label": "Sprint", "km": 0.391, "time": "1:49", "hr": 153}
+		{"date": "2026-10-04", "type": "run", "label": "Sprint", "km": 0.391, "time": "1:49", "hr": 153},
+		{"date": "2026-10-04", "type": "strength", "label": "Gym: chest, triceps, shoulders", "time": "48:57"}
 	]
 }
 </script>
@@ -448,7 +449,7 @@ a:focus-visible,summary:focus-visible,input:focus-visible{outline:2px solid var(
 
 	function actText(a){
 		var t = secsOf(a.time);
-		if (a.type === "strength") return "Strength · " + Math.round(t / 60) + " min";
+		if (a.type === "strength") return (a.label || "Strength") + " · " + Math.round(t / 60) + " min";
 		var parts = [a.label || (a.type === "run" ? "Run" : a.type === "walk" ? "Walk" : a.type.charAt(0).toUpperCase() + a.type.slice(1))];
 		if (a.km) parts.push(a.km.toFixed(2) + " km");
 		parts.push(a.time);
