@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+	<meta name="robots" content="noindex, nofollow">
+	<title>Cluj 42.2 Training Plan</title>
+	<link rel="icon" type="image/png" href="/images/sitethumbnail-modified.png">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Public+Sans:wght@400;500;600;700&display=swap">
+	<style>
+/* Layout: one ~880px column read top to bottom. Race-bib header with countdown, progress stats, this week's runs, the volume chart, key dates, all 27 weeks as folding cards, then reference guides in a two-column grid. */
+:root{
+	--bg:#F1F3F7;
+	--surface:#FFFFFF;
+	--ink:#131B2B;
+	--muted:#5A6477;
+	--line:#D8DDE6;
+	--accent:#2448C8;
+	--accent-soft:#E3E8FA;
+	--mark:#D99A00;
+	--mark-soft:#FCF1CF;
+	--good:#1B8454;
+	--good-soft:#DFF1E7;
+	--warn:#B4420E;
+	--warn-soft:#FAE8DE;
+	--bar-muted:#C3CBDA;
+	--display:"Barlow Condensed","Arial Narrow","Roboto Condensed",sans-serif;
+	--body:"Public Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+	--radius:12px;
+	padding-top:env(safe-area-inset-top,0px);
+	padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+	:root:not([data-theme="light"]){
+		--bg:#0D131E; --surface:#151D2B; --ink:#E6EBF3; --muted:#9BA6B9; --line:#263148;
+		--accent:#86A2FF; --accent-soft:#1D2A4F; --mark:#F4C443; --mark-soft:#3A3014;
+		--good:#52C48E; --good-soft:#14301F; --warn:#F58A5C; --warn-soft:#3A1E12; --bar-muted:#3A465E;
+		color-scheme:dark;
+	}
+}
+:root[data-theme="dark"]{
+	--bg:#0D131E; --surface:#151D2B; --ink:#E6EBF3; --muted:#9BA6B9; --line:#263148;
+	--accent:#86A2FF; --accent-soft:#1D2A4F; --mark:#F4C443; --mark-soft:#3A3014;
+	--good:#52C48E; --good-soft:#14301F; --warn:#F58A5C; --warn-soft:#3A1E12; --bar-muted:#3A465E;
+	color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.page{max-width:880px;margin:0 auto;padding-inline:16px;padding-block:20px 72px;display:flex;flex-direction:column;gap:36px}
+h1,h2,h3{font-family:var(--display);font-weight:700;letter-spacing:.01em;line-height:1.1;margin:0;text-wrap:balance}
+h2{font-size:30px}
+h3{font-size:21px}
+p{margin:0}
+a{color:var(--accent)}
+a:focus-visible,summary:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+.lede{color:var(--muted);max-width:62ch}
+.section{display:flex;flex-direction:column;gap:14px}
+
+/* Race bib */
+.bib{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px 26px 20px;display:flex;flex-direction:column;gap:10px;overflow:hidden}
+.pin{position:absolute;width:10px;height:10px;border-radius:50%;background:var(--bg);border:1px solid var(--line)}
+.pin.tl{top:10px;left:10px}.pin.tr{top:10px;right:10px}.pin.bl{bottom:10px;left:10px}.pin.br{bottom:10px;right:10px}
+.bib-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 16px;font-family:var(--display);font-weight:600;font-size:15px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding-inline:10px}
+.bib-main{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:8px 24px;padding-inline:10px}
+.bib-num{font-family:var(--display);font-weight:700;font-size:clamp(84px,19vw,148px);line-height:.86;letter-spacing:-.01em;font-variant-numeric:tabular-nums}
+.bib-num small{font-size:.26em;font-weight:600;letter-spacing:.04em;margin-left:.2em;color:var(--muted)}
+.bib-count{display:flex;flex-direction:column;align-items:flex-end;padding-bottom:6px}
+.count-num{font-family:var(--display);font-weight:700;font-size:56px;line-height:1;color:var(--accent);font-variant-numeric:tabular-nums}
+.count-label{font-family:var(--display);font-size:15px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.bib-foot{border-top:1px dashed var(--line);padding:10px 10px 0;color:var(--muted);font-size:14px}
+
+/* Stats */
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 14px;display:flex;flex-direction:column;gap:2px;min-width:0}
+.stat-label{font-family:var(--display);font-size:13px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+.stat-val{font-family:var(--display);font-weight:700;font-size:30px;line-height:1.05;font-variant-numeric:tabular-nums}
+.stat-sub{font-size:13px;color:var(--muted);overflow-wrap:anywhere}
+.sync{font-size:13px;color:var(--muted);margin-top:-26px}
+
+/* Chips */
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font-family:var(--display);font-weight:600;font-size:13px;letter-spacing:.06em;text-transform:uppercase;padding:2px 8px;border-radius:999px;background:var(--accent-soft);color:var(--accent);white-space:nowrap}
+.chip-check{background:var(--mark-soft);color:var(--ink)}
+.chip-race{background:var(--warn-soft);color:var(--warn)}
+.chip-cut{background:transparent;color:var(--muted);box-shadow:inset 0 0 0 1px var(--line)}
+.chip-now{background:var(--mark);color:#141414}
+
+/* This week */
+.now-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;display:flex;flex-direction:column;gap:12px}
+.now-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:6px 14px}
+.now-head h3{font-size:26px}
+.now-head .wk-dates{color:var(--muted)}
+
+/* Sessions. The boxes show progress only; they can't be ticked from the page. */
+.sess-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.sess{display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-top:1px solid var(--line)}
+.sess:first-child{border-top:0}
+.sess input{width:20px;height:20px;margin:2px 0 0;flex:none;accent-color:var(--good);cursor:default}
+.sess label{display:flex;flex-wrap:wrap;gap:2px 12px;cursor:default;min-width:0}
+.sess-day{font-family:var(--display);font-weight:600;font-size:16px;letter-spacing:.04em;text-transform:uppercase;min-width:7.5em;color:var(--muted)}
+.sess-text{min-width:0}
+.sess-long .sess-text{font-weight:600}
+.sess input:checked + label .sess-text{color:var(--muted);text-decoration:line-through;text-decoration-color:var(--good);text-decoration-thickness:2px}
+.wk-note{color:var(--muted);font-size:14px;max-width:66ch}
+.callout{background:var(--mark-soft);border-radius:10px;padding:12px 14px;display:flex;flex-direction:column;gap:6px;font-size:14px}
+.callout strong{font-family:var(--display);font-size:17px;letter-spacing:.02em}
+.callout ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:4px}
+.wk-weight{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted)}
+.wk-weight input{width:6.5em;padding:6px 8px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font:inherit;font-variant-numeric:tabular-nums}
+
+/* Chart */
+.chart-wrap{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:14px 10px 8px;overflow-x:auto}
+.chart-wrap svg{display:block;width:100%;min-width:620px;height:auto}
+.chart-wrap .grid{stroke:var(--line);stroke-width:1}
+.chart-wrap .axis{fill:var(--muted);font-family:var(--body);font-size:11px}
+.chart-wrap .ann{fill:var(--ink);font-family:var(--display);font-weight:600;font-size:13px;letter-spacing:.03em}
+.chart-wrap .bar-lr{fill:var(--accent)}
+.chart-wrap .bar-lr.bar-cut{fill:var(--accent);opacity:.55}
+.chart-wrap .bar-lr.bar-race{fill:var(--warn)}
+.chart-wrap .bar-other{fill:var(--bar-muted)}
+.chart-wrap .now-line{stroke:var(--mark);stroke-width:2;stroke-dasharray:4 3}
+.chart-wrap .now-mark{fill:var(--mark)}
+.legend{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:13px;color:var(--muted);padding:6px 8px 2px}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend i{width:12px;height:12px;border-radius:3px;display:inline-block}
+
+/* Key dates */
+.dates{list-style:none;margin:0;padding:0;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius)}
+.dates li{display:grid;grid-template-columns:8.5em minmax(0,1fr);gap:12px;padding:10px 16px;border-top:1px solid var(--line)}
+.dates li:first-child{border-top:0}
+.dates time{font-family:var(--display);font-weight:600;font-size:16px;letter-spacing:.03em;font-variant-numeric:tabular-nums}
+.dates li.is-past{color:var(--muted)}
+.dates li.is-past span{text-decoration:line-through;text-decoration-color:var(--line)}
+.dates li.is-race time,.dates li.is-race span{color:var(--warn);font-weight:600}
+
+/* Weeks */
+.weeks{display:flex;flex-direction:column;gap:8px}
+.week{background:var(--surface);border:1px solid var(--line);border-radius:10px}
+.week.is-current{border-color:var(--mark);box-shadow:0 0 0 1px var(--mark)}
+.week summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:5.2em minmax(0,1fr) auto auto 1.2em;align-items:center;gap:6px 12px;padding:12px 14px}
+.week summary::-webkit-details-marker{display:none}
+.week summary::after{content:"";width:8px;height:8px;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:rotate(45deg);justify-self:center;margin-top:-4px;transition:transform .15s}
+.week[open] summary::after{transform:rotate(-135deg);margin-top:4px}
+.wk-n{font-family:var(--display);font-weight:700;font-size:19px}
+.wk-mid{display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px;min-width:0}
+.wk-dates{font-size:14px;color:var(--muted);white-space:nowrap}
+.wk-km{font-size:14px;color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}
+.wk-count{font-family:var(--display);font-weight:600;font-size:16px;font-variant-numeric:tabular-nums;color:var(--muted);min-width:2.6em;text-align:right}
+.wk-count.is-full{color:var(--good)}
+.wk-body{padding:0 14px 14px 14px;display:flex;flex-direction:column;gap:12px;border-top:1px solid var(--line);padding-top:4px}
+
+/* Guides */
+.guides{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.guide{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.guide ul,.guide ol{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px}
+.guide li::marker{color:var(--muted)}
+.guide.wide{grid-column:1/-1}
+.guide.is-warn{background:var(--warn-soft);border-color:transparent}
+.guide .reps{font-variant-numeric:tabular-nums;font-weight:600;white-space:nowrap}
+.foot{font-size:13px;color:var(--muted);display:flex;flex-direction:column;gap:4px}
+
+@media (max-width:720px){
+	.stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+	.guides{grid-template-columns:minmax(0,1fr)}
+	.week summary{grid-template-columns:4.6em minmax(0,1fr) auto 1.2em}
+	.wk-km{display:none}
+	.dates li{grid-template-columns:minmax(0,1fr);gap:0}
+	.sess-day{min-width:0;width:100%}
+	.sync{margin-top:-28px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+	</style>
+</head>
+<body>
+
+<main class="page">
+	<header class="bib">
+		<span class="pin tl"></span><span class="pin tr"></span><span class="pin bl"></span><span class="pin br"></span>
+		<div class="bib-top"><span>Wizz Air Cluj-Napoca Marathon</span><span>Sun 11 Apr 2027 · 08:30 · Cluj Arena</span></div>
+		<div class="bib-main">
+			<h1 class="bib-num">42.2<small>km</small></h1>
+			<div class="bib-count"><span class="count-num" id="daysLeft">–</span><span class="count-label" id="daysLabel">days to go</span></div>
+		</div>
+		<p class="bib-foot">Two laps of 21.1 km. Cutoff 3:00 at halfway and 6:00 at the finish, about 8:30 per km. The bet only needs a finish.</p>
+	</header>
+
+	<section class="stats" aria-label="Progress">
+		<div class="stat"><span class="stat-label">Week</span><span class="stat-val" id="stWeek">–</span><span class="stat-sub" id="stWeekSub"></span></div>
+		<div class="stat"><span class="stat-label">Runs ticked</span><span class="stat-val" id="stDone">0</span><span class="stat-sub" id="stDoneSub"></span></div>
+		<div class="stat"><span class="stat-label">Longest run</span><span class="stat-val" id="stLong">–</span><span class="stat-sub">ticked so far</span></div>
+		<div class="stat"><span class="stat-label">Weight</span><span class="stat-val" id="stWeight">–</span><span class="stat-sub" id="stWeightSub">log it once a week</span></div>
+	</section>
+	<p class="sync" id="sync"></p>
+
+	<section class="section" aria-labelledby="nowTitle">
+		<h2 id="nowTitle">This week</h2>
+		<div id="nowCard"></div>
+	</section>
+
+	<section class="section" aria-labelledby="buildTitle">
+		<h2 id="buildTitle">The build</h2>
+		<p class="lede">Estimated km per week at an easy 7:45 per km. Easier weeks drop back so your legs can catch up, Christmas to New Year is a break, and the last three weeks taper into the race.</p>
+		<div class="chart-wrap">
+			<svg id="chart" viewBox="0 0 820 264" role="img" aria-label="Weekly running volume from about 10 km in October to about 47 km in March, with a break over the winter holidays, then a taper to race week"></svg>
+			<div class="legend"><span><i style="background:var(--accent)"></i>Long run</span><span><i style="background:var(--bar-muted)"></i>Other runs</span><span><i style="background:var(--warn)"></i>Race</span><span><i style="background:var(--mark)"></i>This week</span></div>
+		</div>
+	</section>
+
+	<section class="section" aria-labelledby="datesTitle">
+		<h2 id="datesTitle">Dates that matter</h2>
+		<ol class="dates" id="dates"></ol>
+	</section>
+
+	<section class="section" aria-labelledby="weeksTitle">
+		<h2 id="weeksTitle">All 27 weeks</h2>
+		<p class="lede">Run days can move to fit your week. Keep a rest day before the long run, and never squeeze missed runs into the next week.</p>
+		<div class="weeks" id="weeks"></div>
+	</section>
+
+	<section class="section" aria-labelledby="guidesTitle">
+		<h2 id="guidesTitle">How to run it</h2>
+		<div class="guides">
+			<article class="guide">
+				<h3>Easy means easy</h3>
+				<ul>
+					<li>You can talk in full sentences. If you can't, slow down or walk. Walking is part of the plan.</li>
+					<li>At your size, easy will probably be around 7:30 to 9:00 per km at first. That's normal, and it's where the fitness comes from.</li>
+					<li>The only quick bits are strides: 20 seconds of fast, relaxed running, then walk back until you've recovered. Not sprints.</li>
+				</ul>
+			</article>
+			<article class="guide">
+				<h3>Run / walk</h3>
+				<ul>
+					<li>From week 9, long runs use the race pattern: run 4 minutes, walk 1 minute, from the first minute. It keeps your legs fresh for longer and makes the 6-hour limit comfortable.</li>
+					<li>If the baseline run in week 0 was hard, do every run in weeks 1 to 4 as run/walk: 1 min run and 1 min walk in week 1, then 2/1, 3/1 and 4/1. Same total minutes.</li>
+				</ul>
+			</article>
+			<article class="guide">
+				<h3>Strength, twice a week</h3>
+				<p>About 20 minutes after the Tuesday and Thursday runs. No gym needed.</p>
+				<ul>
+					<li>Calf raises <span class="reps">3 × 15</span>, one leg at a time once it's easy. The most important one.</li>
+					<li>Squats <span class="reps">3 × 12</span></li>
+					<li>Reverse lunges <span class="reps">2 × 10</span> each leg</li>
+					<li>Glute bridges <span class="reps">3 × 15</span>, then single-leg</li>
+					<li>Plank <span class="reps">3 × 30–45 s</span></li>
+					<li>Side plank <span class="reps">2 × 30 s</span> each side</li>
+					<li>Stand on one leg <span class="reps">2 × 30 s</span> each, eyes closed once it's easy</li>
+				</ul>
+			</article>
+			<article class="guide">
+				<h3>Food and weight</h3>
+				<ul>
+					<li>Losing weight makes every run easier on your legs. Let it happen slowly, about 0.25 to 0.5 kg a week. That could be 6 to 10 kg by April without hurting your training.</li>
+					<li>Don't crash-diet. A big calorie cut while your distances go up is how beginners get injured, sick or stuck.</li>
+					<li>Eat normally on long-run days, with carbs before and after. Make the cut on rest days.</li>
+					<li>Protein with every meal. About 1.6 g per kg of body weight a day helps you keep muscle while you lose fat.</li>
+					<li>On runs over about 90 minutes, eat during the run (gels, dates, jelly sweets), even while losing weight.</li>
+					<li>Weigh yourself once a week on the same morning and log it in that week's card. Ignore daily jumps; that's mostly water.</li>
+				</ul>
+			</article>
+			<article class="guide">
+				<h3>Winter in Cluj</h3>
+				<ul>
+					<li>December to February means dark by about 16:30, ice and below-zero mornings.</li>
+					<li>Dress in layers. You should feel a little cold for the first 10 minutes.</li>
+					<li>After dark, wear a headlamp or a reflective vest.</li>
+					<li>Icy? Do weekday runs on a treadmill at 1% incline. Don't do long runs on ice; move them a day or split them on a treadmill.</li>
+				</ul>
+			</article>
+			<article class="guide is-warn">
+				<h3>Protect the bet</h3>
+				<ol>
+					<li>Pain that makes you limp or gets worse as you run: stop and walk home.</li>
+					<li>A spot on your shin or foot that hurts to press and lasts more than 2 or 3 days: stop running and see a physio. Stress injuries are how beginners lose months.</li>
+					<li>Missed a few days? Carry on. Missed a week? Repeat the week before. Missed two or more? Go back two weeks.</li>
+					<li>A cold in your head only: an easy run is fine. Fever or chest: no running.</li>
+					<li>Don't speed up the plan because you feel good. Heart and lungs improve faster than tendons and bones.</li>
+					<li>Sleep 7 hours or more. It does more than any gadget.</li>
+				</ol>
+			</article>
+			<article class="guide wide">
+				<h3>Race day</h3>
+				<ul>
+					<li>Target about 7:40 per km including walks: halfway in about 2:42, finish in about 5:25. That leaves roughly 18 minutes of buffer on the halfway cutoff.</li>
+					<li>Start near the back and run 4 / walk 1 from the very first minute. Don't go faster than 7:15 per km in the first 10 km, however good it feels.</li>
+					<li>There are 7 aid stations with water and isotonic drink, plus fruit at km 11, 16 and 18.8. Walk through every one and drink.</li>
+					<li>A gel at 45 minutes, then one every 40 minutes. Use the ones you trained with.</li>
+					<li>Nothing new on race day: same shoes, kit, breakfast and gels as your 30 km rehearsal in week 24.</li>
+					<li>The second lap is the real race. If 4 / 1 gets hard after 30 km, switch to 3 / 1. You'll still be well inside 6 hours.</li>
+					<li>Keep the finisher diploma. It's your proof for the bet.</li>
+				</ul>
+			</article>
+			<article class="guide wide">
+				<h3>Plan B</h3>
+				<ul>
+					<li>The bet needs a finished marathon by 31 December 2027, so April isn't your only chance.</li>
+					<li>If the January checkpoint goes badly or you get injured, switch to the half marathon in April (allowed until 31 January) and run a full marathon in the autumn.</li>
+					<li>The Bucharest Marathon is usually the second weekend of October. The 2027 date isn't announced yet.</li>
+					<li>No medical certificate is needed for Cluj; you sign that you're healthy. A quick GP check (blood pressure, ECG) before the long runs start is still worth it.</li>
+				</ul>
+			</article>
+		</div>
+	</section>
+
+	<footer class="foot">
+		<p>Race facts from the <a href="https://maraton-cluj.ro/en/maraton-42-2-km/" target="_blank" rel="noopener">race page</a> and <a href="https://maraton-cluj.ro/en/regulament/" target="_blank" rel="noopener">rules</a>, checked 29 September 2026.</p>
+	</footer>
+</main>
+
+<!--
+	Progress. This page is read-only: it changes only when this block is edited.
+	log: one entry per week, w00 to w27. "s" maps a session key to the date it was done
+	(tue, thu, sat, lr, and hol for the optional holiday runs; week 0 uses shoes, register, test).
+	"weight" is in kg. Set "updated" to the day of the edit.
+-->
+<script id="progress" type="application/json">
+{
+	"updated": "2026-10-04",
+	"log": {
+		"w00": {"s": {"shoes": "2026-10-01", "test": "2026-10-03"}, "weight": 95}
+	}
+}
+</script>
+
+<script>
+(function(){
+	"use strict";
+	var DAY = 864e5;
+	var W1 = new Date(2026, 9, 5);
+	var RACE = new Date(2027, 3, 11, 8, 30);
+	var PACE = 7.75;
+	var PHASES = {prep:"Get ready", base:"Base", build:"Build", check:"Checkpoint", mara:"Marathon", taper:"Taper"};
+	var PROGRESS = JSON.parse(document.getElementById("progress").textContent);
+
+	// n, phase, tue, thu, extra run [day, min], long run [day, km], cutback
+	// Weeks 12 and 13 hold the winter holidays (24 Dec to 3 Jan): only the Tuesday run before Christmas is planned.
+	var RAW = [
+		[1,"base",20,20,null,["Sun 11 Oct",5],0],
+		[2,"base",25,20,null,["Sun",6],0],
+		[3,"base",25,25,null,["Sun",7],0],
+		[4,"base",20,20,null,["Sun",5],1],
+		[5,"base",30,25,null,["Sun",8],0],
+		[6,"base",30,30,["Sat",20],["Sun",9],0],
+		[7,"base",35,30,["Sat",20],["Sun",10],0],
+		[8,"base",30,25,["Sat",20],["Sun",7],1],
+		[9,"build",35,35,["Sat",25],["Sun",11],0],
+		[10,"build",40,35,["Sat",25],["Sun",12],0],
+		[11,"build",40,40,["Sat",30],["Sun",13],0],
+		[12,"build",30,null,null,null,0],
+		[13,"build",null,null,null,null,0],
+		[14,"build",35,35,["Sat",25],["Sun",12],0],
+		[15,"build",40,40,["Sat",30],["Sun",15],0],
+		[16,"build",45,40,["Sat",30],["Sun",18],0],
+		[17,"check",40,35,null,["Sat 30 Jan",21],0],
+		[18,"mara",40,40,["Sat",30],["Sun",16],1],
+		[19,"mara",50,45,["Sat",30],["Sun",23],0],
+		[20,"mara",50,50,["Sat",35],["Sun",25],0],
+		[21,"mara",40,40,["Sat",30],["Sun",18],1],
+		[22,"mara",55,50,["Sat",35],["Sun",28],0],
+		[23,"mara",45,45,["Sat",30],["Sun",20],1],
+		[24,"mara",55,50,["Sat",30],["Sun",30],0],
+		[25,"taper",45,40,["Sat",30],["Sun",21],0],
+		[26,"taper",40,35,["Sat",25],["Sun",14],0],
+		[27,"taper",30,20,["Sat",15],["Sun 11 Apr",42.2],0]
+	];
+
+	// Optional holiday runs, [day, text]. They show up in the week but don't count towards the totals.
+	var HOLIDAY = {
+		12:["24–27 Dec", "Holidays: run if you feel like it. No targets."],
+		13:["28 Dec – 3 Jan", "Holidays: easy 20–30 min runs or long walks, if they happen. No targets."]
+	};
+
+	var NOTES = {
+		0:"Shoes should arrive by Friday. Do the baseline run at the weekend. If you had to walk during it, do weeks 1 to 4 as run/walk (see Run / walk below).",
+		1:"Every run easy. Sunday's 5K climbs about 120 m towards Hoia forest, partly off-road. Don't race it: walk the climbs, take muddy descents slowly, and finish feeling you could do more. Check your race email for the start time and number pickup.",
+		2:"Slightly longer. Walk breaks are fine.",
+		4:"Easier week. Less running lets your legs absorb the last three weeks.",
+		5:"Strides start on Thursdays: 4 to 6 × 20 seconds quick and relaxed, walking back between them.",
+		6:"A fourth run starts on Saturdays. Keep it short and slow.",
+		8:"Easier week.",
+		9:"Long runs now use the race pattern: run 4 min, walk 1 min, from the first minute.",
+		11:"Last long run before the holidays. Dark early now. Headlamp or reflective vest for evening runs.",
+		12:"Get Tuesday's run in before the holidays. From Christmas Eve to 3 January nothing is scheduled: carolling, Christmas and New Year come first.",
+		13:"Holidays. A couple of easy runs or long walks would make January easier, but nothing here is a target, and nothing missed needs making up.",
+		14:"Back from the holidays. A lighter restart: don't try to win back the time off.",
+		15:"Longest run yet. Take it slow.",
+		16:"Longer again. Start practising fuel on long runs: something at 45 minutes, then every 40 minutes.",
+		17:"Shorter runs midweek so you start the checkpoint fresh. The long run moves to Saturday so you can decide on Sunday 31 January, the last day to switch races or get a refund.",
+		18:"Easier week after the checkpoint.",
+		19:"Buy a second pair of shoes around now and alternate them. The first pair will be around 400 km.",
+		21:"Easier week.",
+		22:"Probably your first run over three hours. Slow is correct.",
+		23:"Easier week before the peak.",
+		24:"Peak week. The long run is a race rehearsal: same breakfast about 3 hours before, race kit, gels, and an 08:30 start.",
+		25:"Taper starts. Less running, same easy feel. Heavy legs this week are normal.",
+		26:"Last long run. Sort out kit, gels and your race-morning plan now.",
+		27:"Race week. Sleep, eat normally, more carbs from Friday. Nothing new."
+	};
+
+	var CHECK_CALLOUT = '<div class="callout"><strong>Checkpoint: Saturday 30 January, 21 km</strong><ul>' +
+		'<li>Done in under about 2:50 and felt OK: you are on track for April.</li>' +
+		'<li>Done but slower than 3:00: still on. There are 10 weeks left. Start slower on race day.</li>' +
+		'<li>Couldn’t finish, or something hurts: switch to the half before Sunday night and use Plan B.</li></ul></div>';
+
+	function fmt(d, withYear){
+		return d.toLocaleDateString("en-GB", withYear ? {day:"numeric", month:"short", year:"numeric"} : {day:"numeric", month:"short"});
+	}
+	function range(a, b){
+		if (a.getMonth() === b.getMonth()) return a.getDate() + "–" + fmt(b);
+		return fmt(a) + " – " + fmt(b);
+	}
+	function addDays(d, n){ var x = new Date(d); x.setDate(x.getDate() + n); return x; }
+	function startOfDay(d){ return new Date(d.getFullYear(), d.getMonth(), d.getDate()); }
+	function parseDay(s){ var p = s.split("-"); return new Date(+p[0], +p[1] - 1, +p[2]); }
+	function pad(n){ return String(n).padStart(2, "0"); }
+
+	function longText(n, km){
+		if (n === 27) return "Race: 42.2 km, 08:30 start at Cluj Arena. Run 4 / walk 1 from the first minute.";
+		if (n === 24) return "Peak: 30 km or 3h45, whichever comes first. Run 4 / walk 1, full race rehearsal.";
+		if (n === 17) return "Checkpoint: 21 km. Run 4 / walk 1, practise fuel, note your time.";
+		if (n === 1) return "Cluj Connect Run 5K from the Ethnographic Park. This is your long run: easy pace, walk every uphill.";
+		if (n <= 8) return "Long run " + km + " km, walk breaks whenever you like";
+		if (km < 16) return "Long run " + km + " km, run 4 / walk 1";
+		return "Long run " + km + " km, run 4 / walk 1, practise fuel";
+	}
+
+	var WEEKS = [];
+	WEEKS.push({
+		n:0, id:"w00", phase:"prep", cut:false, km:0, lrKm:0,
+		start:new Date(2026, 8, 28), end:new Date(2026, 9, 4),
+		sessions:[
+			{k:"shoes", day:"When they arrive", text:"Wear the new shoes around the house first. That keeps the 30-day return open."},
+			{k:"register", day:"By 31 Oct", text:"Register for the marathon on maraton-cluj.ro: 225 LEI until 31 October, 250 LEI from 1 November."},
+			{k:"test", day:"Sat or Sun", text:"Baseline: run 20 minutes easy. Note whether you needed to walk."}
+		]
+	});
+	RAW.forEach(function(r){
+		var n = r[0], start = addDays(W1, (n - 1) * 7), end = addDays(start, 6);
+		var strength = n <= 25, strides = n >= 5 && n <= 26;
+		var s = [];
+		if (n === 27) {
+			s.push({k:"tue", day:"Tue", text:"Easy 30 min with 4 × 1 min at race effort"});
+			s.push({k:"thu", day:"Thu", text:"Easy 20 min, then 4 strides"});
+			s.push({k:"sat", day:"Sat", text:"Easy 15 min shakeout (optional). Collect your race number."});
+		} else {
+			if (r[2]) s.push({k:"tue", day:"Tue", text:"Easy " + r[2] + " min" + (strength ? " + strength" : (n === 26 ? " + light strength" : ""))});
+			if (r[3]) s.push({k:"thu", day:"Thu", text:"Easy " + r[3] + " min" + (strides ? ", then 4–6 strides" : "") + (strength ? " + strength" : "")});
+			if (r[4]) s.push({k:"sat", day:r[4][0], text:"Easy " + r[4][1] + " min"});
+		}
+		if (r[5]) s.push({k:"lr", day:r[5][0], text:longText(n, r[5][1]), long:true});
+		if (HOLIDAY[n]) s.push({k:"hol", day:HOLIDAY[n][0], text:HOLIDAY[n][1], opt:true});
+		var mins = (r[2] || 0) + (r[3] || 0) + (r[4] ? r[4][1] : 0), lrKm = r[5] ? r[5][1] : 0;
+		WEEKS.push({n:n, id:"w" + pad(n), phase:r[1], cut:!!r[6], hol:!!HOLIDAY[n], start:start, end:end, sessions:s, lrKm:lrKm, km:mins / PACE + lrKm});
+	});
+	WEEKS.forEach(function(w){
+		w.range = range(w.start, w.end);
+		w.note = NOTES[w.n] || "";
+		w.req = w.sessions.filter(function(s){ return !s.opt; }).length;
+	});
+	var TOTAL = WEEKS.reduce(function(a, w){ return a + w.req; }, 0);
+
+	function currentWeek(){
+		var t = startOfDay(new Date());
+		var days = Math.floor((t - W1) / DAY);
+		if (days < 0) return 0;
+		var n = Math.floor(days / 7) + 1;
+		return n > 27 ? 28 : n;
+	}
+	var CUR = currentWeek();
+
+	function chipsFor(w, isCur){
+		var c = '<span class="chip' + (w.phase === "check" ? " chip-check" : "") + (w.n === 27 ? " chip-race" : "") + '">' + (w.n === 27 ? "Race week" : PHASES[w.phase]) + '</span>';
+		if (w.cut) c += '<span class="chip chip-cut">Easier week</span>';
+		if (w.hol) c += '<span class="chip chip-cut">Holidays</span>';
+		if (isCur) c += '<span class="chip chip-now">This week</span>';
+		return c;
+	}
+
+	function body(w, prefix){
+		var rows = w.sessions.map(function(s){
+			var id = prefix + w.id + "-" + s.k;
+			return '<li class="sess' + (s.long ? " sess-long" : "") + '"><input type="checkbox" id="' + id + '" data-w="' + w.id + '" data-k="' + s.k + '" tabindex="-1" aria-readonly="true">' +
+				'<label for="' + id + '"><span class="sess-day">' + s.day + '</span><span class="sess-text">' + s.text + '</span></label></li>';
+		}).join("");
+		var wt = prefix + w.id + "-weight";
+		return '<ul class="sess-list">' + rows + '</ul>' +
+			(w.note ? '<p class="wk-note">' + w.note + '</p>' : '') +
+			(w.n === 17 ? CHECK_CALLOUT : '') +
+			'<div class="wk-weight"><label for="' + wt + '">Weight this week</label><input type="number" id="' + wt + '" data-w="' + w.id + '" data-weight="1" placeholder="kg" readonly tabindex="-1"><span>kg</span></div>';
+	}
+
+	function countText(w, c){ return w.req ? c + "/" + w.req : "–"; }
+
+	function renderWeeks(){
+		document.getElementById("weeks").innerHTML = WEEKS.map(function(w){
+			var isCur = w.n === CUR;
+			return '<details class="week' + (isCur ? " is-current" : "") + '" id="' + w.id + '"' + (isCur ? " open" : "") + '>' +
+				'<summary><span class="wk-n">' + (w.n === 0 ? "Week 0" : "Week " + w.n) + '</span>' +
+				'<span class="wk-mid"><span class="wk-dates">' + w.range + '</span><span class="chips">' + chipsFor(w, isCur) + '</span></span>' +
+				'<span class="wk-km">' + (w.km ? "≈" + Math.round(w.km) + " km" : "") + '</span>' +
+				'<span class="wk-count" data-count="' + w.id + '">' + countText(w, 0) + '</span></summary>' +
+				'<div class="wk-body">' + body(w, "") + '</div></details>';
+		}).join("");
+	}
+
+	function renderNow(){
+		var el = document.getElementById("nowCard");
+		if (CUR > 27) {
+			el.innerHTML = '<div class="now-card"><h3>Race done.</h3><p class="wk-note">Payout is on 1 January 2028. Keep the finisher diploma safe.</p></div>';
+			return;
+		}
+		var w = WEEKS[CUR];
+		el.innerHTML = '<div class="now-card"><div class="now-head"><h3>' + (w.n === 0 ? "Week 0: before you start" : "Week " + w.n + " of 27") + '</h3>' +
+			'<span class="wk-dates">' + w.range + (w.km ? " · ≈" + Math.round(w.km) + " km" : "") + '</span></div>' +
+			'<div class="chips">' + chipsFor(w, false) + '</div>' + body(w, "now-") + '</div>';
+	}
+
+	function renderDates(){
+		var today = startOfDay(new Date());
+		var items = [
+			{d:new Date(2026, 9, 2), t:"Shoes arrive (estimate)"},
+			{d:new Date(2026, 9, 11), t:"Cluj Connect Run 5K, your first race. Run it easy."},
+			{d:new Date(2026, 9, 31), t:'Last day to register at 225 LEI on <a href="https://maraton-cluj.ro/en/" target="_blank" rel="noopener">maraton-cluj.ro</a>. 250 LEI from 1 November.'},
+			{d:new Date(2027, 0, 3), label:"24 Dec – 3 Jan", t:"Winter holidays. Nothing scheduled; any run is a bonus."},
+			{d:new Date(2027, 0, 30), t:"Checkpoint: 21 km long run"},
+			{d:new Date(2027, 0, 31), t:"Last day to switch to the half or get a refund (minus 30 LEI)"},
+			{d:new Date(2027, 1, 8), t:"Buy a second pair of shoes around this week"},
+			{d:new Date(2027, 2, 14), t:"Registration closes"},
+			{d:new Date(2027, 2, 21), t:"Peak long run: 30 km"},
+			{d:new Date(2027, 3, 11), t:"Race day, 08:30, Cluj Arena", race:true},
+			{label:"Oct 2027", t:"Plan B if needed: Bucharest Marathon, usually the second weekend of October"},
+			{d:new Date(2028, 0, 1), t:"Payout day"}
+		];
+		document.getElementById("dates").innerHTML = items.map(function(i){
+			var past = i.d && i.d < today;
+			var label = i.label || i.d.toLocaleDateString("en-GB", {weekday:"short", day:"numeric", month:"short"}) + (i.d.getFullYear() !== 2026 && i.d.getFullYear() !== 2027 ? " " + i.d.getFullYear() : "");
+			return '<li class="' + (past ? "is-past" : "") + (i.race ? " is-race" : "") + '"><time>' + label + '</time><span>' + i.t + '</span></li>';
+		}).join("");
+	}
+
+	function drawChart(){
+		var W = 820, H = 264, L = 36, R = 10, T = 30, B = 36, MAX = 55;
+		var pw = W - L - R, ph = H - T - B, step = pw / 27, bw = step * 0.62;
+		function y(v){ return T + ph - (v / MAX) * ph; }
+		var s = "";
+		[0, 10, 20, 30, 40, 50].forEach(function(v){
+			s += '<line class="grid" x1="' + L + '" x2="' + (W - R) + '" y1="' + y(v) + '" y2="' + y(v) + '"/>';
+			s += '<text class="axis" x="' + (L - 6) + '" y="' + (y(v) + 4) + '" text-anchor="end">' + v + '</text>';
+		});
+		s += '<text class="axis" x="' + L + '" y="' + (T - 14) + '">km / week</text>';
+		var prevMonth = -1;
+		WEEKS.forEach(function(w){
+			if (w.n === 0) return;
+			var cx = L + (w.n - 0.5) * step, x = cx - bw / 2;
+			var yTop = y(w.km), yMid = y(w.lrKm), y0 = y(0);
+			s += '<rect class="bar-lr' + (w.cut ? " bar-cut" : "") + (w.n === 27 ? " bar-race" : "") + '" x="' + x.toFixed(1) + '" y="' + yMid.toFixed(1) + '" width="' + bw.toFixed(1) + '" height="' + Math.max(0, y0 - yMid).toFixed(1) + '" rx="2"/>';
+			s += '<rect class="bar-other" x="' + x.toFixed(1) + '" y="' + yTop.toFixed(1) + '" width="' + bw.toFixed(1) + '" height="' + Math.max(0, yMid - yTop).toFixed(1) + '" rx="2"/>';
+			var m = w.start.getMonth();
+			if (m !== prevMonth) {
+				s += '<text class="axis" x="' + cx.toFixed(1) + '" y="' + (H - 6) + '" text-anchor="middle">' + w.start.toLocaleDateString("en-GB", {month:"short"}) + '</text>';
+				prevMonth = m;
+			}
+			var ann = w.n === 17 ? "21 km checkpoint" : w.n === 24 ? "30 km peak" : w.n === 27 ? "Race" : "";
+			if (ann) {
+				var endAnchor = w.n === 27;
+				s += '<text class="ann" x="' + (endAnchor ? x + bw : cx).toFixed(1) + '" y="' + (yTop - 8).toFixed(1) + '" text-anchor="' + (endAnchor ? "end" : "middle") + '">' + ann + '</text>';
+			}
+		});
+		// The holiday gap sits between weeks 12 and 13, above week 12's single short run.
+		s += '<text class="ann" x="' + (L + 12 * step).toFixed(1) + '" y="' + y(8).toFixed(1) + '" text-anchor="middle">Holidays</text>';
+		if (CUR >= 1 && CUR <= 27) {
+			var cx = L + (CUR - 0.5) * step, y0 = y(0);
+			s += '<line class="now-line" x1="' + cx.toFixed(1) + '" x2="' + cx.toFixed(1) + '" y1="' + (T - 4) + '" y2="' + y0 + '"/>';
+			s += '<path class="now-mark" d="M' + (cx - 5).toFixed(1) + ',' + (y0 + 12) + ' L' + (cx + 5).toFixed(1) + ',' + (y0 + 12) + ' L' + cx.toFixed(1) + ',' + (y0 + 4) + ' Z"/>';
+		}
+		document.getElementById("chart").innerHTML = s;
+	}
+
+	function renderHeader(){
+		var now = new Date();
+		var days = Math.max(0, Math.ceil((startOfDay(RACE) - startOfDay(now)) / DAY));
+		document.getElementById("daysLeft").textContent = days;
+		document.getElementById("daysLabel").textContent = days === 1 ? "day to go" : (days === 0 ? (now > RACE ? "race done" : "race day") : "days to go");
+		var wk = document.getElementById("stWeek"), sub = document.getElementById("stWeekSub");
+		if (CUR === 0) { wk.textContent = "0"; sub.textContent = "Week 1 starts Mon 5 Oct"; }
+		else if (CUR > 27) { wk.textContent = "Done"; sub.textContent = "All 27 weeks"; }
+		else { wk.textContent = CUR + " / 27"; sub.textContent = WEEKS[CUR].n === 27 ? "Race week" : PHASES[WEEKS[CUR].phase]; }
+	}
+
+	function applyProgress(){
+		var log = PROGRESS.log || {}, done = 0, longest = 0, weights = [];
+		WEEKS.forEach(function(w){
+			var entry = log[w.id] || {}, s = entry.s || {}, c = 0;
+			w.sessions.forEach(function(x){
+				if (!s[x.k] || x.opt) return;
+				c++;
+				if (x.k === "lr" && w.lrKm > longest) longest = w.lrKm;
+			});
+			done += c;
+			var cnt = document.querySelector('[data-count="' + w.id + '"]');
+			if (cnt) { cnt.textContent = countText(w, c); cnt.classList.toggle("is-full", w.req > 0 && c === w.req); }
+			if (typeof entry.weight === "number") weights.push(entry.weight);
+		});
+		document.querySelectorAll('input[type="checkbox"][data-w]').forEach(function(el){
+			var e = log[el.dataset.w];
+			el.checked = !!(e && e.s && e.s[el.dataset.k]);
+		});
+		document.querySelectorAll('input[data-weight]').forEach(function(el){
+			var e = log[el.dataset.w];
+			el.value = e && typeof e.weight === "number" ? e.weight : "";
+		});
+		document.getElementById("stDone").textContent = done;
+		document.getElementById("stDoneSub").textContent = "of " + TOTAL + " sessions";
+		document.getElementById("stLong").textContent = longest ? longest + " km" : "–";
+		var sw = document.getElementById("stWeight"), sws = document.getElementById("stWeightSub");
+		if (weights.length) {
+			var first = weights[0], last = weights[weights.length - 1], d = Math.round((last - first) * 10) / 10;
+			sw.textContent = last + " kg";
+			sws.textContent = weights.length > 1 ? (d <= 0 ? "−" + Math.abs(d) : "+" + d) + " kg since " + first : "starting weight";
+		} else {
+			sw.textContent = "–";
+			sws.textContent = "log it once a week";
+		}
+		document.getElementById("sync").textContent = "Last updated " + fmt(parseDay(PROGRESS.updated), true) + ".";
+	}
+
+	// Read-only: a click on a box or its label never changes it.
+	document.addEventListener("click", function(ev){
+		if (ev.target.matches('input[type="checkbox"][data-w]')) ev.preventDefault();
+	});
+
+	renderHeader();
+	renderNow();
+	renderWeeks();
+	renderDates();
+	drawChart();
+	applyProgress();
+})();
+</script>
+
+</body>
+</html>
