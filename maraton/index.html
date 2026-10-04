@@ -111,6 +111,16 @@ a:focus-visible,summary:focus-visible,input:focus-visible{outline:2px solid var(
 .wk-weight{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted)}
 .wk-weight input{width:6.5em;padding:6px 8px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font:inherit;font-variant-numeric:tabular-nums}
 
+/* What actually happened, from Garmin. Indented to line up with the session text above it. */
+.act-wrap{display:flex;flex-direction:column;gap:2px}
+.act-head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 12px;padding-left:32px;font-family:var(--display);font-weight:600;font-size:13px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+.act-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.act{position:relative;display:flex;flex-wrap:wrap;gap:2px 12px;padding:8px 0 8px 32px;border-top:1px solid var(--line)}
+.act:first-child{border-top:0}
+.act::before{content:"";position:absolute;left:6px;top:16px;width:8px;height:8px;border-radius:50%;background:var(--good)}
+.act-text{min-width:0;font-variant-numeric:tabular-nums}
+.act-none{color:var(--muted);font-size:14px;padding-left:32px}
+
 /* Chart */
 .chart-wrap{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:14px 10px 8px;overflow-x:auto}
 .chart-wrap svg{display:block;width:100%;min-width:620px;height:auto}
@@ -190,7 +200,7 @@ a:focus-visible,summary:focus-visible,input:focus-visible{outline:2px solid var(
 	<section class="stats" aria-label="Progress">
 		<div class="stat"><span class="stat-label">Week</span><span class="stat-val" id="stWeek">–</span><span class="stat-sub" id="stWeekSub"></span></div>
 		<div class="stat"><span class="stat-label">Runs ticked</span><span class="stat-val" id="stDone">0</span><span class="stat-sub" id="stDoneSub"></span></div>
-		<div class="stat"><span class="stat-label">Longest run</span><span class="stat-val" id="stLong">–</span><span class="stat-sub">ticked so far</span></div>
+		<div class="stat"><span class="stat-label">Longest run</span><span class="stat-val" id="stLong">–</span><span class="stat-sub">so far</span></div>
 		<div class="stat"><span class="stat-label">Weight</span><span class="stat-val" id="stWeight">–</span><span class="stat-sub" id="stWeightSub">log it once a week</span></div>
 	</section>
 	<p class="sync" id="sync"></p>
@@ -312,18 +322,26 @@ a:focus-visible,summary:focus-visible,input:focus-visible{outline:2px solid var(
 </main>
 
 <!--
-	Progress. This page is read-only: it changes only when this block is edited.
-	log: one entry per week, w00 to w27. "s" maps a session key to the date it was done
-	(tue, thu, sat, lr, and hol for the optional holiday runs; week 0 uses shoes, register, test).
-	"weight" is in kg. Set "updated" to the day of the edit.
+	Progress. This page is read-only: it changes only when this block is edited, and it follows Garmin.
+	activities: everything Garmin recorded, oldest first. type is run, walk or strength; time is m:ss or h:mm:ss;
+	runs also have km and hr (average heart rate); label replaces the name, e.g. "Sprint".
+	log: one entry per week, w00 to w27. "s" maps a planned session to the date of the activity that covered it
+	(at least 70% of the planned time; days can move within the week). Keys: tue, thu, sat, lr, and hol for the
+	optional holiday runs; week 0 uses shoes, register, test. "weight" is in kg. Set "updated" to the day of the edit.
 -->
 <script id="progress" type="application/json">
 {
 	"updated": "2026-10-04",
 	"log": {
-		"w00": {"s": {"shoes": "2026-10-01", "test": "2026-10-03"}, "weight": 95},
-		"w01": {"s": {"tue": "2026-10-04"}}
-	}
+		"w00": {"s": {"shoes": "2026-10-01", "test": "2026-10-03"}, "weight": 95}
+	},
+	"activities": [
+		{"date": "2026-09-30", "type": "strength", "time": "37:59"},
+		{"date": "2026-10-03", "type": "strength", "time": "37:44"},
+		{"date": "2026-10-03", "type": "run", "km": 3.283, "time": "23:51", "hr": 160},
+		{"date": "2026-10-04", "type": "run", "km": 3.996, "time": "29:25", "hr": 168},
+		{"date": "2026-10-04", "type": "run", "label": "Sprint", "km": 0.391, "time": "1:49", "hr": 153}
+	]
 }
 </script>
 
@@ -418,6 +436,39 @@ a:focus-visible,summary:focus-visible,input:focus-visible{outline:2px solid var(
 	function startOfDay(d){ return new Date(d.getFullYear(), d.getMonth(), d.getDate()); }
 	function parseDay(s){ var p = s.split("-"); return new Date(+p[0], +p[1] - 1, +p[2]); }
 	function pad(n){ return String(n).padStart(2, "0"); }
+	function secsOf(t){ return t.split(":").reduce(function(a, p){ return a * 60 + Number(p); }, 0); }
+	function clock(s){ s = Math.round(s); return Math.floor(s / 60) + ":" + pad(s % 60); }
+	function dayLabel(d){ return d.toLocaleDateString("en-GB", {weekday:"short", day:"numeric", month:"short"}); }
+
+	// Everything Garmin recorded, placed in its plan week (week 0 is the week before 5 Oct).
+	var ACTS = (PROGRESS.activities || []).map(function(a){
+		var d = parseDay(a.date), days = Math.round((d - W1) / DAY);
+		return {a:a, d:d, n:Math.floor(days / 7) + 1};
+	});
+
+	function actText(a){
+		var t = secsOf(a.time);
+		if (a.type === "strength") return "Strength · " + Math.round(t / 60) + " min";
+		var parts = [a.label || (a.type === "run" ? "Run" : a.type === "walk" ? "Walk" : a.type.charAt(0).toUpperCase() + a.type.slice(1))];
+		if (a.km) parts.push(a.km.toFixed(2) + " km");
+		parts.push(a.time);
+		if (a.km) parts.push(clock(t / a.km) + "/km");
+		if (a.hr) parts.push("avg HR " + a.hr);
+		return parts.join(" · ");
+	}
+
+	function actsHtml(w){
+		var acts = ACTS.filter(function(x){ return x.n === w.n; }), today = startOfDay(new Date());
+		if (!acts.length) {
+			if (today < w.start) return "";
+			return '<p class="act-none">' + (today > w.end ? "Nothing logged this week." : "Nothing logged yet this week.") + '</p>';
+		}
+		var km = acts.reduce(function(s, x){ return s + (x.a.type === "run" && x.a.km ? x.a.km : 0); }, 0);
+		return '<div class="act-wrap"><p class="act-head"><span>What you did</span>' + (km ? '<span>' + km.toFixed(1) + ' km run</span>' : '') + '</p>' +
+			'<ul class="act-list">' + acts.map(function(x){
+				return '<li class="act"><span class="sess-day">' + dayLabel(x.d) + '</span><span class="act-text">' + actText(x.a) + '</span></li>';
+			}).join("") + '</ul></div>';
+	}
 
 	function longText(n, km){
 		if (n === 27) return "Race: 42.2 km, 08:30 start at Cluj Arena. Run 4 / walk 1 from the first minute.";
@@ -489,6 +540,7 @@ a:focus-visible,summary:focus-visible,input:focus-visible{outline:2px solid var(
 		}).join("");
 		var wt = prefix + w.id + "-weight";
 		return '<ul class="sess-list">' + rows + '</ul>' +
+			actsHtml(w) +
 			(w.note ? '<p class="wk-note">' + w.note + '</p>' : '') +
 			(w.n === 17 ? CHECK_CALLOUT : '') +
 			'<div class="wk-weight"><label for="' + wt + '">Weight this week</label><input type="number" id="' + wt + '" data-w="' + w.id + '" data-weight="1" placeholder="kg" readonly tabindex="-1"><span>kg</span></div>';
@@ -593,14 +645,11 @@ a:focus-visible,summary:focus-visible,input:focus-visible{outline:2px solid var(
 	}
 
 	function applyProgress(){
-		var log = PROGRESS.log || {}, done = 0, longest = 0, weights = [];
+		var log = PROGRESS.log || {}, done = 0, weights = [];
+		var longest = ACTS.reduce(function(m, x){ return x.a.type === "run" && x.a.km > m ? x.a.km : m; }, 0);
 		WEEKS.forEach(function(w){
 			var entry = log[w.id] || {}, s = entry.s || {}, c = 0;
-			w.sessions.forEach(function(x){
-				if (!s[x.k] || x.opt) return;
-				c++;
-				if (x.k === "lr" && w.lrKm > longest) longest = w.lrKm;
-			});
+			w.sessions.forEach(function(x){ if (s[x.k] && !x.opt) c++; });
 			done += c;
 			var cnt = document.querySelector('[data-count="' + w.id + '"]');
 			if (cnt) { cnt.textContent = countText(w, c); cnt.classList.toggle("is-full", w.req > 0 && c === w.req); }
@@ -616,7 +665,7 @@ a:focus-visible,summary:focus-visible,input:focus-visible{outline:2px solid var(
 		});
 		document.getElementById("stDone").textContent = done;
 		document.getElementById("stDoneSub").textContent = "of " + TOTAL + " sessions";
-		document.getElementById("stLong").textContent = longest ? longest + " km" : "–";
+		document.getElementById("stLong").textContent = longest ? longest.toFixed(1) + " km" : "–";
 		var sw = document.getElementById("stWeight"), sws = document.getElementById("stWeightSub");
 		if (weights.length) {
 			var first = weights[0], last = weights[weights.length - 1], d = Math.round((last - first) * 10) / 10;
