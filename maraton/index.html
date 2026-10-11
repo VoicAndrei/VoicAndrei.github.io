@@ -201,7 +201,7 @@ a:focus-visible,summary:focus-visible,input:focus-visible{outline:2px solid var(
 		<div class="stat"><span class="stat-label">Week</span><span class="stat-val" id="stWeek">–</span><span class="stat-sub" id="stWeekSub"></span></div>
 		<div class="stat"><span class="stat-label">Runs ticked</span><span class="stat-val" id="stDone">0</span><span class="stat-sub" id="stDoneSub"></span></div>
 		<div class="stat"><span class="stat-label">Longest run</span><span class="stat-val" id="stLong">–</span><span class="stat-sub">so far</span></div>
-		<div class="stat"><span class="stat-label">Weight</span><span class="stat-val" id="stWeight">–</span><span class="stat-sub" id="stWeightSub">log it once a week</span></div>
+		<div class="stat"><span class="stat-label">Total run</span><span class="stat-val" id="stTotal">–</span><span class="stat-sub" id="stTotalSub"></span></div>
 	</section>
 	<p class="sync" id="sync"></p>
 
@@ -649,7 +649,7 @@ a:focus-visible,summary:focus-visible,input:focus-visible{outline:2px solid var(
 	}
 
 	function applyProgress(){
-		var log = PROGRESS.log || {}, done = 0, weights = [];
+		var log = PROGRESS.log || {}, done = 0;
 		var longest = ACTS.reduce(function(m, x){ return x.a.type === "run" && x.a.km > m ? x.a.km : m; }, 0);
 		WEEKS.forEach(function(w){
 			var entry = log[w.id] || {}, s = entry.s || {}, c = 0;
@@ -657,7 +657,6 @@ a:focus-visible,summary:focus-visible,input:focus-visible{outline:2px solid var(
 			done += c;
 			var cnt = document.querySelector('[data-count="' + w.id + '"]');
 			if (cnt) { cnt.textContent = countText(w, c); cnt.classList.toggle("is-full", w.req > 0 && c === w.req); }
-			if (typeof entry.weight === "number") weights.push(entry.weight);
 		});
 		document.querySelectorAll('input[type="checkbox"][data-w]').forEach(function(el){
 			var e = log[el.dataset.w];
@@ -670,15 +669,10 @@ a:focus-visible,summary:focus-visible,input:focus-visible{outline:2px solid var(
 		document.getElementById("stDone").textContent = done;
 		document.getElementById("stDoneSub").textContent = "of " + TOTAL + " sessions";
 		document.getElementById("stLong").textContent = longest ? longest.toFixed(1) + " km" : "–";
-		var sw = document.getElementById("stWeight"), sws = document.getElementById("stWeightSub");
-		if (weights.length) {
-			var first = weights[0], last = weights[weights.length - 1], d = Math.round((last - first) * 10) / 10;
-			sw.textContent = last + " kg";
-			sws.textContent = weights.length > 1 ? (d <= 0 ? "−" + Math.abs(d) : "+" + d) + " kg since " + first : "starting weight";
-		} else {
-			sw.textContent = "–";
-			sws.textContent = "log it once a week";
-		}
+		var runs = ACTS.filter(function(x){ return x.a.type === "run" && x.a.km; });
+		var total = runs.reduce(function(m, x){ return m + x.a.km; }, 0);
+		document.getElementById("stTotal").textContent = total ? total.toFixed(1) + " km" : "–";
+		document.getElementById("stTotalSub").textContent = runs.length ? "across " + runs.length + (runs.length === 1 ? " run" : " runs") : "no runs yet";
 		document.getElementById("sync").textContent = "Last updated " + fmt(parseDay(PROGRESS.updated), true) + ".";
 	}
 
