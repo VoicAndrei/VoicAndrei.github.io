@@ -325,6 +325,7 @@ a:focus-visible,summary:focus-visible,input:focus-visible{outline:2px solid var(
 	Progress. This page is read-only: it changes only when this block is edited, and it follows Garmin.
 	activities: everything Garmin recorded, oldest first. type is run, walk or strength; time is m:ss or h:mm:ss;
 	runs also have km and hr (average heart rate); label replaces the name, e.g. "Sprint".
+	"part": true marks a piece Garmin saved separately from the run before it; its km counts, but not as another run.
 	log: one entry per week, w00 to w27. "s" maps a planned session to the date of the activity that covered it
 	(at least 70% of the planned time; days can move within the week). Keys: tue, thu, sat, lr, and hol for the
 	optional holiday runs; week 0 uses shoes, register, test. "weight" is in kg. Set "updated" to the day of the edit.
@@ -342,7 +343,7 @@ a:focus-visible,summary:focus-visible,input:focus-visible{outline:2px solid var(
 		{"date": "2026-10-03", "type": "strength", "time": "37:44"},
 		{"date": "2026-10-03", "type": "run", "km": 3.283, "time": "23:51", "hr": 160},
 		{"date": "2026-10-04", "type": "run", "km": 3.996, "time": "29:25", "hr": 168},
-		{"date": "2026-10-04", "type": "run", "label": "Sprint", "km": 0.391, "time": "1:49", "hr": 153},
+		{"date": "2026-10-04", "type": "run", "label": "Sprint", "part": true, "km": 0.391, "time": "1:49", "hr": 153},
 		{"date": "2026-10-04", "type": "strength", "label": "Gym: chest, triceps, shoulders", "time": "48:57"},
 		{"date": "2026-10-06", "type": "walk", "km": 1.552, "time": "25:45", "hr": 130},
 		{"date": "2026-10-11", "type": "run", "label": "Cluj Connect 5K", "km": 5.501, "time": "44:12", "hr": 164},
@@ -674,6 +675,7 @@ a:focus-visible,summary:focus-visible,input:focus-visible{outline:2px solid var(
 		document.getElementById("stLong").textContent = longest ? longest.toFixed(1) + " km" : "–";
 		var runs = ACTS.filter(function(x){ return x.a.type === "run" && x.a.km; });
 		var total = runs.reduce(function(m, x){ return m + x.a.km; }, 0);
+		runs = runs.filter(function(x){ return !x.a.part; });
 		document.getElementById("stTotal").textContent = total ? total.toFixed(1) + " km" : "–";
 		document.getElementById("stTotalSub").textContent = runs.length ? "across " + runs.length + (runs.length === 1 ? " run" : " runs") : "no runs yet";
 		document.getElementById("sync").textContent = "Last updated " + fmt(parseDay(PROGRESS.updated), true) + ".";
