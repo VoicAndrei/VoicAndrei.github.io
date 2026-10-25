@@ -323,7 +323,7 @@ a:focus-visible,summary:focus-visible,input:focus-visible{outline:2px solid var(
 
 <!--
 	Progress. This page is read-only: it changes only when this block is edited, and it follows Garmin.
-	activities: everything Garmin recorded, oldest first. type is run, walk or strength; time is m:ss or h:mm:ss;
+	activities: everything Garmin recorded, oldest first. type is run, walk, swim or strength; time is m:ss or h:mm:ss;
 	runs also have km and hr (average heart rate); label replaces the name, e.g. "Sprint".
 	"part": true marks a piece Garmin saved separately from the run before it; its km counts, but not as another run.
 	log: one entry per week, w00 to w27. "s" maps a planned session to the date of the activity that covered it
@@ -332,7 +332,7 @@ a:focus-visible,summary:focus-visible,input:focus-visible{outline:2px solid var(
 -->
 <script id="progress" type="application/json">
 {
-	"updated": "2026-10-24",
+	"updated": "2026-10-25",
 	"log": {
 		"w00": {"s": {"shoes": "2026-10-01", "test": "2026-10-03"}, "weight": 95},
 		"w01": {"s": {"lr": "2026-10-11"}, "weight": 94},
@@ -361,7 +361,10 @@ a:focus-visible,summary:focus-visible,input:focus-visible{outline:2px solid var(
 		{"date": "2026-10-20", "type": "strength", "time": "41:43"},
 		{"date": "2026-10-20", "type": "run", "label": "Treadmill", "km": 3.240, "time": "31:08", "hr": 134},
 		{"date": "2026-10-22", "type": "run", "km": 3.062, "time": "27:03", "hr": 144},
-		{"date": "2026-10-24", "type": "run", "label": "Long run", "km": 7.630, "time": "1:08:28", "hr": 146}
+		{"date": "2026-10-24", "type": "run", "label": "Long run", "km": 7.630, "time": "1:08:28", "hr": 146},
+		{"date": "2026-10-25", "type": "strength", "time": "52:42"},
+		{"date": "2026-10-25", "type": "swim", "label": "Pool swim", "km": 1.350, "time": "45:40", "hr": 125},
+		{"date": "2026-10-25", "type": "run", "km": 2.811, "time": "25:55", "hr": 142}
 	]
 }
 </script>
