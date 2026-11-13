@@ -1,0 +1,628 @@
+<!DOCTYPE HTML>
+<!--
+	Strata by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html lang="en">
+	<head>
+		<title>We gave an AI a robot arm, a paintbrush and one prompt - Voic Andrei</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="Claude Fable 5.2 had never seen this robot arm. It practised on five sheets of paper on the first day and painted its self-portrait in watercolour on the sixth sheet on the second." />
+		<link rel="canonical" href="https://voic.ro/blog/ai-robot-arm-paints-self-portrait" />
+		<meta property="og:title" content="We gave an AI a robot arm, a paintbrush and one prompt - Voic Andrei" />
+		<meta property="og:description" content="Claude Fable 5.2 had never seen this robot arm. It practised on five sheets of paper on the first day and painted its self-portrait in watercolour on the sixth sheet on the second." />
+		<meta property="og:type" content="article" />
+		<meta property="og:url" content="https://voic.ro/blog/ai-robot-arm-paints-self-portrait" />
+		<meta property="og:image" content="https://voic.ro/images/blog_robot_painter/og-target-and-painting.jpg" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content="We gave an AI a robot arm, a paintbrush and one prompt - Voic Andrei" />
+		<meta name="twitter:description" content="Claude Fable 5.2 had never seen this robot arm. It practised on five sheets of paper on the first day and painted its self-portrait in watercolour on the sixth sheet on the second." />
+		<meta name="twitter:image" content="https://voic.ro/images/blog_robot_painter/og-target-and-painting.jpg" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<link rel="stylesheet" href="../assets/css/i18n.css" />
+		<link rel="stylesheet" href="../assets/css/blog.css" />
+		<link rel="icon" type="image/png" href="../images/sitethumbnail-modified.png">
+		<style>
+			.rp-kicker {
+				color: #49bf9d;
+				font-size: 0.8em;
+				font-weight: 700;
+				letter-spacing: 0.08em;
+				margin: 0 0 0.5em 0;
+				text-transform: uppercase;
+			}
+
+			.rp-dek {
+				color: #787878;
+				font-size: 1.15em;
+				line-height: 1.5;
+				margin: 0 0 2em 0;
+			}
+
+			.rp-figure {
+				margin: 0 0 2em 0;
+			}
+
+			.rp-figure img,
+			.rp-figure video {
+				border: solid 1px rgba(144, 144, 144, 0.25);
+				border-radius: 0.35em;
+				display: block;
+				height: auto;
+				width: 100%;
+			}
+
+			.rp-figure .image.fit {
+				margin-bottom: 0;
+			}
+
+			.rp-figure figcaption {
+				color: #787878;
+				font-size: 0.9em;
+				line-height: 1.5;
+				margin-top: 0.75em;
+			}
+
+			.rp-narrow {
+				margin-left: auto;
+				margin-right: auto;
+				max-width: 560px;
+			}
+
+			.rp-row {
+				display: grid;
+				gap: 0.75em;
+				grid-template-columns: repeat(2, minmax(0, 1fr));
+			}
+
+			.rp-row.rp-wide-left {
+				grid-template-columns: 1.33fr 1.42fr;
+			}
+
+			.rp-tiles {
+				display: grid;
+				gap: 0.75em;
+				grid-template-columns: repeat(3, minmax(0, 1fr));
+			}
+
+			.rp-tiles.rp-four {
+				grid-template-columns: repeat(4, minmax(0, 1fr));
+			}
+
+			.rp-tiles figure {
+				margin: 0;
+			}
+
+			.rp-tiles figcaption {
+				margin-top: 0.35em;
+			}
+
+			.rp-stats {
+				border-bottom: solid 1px rgba(144, 144, 144, 0.25);
+				border-top: solid 1px rgba(144, 144, 144, 0.25);
+				display: grid;
+				gap: 1em;
+				grid-template-columns: repeat(5, minmax(0, 1fr));
+				margin: 0 0 2em 0;
+				padding: 1.25em 0;
+			}
+
+			.rp-stats b {
+				color: #494949;
+				display: block;
+				font-size: 1.35em;
+				line-height: 1.2;
+			}
+
+			.rp-stats span {
+				color: #787878;
+				display: block;
+				font-size: 0.85em;
+				line-height: 1.35;
+				margin-top: 0.25em;
+			}
+
+			.rp-prompt {
+				background: #f7f7f7;
+				border-left: solid 4px #49bf9d;
+				border-radius: 0.35em;
+				margin: 0 0 1em 0;
+				padding: 1.25em 1.5em 0.25em 1.5em;
+			}
+
+			.rp-prompt-tag {
+				color: #49bf9d;
+				font-size: 0.75em;
+				font-weight: 700;
+				letter-spacing: 0.08em;
+				margin-bottom: 0.75em;
+				text-transform: uppercase;
+			}
+
+			.rp-prompt p,
+			.rp-prompt li {
+				font-family: "Courier New", monospace;
+				font-size: 0.9em;
+				line-height: 1.55;
+			}
+
+			.rp-prompt p {
+				margin-bottom: 0.9em;
+			}
+
+			.rp-prompt ul {
+				margin-bottom: 0.9em;
+			}
+
+			.rp-cut {
+				color: #999999;
+			}
+
+			.rp-note,
+			.rp-foot {
+				color: #787878;
+				font-size: 0.9em;
+				line-height: 1.5;
+			}
+
+			.rp-note {
+				margin-bottom: 2.5em;
+			}
+
+			.rp-day {
+				color: #49bf9d;
+				display: block;
+				font-size: 0.6em;
+				letter-spacing: 0.08em;
+				margin-bottom: 0.2em;
+				text-transform: uppercase;
+			}
+
+			.table-wrapper table td,
+			.table-wrapper table th {
+				font-size: 0.9em;
+				vertical-align: top;
+			}
+
+			.rp-num {
+				text-align: right;
+				white-space: nowrap;
+			}
+
+			.rp-total td {
+				font-weight: 700;
+			}
+
+			ol.rp-findings li {
+				margin-bottom: 0.9em;
+			}
+
+			ol.rp-findings b {
+				color: #494949;
+			}
+
+			@media screen and (max-width: 980px) {
+				.rp-stats {
+					grid-template-columns: repeat(3, minmax(0, 1fr));
+				}
+			}
+
+			@media screen and (max-width: 736px) {
+				.rp-row,
+				.rp-row.rp-wide-left {
+					grid-template-columns: 1fr;
+				}
+
+				.rp-tiles,
+				.rp-tiles.rp-four,
+				.rp-stats {
+					grid-template-columns: repeat(2, minmax(0, 1fr));
+				}
+
+				.rp-prompt {
+					padding: 1em 1em 0.1em 1em;
+				}
+			}
+		</style>
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "Article",
+				"headline": "We gave an AI a robot arm, a paintbrush and one prompt",
+				"author": {
+					"@type": "Person",
+					"name": "Voic Andrei"
+				},
+				"datePublished": "2026-11-13",
+				"description": "Claude Fable 5.2 had never seen this robot arm. It practised on five sheets of paper on the first day and painted its self-portrait in watercolour on the sixth sheet on the second.",
+				"image": "https://voic.ro/images/blog_robot_painter/og-target-and-painting.jpg",
+				"mainEntityOfPage": "https://voic.ro/blog/ai-robot-arm-paints-self-portrait"
+			}
+		</script>
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-PF57JWBKRV"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'G-PF57JWBKRV');
+		</script>
+		<!-- Microsoft Clarity -->
+		<script type="text/javascript">
+			(function(c,l,a,r,i,t,y){
+				c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+				t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+				y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+			})(window, document, "clarity", "script", "vb0nay37b9");
+		</script>
+	</head>
+	<body class="is-preload">
+
+
+		<!-- Header -->
+			<header id="header">
+				<div class="inner">
+					<a href="../" class="image avatar"><img src="../images/headshot_ok.png" alt="Voic Andrei" /></a>
+					<h1><strong>I am Voic Andrei</strong>, a passionate<br />
+					developer and professional<br />
+					based in Romania.</h1>
+				</div>
+			</header>
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- Article -->
+					<section>
+						<nav class="post-back">
+							<a href="/blog/" data-i18n="nav.back">Back to Blog</a>
+						</nav>
+						<header class="major">
+							<p class="rp-kicker" data-i18n="kicker">RebelDot Robotics Lab · 10 and 11 November 2026</p>
+							<h1 data-i18n="title">We gave an AI a robot arm, a paintbrush and one prompt</h1>
+							<p><time datetime="2026-11-13" data-i18n="date">November 13, 2026</time></p>
+						</header>
+
+						<p class="rp-dek" data-i18n="dek">Claude Fable 5.2 had never seen this arm. It practised on five sheets of paper on the first day and painted its self-portrait on the sixth sheet on the second. This is what it made, what it cost, and what went wrong on the way.</p>
+
+						<figure class="rp-figure">
+							<div class="rp-row rp-wide-left">
+								<img src="../images/blog_robot_painter/target-picture.jpg" alt="The picture the model was asked to paint: an orange robot arm on green hills under a blue sky with a yellow sun and two flowers" />
+								<img src="../images/blog_robot_painter/sheet6-final-painting.jpg" alt="The watercolour the robot arm painted on the sixth sheet: the same orange arm, sky, sun, hills and flowers, with rough brush strokes" />
+							</div>
+							<figcaption data-i18n="fig.hero">Left, the picture it was asked to paint. Right, the sixth sheet, photographed with a phone and straightened.</figcaption>
+						</figure>
+
+						<div class="rp-stats">
+							<div><b data-i18n="stat.1.v">12 h 03 min</b><span data-i18n="stat.1.l">of sessions over two days</span></div>
+							<div><b data-i18n="stat.2.v">188 M</b><span data-i18n="stat.2.l">tokens</span></div>
+							<div><b data-i18n="stat.3.v">$97</b><span data-i18n="stat.3.l">at API list price</span></div>
+							<div><b data-i18n="stat.4.v">80</b><span data-i18n="stat.4.l">Python scripts it wrote</span></div>
+							<div><b data-i18n="stat.5.v">10,776</b><span data-i18n="stat.5.l">arm moves</span></div>
+						</div>
+
+						<p data-i18n="p.lead1">We gave Claude Fable 5.2 a robot arm with a paintbrush, three cameras, a watercolour palette and a short prompt. We did not give it painting tools, inverse kinematics, a calibration, or a single hint about how the arm behaves.</p>
+						<p data-i18n="p.lead2">It had six sheets of paper: five to practise on and one for its best painting. It used the five practice sheets on the first day and painted the picture above on the second.</p>
+						<p data-i18n="p.lead3">The painting is rough. The sky is streaky, the outlines are thick, and one of the two flowers is almost invisible. But it shows what the picture asked for: a sun, a blue sky, green hills, flowers, and an orange arm with the right zigzag. Nobody told the model how to make any of it.</p>
+
+						<figure class="rp-figure">
+							<video controls preload="metadata" playsinline poster="../images/blog_robot_painter/video-1min-poster.jpg">
+								<source src="../images/blog_robot_painter/robot-painter-1min.mp4" type="video/mp4" />
+								<span data-i18n="video.fallback1">Your browser can't play embedded video.</span> <a href="../images/blog_robot_painter/robot-painter-1min.mp4" data-i18n="video.watch">Watch the clip</a>.
+							</video>
+							<figcaption data-i18n="fig.video1">Both days in one minute.</figcaption>
+						</figure>
+
+						<div class="rp-prompt">
+							<div class="rp-prompt-tag" data-i18n="prompt.tag">The prompt</div>
+							<p>Paint a self-portrait, like the attached picture.</p>
+							<p>Over Tailscale you can reach a Linux computer with a powerful GPU: <span class="rp-cut">[ssh command]</span></p>
+							<p>Connected to it:</p>
+							<ul>
+								<li>an SO-101 robot arm with a paintbrush in its gripper</li>
+								<li>a camera on the arm's wrist</li>
+								<li>a camera looking down at the table</li>
+								<li>a camera at the side, recording the whole session. You can use it too, as long as the recording isn't affected. <span class="rp-cut">[…]</span></li>
+							</ul>
+							<p>On the table: a watercolour palette, with water in the well in its middle.</p>
+							<p>You have 6 sheets of paper. Sheets 1 to 5 are for practice: use them however you want. Sheet 6 is for your best painting. When you need a new sheet, tell me and I'll put it down.</p>
+							<p>Use the computer and everything connected to it however you want.</p>
+						</div>
+						<p class="rp-note" data-i18n="prompt.note">The prompt, trimmed where marked and left in its original English. That and the picture were everything it got on the first day. On the second day it got one more line: “sheet 6 loaded. make sure the sidecam records and do the final sheet. good luck!”</p>
+
+						<h2><span class="rp-day" data-i18n="h.day1.small">Day 1</span><span data-i18n="h.day1">Five practice sheets</span></h2>
+
+						<h3 data-i18n="h.setup">The setup</h3>
+						<p data-i18n="p.setup1">An SO-101 arm holds a round brush in its gripper. One webcam sits on the wrist, one looks down from a pole, and a third camera on a tripod records the whole session. A palette with twelve pans is taped to the table. The paper is plain A4, taped down on all four sides.</p>
+
+						<figure class="rp-figure">
+							<div class="rp-row">
+								<img src="../images/blog_robot_painter/20261110_rig_before_start.jpg" alt="The table before the first stroke: the robot arm, a camera on a pole, a camera on a tripod, the palette and a taped-down sheet of paper" loading="lazy" />
+								<img src="../images/blog_robot_painter/20261110_first_dabs.jpg" alt="The arm over sheet 1, with a row of small blue dabs on the paper" loading="lazy" />
+							</div>
+							<figcaption data-i18n="fig.rig">Left, the rig before the first stroke. Right, half an hour in: the first marks. A row of dabs, each one a millimetre lower than the last, to find out where the paper is.</figcaption>
+						</figure>
+
+						<p data-i18n="p.setup2">The model reached all of it over SSH from a laptop. It was also told it had a powerful GPU. It never used it.</p>
+
+						<h3 data-i18n="h.sheets">Sheet by sheet</h3>
+						<p data-i18n="p.sheets">Sheets 1 to 4 were for tests and a first attempt at the picture. Sheet 5 was a full rehearsal. Sheet 6, a day later, is the painting.</p>
+
+						<figure class="rp-figure">
+							<div class="rp-tiles">
+								<img src="../images/blog_robot_painter/sheet1-finished.jpg" alt="Sheet 1: rows of blue dabs and short lines" loading="lazy" />
+								<img src="../images/blog_robot_painter/sheet2-finished.jpg" alt="Sheet 2: test lines, a fill and colour swatches" loading="lazy" />
+								<img src="../images/blog_robot_painter/sheet3-finished.jpg" alt="Sheet 3: a first attempt at the picture, the arm in grey-green" loading="lazy" />
+								<img src="../images/blog_robot_painter/sheet4-finished.jpg" alt="Sheet 4: test strokes in several colours" loading="lazy" />
+								<img src="../images/blog_robot_painter/sheet5-finished.jpg" alt="Sheet 5: the whole picture, with broken black outlines" loading="lazy" />
+								<img src="../images/blog_robot_painter/sheet6-finished.jpg" alt="Sheet 6: the final painting" loading="lazy" />
+							</div>
+							<figcaption data-i18n="fig.sheets">All six sheets as they looked when they were finished, straightened from the side camera. Sheet 1 to 6, left to right and top to bottom.</figcaption>
+						</figure>
+
+						<div class="table-wrapper">
+							<table>
+								<thead>
+									<tr><th data-i18n="t1.h1">Sheet</th><th data-i18n="t1.h2">Time</th><th data-i18n="t1.h3">What it was for</th><th data-i18n="t1.h4">What came out</th></tr>
+								</thead>
+								<tbody>
+									<tr><td>1</td><td data-i18n="t1.r1.time">Day 1, 14:17 to 15:41</td><td data-i18n="t1.r1.for">Finding out where everything is</td><td data-i18n="t1.r1.out">The brush tip, both cameras and the paper located to within one or two millimetres. First dabs and lines.</td></tr>
+									<tr><td>2</td><td data-i18n="t1.r2.time">15:43 to 16:26</td><td data-i18n="t1.r2.for">Lines, a fill, a swatch of eleven colours</td><td data-i18n="t1.r2.out">Lines work, but only bold ones. The water went black and every light colour came out grey.</td></tr>
+									<tr><td>3</td><td data-i18n="t1.r3.time">16:32 to 17:45</td><td data-i18n="t1.r3.for">First attempt at the picture</td><td data-i18n="t1.r3.out">A recognisable arm, in grey-green instead of orange, with dotted outlines.</td></tr>
+									<tr><td>4</td><td data-i18n="t1.r4.time">18:00 to 19:05</td><td data-i18n="t1.r4.for">Stroke direction and paint loading</td><td data-i18n="t1.r4.out">It found the mistake behind most of the afternoon's problems. Yellow came out yellow again.</td></tr>
+									<tr><td>5</td><td data-i18n="t1.r5.time">19:14 to 21:27</td><td data-i18n="t1.r5.for">A full rehearsal, every layer</td><td data-i18n="t1.r5.out">The whole picture for the first time, in 2 h 05 min of brush work. The outlines, painted last on wet paper, broke into blotches.</td></tr>
+									<tr><td>6</td><td data-i18n="t1.r6.time">Day 2, 13:34 to 18:11</td><td data-i18n="t1.r6.for">The final painting</td><td data-i18n="t1.r6.out">The picture at the top. Outlines first, colour second, one more outline pass on top.</td></tr>
+								</tbody>
+							</table>
+						</div>
+
+						<h3 data-i18n="h.workout">What it had to work out</h3>
+						<p data-i18n="p.work1">Where is the brush? Nobody told it how long the brush was or how it sat in the gripper. It downloaded the arm's public description file, wrote its own kinematics, and then hovered the brush over the paper in 176 poses while two cameras watched. From those frames it solved for the brush tip, both cameras and the lens distortion in a single fit. The result was good to about a pixel and a half.</p>
+
+						<figure class="rp-figure">
+							<img src="../images/blog_robot_painter/brush-tip-detection.jpg" alt="Eight frames from the top camera during calibration, with the arm and brush the model detected painted red and the tip ringed in green" loading="lazy" />
+							<figcaption data-i18n="fig.tip">The top camera during calibration. Red is what the model's own detector decided was arm and brush. The green ring is the tip.</figcaption>
+						</figure>
+
+						<p data-i18n="p.work2">Then it crashed the arm. At 14:54, while it was tuning its control loop, a joint started to oscillate and pushed the brush into the table. The brush slid about ten millimetres in the gripper. It lifted the arm, recalibrated the tip in four minutes, and added a guard to its own controller so the arm freezes instead. Then it told us what had happened.</p>
+						<p data-i18n="p.work3">The colours were the next problem. One small water well cannot wash black out of a brush, so the yellow turned grey and the orange turned green. It asked for a paper towel. We taped one down, later a bigger one, and swapped the well for a tub.</p>
+						<p data-i18n="p.work4">The lines kept breaking, and this took most of the afternoon. Heights it had measured an hour earlier seemed to drift by millimetres. It suspected the gripper, then the servos, then its own calibration. The cause was the brush: the bristles had bent while they were wet and had stayed bent, so the tip was no longer where the model thought it was.</p>
+
+						<figure class="rp-figure rp-narrow">
+							<img src="../images/blog_robot_painter/bent-bristles.jpg" alt="The same arm pose photographed twice: first with straight bristles, then with the bristles hooked to one side" loading="lazy" />
+							<figcaption data-i18n="fig.bristles">The same arm pose, less than an hour apart. The green cross marks where the tip was the first time. Nothing had moved except the bristles.</figcaption>
+						</figure>
+
+						<p data-i18n="p.work5">The reason for the bent bristles came out at 18:26. It lowered the brush onto a paint pan in small steps while watching the side camera, and saw that the paint surface was about 12 mm higher than it had assumed since a quarter to three. For more than three and a half hours, every time it picked up paint it had rammed the brush into the pan.</p>
+						<p data-i18n="p.work6">That one mistake bent the bristles, pushed black paint up into the base of the brush, and smeared dark paint across the yellow and orange pans. It explains most of sheets 2 and 3.</p>
+
+						<figure class="rp-figure">
+							<img src="../images/blog_robot_painter/pan-height-check.jpg" alt="A grid of side-camera crops showing the brush lowered onto the black, blue and orange paint pans in 3 mm steps" loading="lazy" />
+							<figcaption data-i18n="fig.pans">How it checked: the brush lowered onto three pans in 3 mm steps, photographed from the side each time.</figcaption>
+						</figure>
+
+						<h3 data-i18n="h.rehearsal">The rehearsal</h3>
+						<p data-i18n="p.reh1">Sheet 5 was the whole picture, start to finish: 402 strokes in a little over two hours. The colours were right for the first time. The outlines were not. They went on last, after almost two hours of wet paint had buckled the sheet. The brush touched only the ridges, and the lines broke into blotches.</p>
+						<p data-i18n="p.reh2">When the rehearsal was done it tried three more strokes on the grass, with a drier brush, to see if that would hold a line on the buckled sheet. It did not. Its plan for the final sheet: outlines and cables first, on dry paper, then colour kept a millimetre clear of them, bolts last.</p>
+
+						<h2><span class="rp-day" data-i18n="h.day2.small">Day 2</span><span data-i18n="h.day2">The sixth sheet</span></h2>
+						<p data-i18n="p.day2">The arm was unplugged overnight. At 13:33 the next day the model was told that sheet 6 was down. It did not start painting.</p>
+
+						<h3 data-i18n="h.check">An hour of checking first</h3>
+						<p data-i18n="p.check1">Its first question was whether anything had moved, and a lot had. The water tub stood about four centimetres from where it had been. The towel had shifted. The brush tip was five millimetres off the first day's calibration, and the paint pans were five to ten millimetres from where its notes put them. It recalibrated the brush with both cameras and located the pans again from the top camera.</p>
+						<p data-i18n="p.check2">It also measured the water level in the tub, one millimetre at a time. The surface was at 25 mm, not the 18 mm it had assumed on day 1. The “shallow” dips of day 1 had soaked the whole brush. It concluded that this was what had flooded the paint pans and buckled the paper, and it set the dips to wet only the last few millimetres of bristle.</p>
+						<p data-i18n="p.check3">Then it measured the height of the new sheet. It does this with short yellow strokes that start in the air and sink until they leave a mark, placed where later paint will hide them. Many of the readings were unusable, so it painted several rounds of them and fitted a smooth surface through the 13 it trusted.</p>
+						<p data-i18n="p.check4">The first green lines went on at 14:18. They came out faint and broken, and it stopped the job after six minutes. It tested how hard a damp brush has to press, then started again at 14:38 with a firmer press and fresh paint every 45 mm. That was 64 minutes after the start. It had allowed fifteen.</p>
+
+						<h3 data-i18n="h.lines">Lines first, colour second</h3>
+						<p data-i18n="p.lines1">The order was the one it had planned the evening before. The lines went on while the paper was flat and dry: green stems and hill lines, the red cables, then the black outlines. A test of six outline strokes came out grey because the brush was too dry. It changed to a wetter load and painted every outline twice.</p>
+						<p data-i18n="p.lines2">Colour came next, light before dark and kept clear of the lines: the sun, the orange arm, the flowers, 24 minutes of sky, then hills and grass. After that it gave the sun and the arm a second coat, went over the outlines a third time, and dabbed on the bolts. The last bolt went on at 18:06.</p>
+
+						<figure class="rp-figure">
+							<div class="rp-tiles rp-four">
+								<img src="../images/blog_robot_painter/sheet6-layer-1.jpg" alt="Sheet 6 with only the yellow height-check dots" loading="lazy" />
+								<img src="../images/blog_robot_painter/sheet6-layer-2.jpg" alt="Sheet 6 with the green lines" loading="lazy" />
+								<img src="../images/blog_robot_painter/sheet6-layer-3.jpg" alt="Sheet 6 with the black outlines" loading="lazy" />
+								<img src="../images/blog_robot_painter/sheet6-layer-4.jpg" alt="Sheet 6 with the orange arm" loading="lazy" />
+								<img src="../images/blog_robot_painter/sheet6-layer-5.jpg" alt="Sheet 6 with the sky" loading="lazy" />
+								<img src="../images/blog_robot_painter/sheet6-layer-6.jpg" alt="Sheet 6 with the hills and grass" loading="lazy" />
+								<img src="../images/blog_robot_painter/sheet6-layer-7.jpg" alt="Sheet 6 after the second coats" loading="lazy" />
+								<img src="../images/blog_robot_painter/sheet6-layer-8.jpg" alt="Sheet 6 finished, with the last outlines and the bolts" loading="lazy" />
+							</div>
+							<figcaption data-i18n="fig.layers">Sheet 6, layer by layer, from the top camera. The yellow dots in the first frame are the height checks. The lines are in place before any colour.</figcaption>
+						</figure>
+
+						<figure class="rp-figure">
+							<div class="rp-row">
+								<img src="../images/blog_robot_painter/20261111_sky_going_on.jpg" alt="Phone photo of the table: the arm painting the sky on sheet 6, the outlines already in place" loading="lazy" />
+								<img src="../images/blog_robot_painter/20261111_brush_on_grass.jpg" alt="Close phone photo of the brush tip on the wet green grass of the painting" loading="lazy" />
+							</div>
+							<figcaption data-i18n="fig.phone">Two phone photos from the afternoon. Left, the outlines are done and the sky is going on. Right, the brush on the wet grass.</figcaption>
+						</figure>
+
+						<figure class="rp-figure">
+							<video controls preload="metadata" playsinline poster="../images/blog_robot_painter/timelapse-poster.jpg">
+								<source src="../images/blog_robot_painter/sheet6-timelapse.mp4" type="video/mp4" />
+								<span data-i18n="video.fallback2">Your browser can't play embedded video.</span> <a href="../images/blog_robot_painter/sheet6-timelapse.mp4" data-i18n="video.watch2">Watch the time-lapse</a>.
+							</video>
+							<figcaption data-i18n="fig.video2">The sixth sheet from blank paper to the last bolt: 4 h 38 min in 50 seconds.</figcaption>
+						</figure>
+
+						<h3 data-i18n="h.went">How it went</h3>
+						<p data-i18n="p.went1">The changes worked. With less water in the brush the paper stayed flat enough for the last outline pass to hold, which it had not done on sheet 5. The orange is orange and the yellow is yellow.</p>
+
+						<figure class="rp-figure">
+							<div class="rp-row">
+								<img src="../images/blog_robot_painter/sheet5-rehearsal.jpg" alt="Sheet 5, the rehearsal, with blotchy black outlines and three dark dashes on the grass" loading="lazy" />
+								<img src="../images/blog_robot_painter/sheet6-final.jpg" alt="Sheet 6, the final painting, with cleaner outlines" loading="lazy" />
+							</div>
+							<figcaption data-i18n="fig.compare">Left, the rehearsal on sheet 5. The three dark dashes on the grass are the test strokes it added afterwards. Right, the final painting on sheet 6. Both are phone photos, straightened.</figcaption>
+						</figure>
+
+						<p data-i18n="p.went2">The model's own list of what is still wrong is longer than ours:</p>
+						<ul>
+							<li data-i18n="wrong.1">The pink flower is almost invisible. It reads as a white flower with a yellow centre.</li>
+							<li data-i18n="wrong.2">The outlines are sketchy, and grey-brown where the orange ran into them. The gripper and the cables are hard to read.</li>
+							<li data-i18n="wrong.3">The grass tufts came out as blobs, and the left side of the robot's base is muddy where green and red lines cross.</li>
+							<li data-i18n="wrong.4">Rinse water crept under the tape along the top-left edge early on. The sky covers most of the stain.</li>
+						</ul>
+						<p data-i18n="p.went3">Two more things went wrong on the way. At 16:26 it found two of its own paint jobs running at the same time, the flowers and the sky. It stopped the sky and started it again once the flowers were finished. And at the very end, when it parked the arm, the clean, damp brush came to rest on the finished painting for about half a minute before it noticed and lifted it. It saw no mark in its photos, and told us to check the paper.</p>
+
+						<h3 data-i18n="h.built">What it built along the way</h3>
+						<p data-i18n="p.built1">Most of what it wrote was for measuring, not for painting.</p>
+						<div class="table-wrapper">
+							<table>
+								<thead>
+									<tr><th data-i18n="t2.h1">Thing</th><th class="rp-num" data-i18n="t2.h2">Day 1</th><th class="rp-num" data-i18n="t2.h3">Day 2</th><th class="rp-num" data-i18n="t2.h4">Both days</th></tr>
+								</thead>
+								<tbody>
+									<tr><td data-i18n="t2.r1">Python files it wrote</td><td class="rp-num">63</td><td class="rp-num" data-i18n="t2.r1.d2">17 more</td><td class="rp-num" data-i18n="t2.r1.both">80, about 2,560 lines</td></tr>
+									<tr><td data-i18n="t2.r2">Commands and file reads it ran</td><td class="rp-num">463</td><td class="rp-num">188</td><td class="rp-num">651</td></tr>
+									<tr><td data-i18n="t2.r3">Images it looked at</td><td class="rp-num">147</td><td class="rp-num">67</td><td class="rp-num">214</td></tr>
+									<tr><td data-i18n="t2.r4">Arm trajectories it ran</td><td class="rp-num">6,211</td><td class="rp-num">4,565</td><td class="rp-num">10,776</td></tr>
+									<tr><td data-i18n="t2.r5">Strokes in the plan for the picture</td><td class="rp-num" data-i18n="t2.r5.d1">402, about 16 m</td><td class="rp-num" data-i18n="t2.r5.d2">363, about 14 m</td><td class="rp-num"></td></tr>
+								</tbody>
+							</table>
+						</div>
+						<p data-i18n="p.built2">The plan for sheet 6 had 363 strokes. With the second coats and the three passes over the outlines, the arm painted roughly 600.</p>
+						<p data-i18n="p.built3">The code covers an arm controller with a safety stop, kinematics, camera calibration, a finder for the sheet inside its tape frame, a planner that turns the reference picture into brush strokes, and routines for water, paint and towel. In two days it asked us for fresh sheets, clean water and a paper towel, and for nothing else.</p>
+
+						<h2><span class="rp-day" data-i18n="h.costs.small">Costs</span><span data-i18n="h.costs">188 million tokens, $97</span></h2>
+						<p data-i18n="p.costs1">Everything below covers both sessions: day 1 from the prompt at 14:16 to the model's last report at 21:40, and day 2 from 13:33 to 18:13. Prices are Anthropic's API list prices for Claude Fable 5.2 on those days.</p>
+
+						<h3 data-i18n="h.tokens">Tokens</h3>
+						<div class="table-wrapper">
+							<table>
+								<thead>
+									<tr><th data-i18n="t3.h1">Kind of token</th><th class="rp-num" data-i18n="t3.h2">Day 1</th><th class="rp-num" data-i18n="t3.h3">Day 2</th><th class="rp-num" data-i18n="t3.h4">Price per million</th><th class="rp-num" data-i18n="t3.h5">Cost</th></tr>
+								</thead>
+								<tbody>
+									<tr><td data-i18n="t3.r1">Cache reads</td><td class="rp-num">139,676,286</td><td class="rp-num">45,343,977</td><td class="rp-num">$0.20</td><td class="rp-num">$37.00</td></tr>
+									<tr><td data-i18n="t3.r2">Cache writes</td><td class="rp-num">1,948,848</td><td class="rp-num">355,494</td><td class="rp-num">$16.00</td><td class="rp-num">$36.87</td></tr>
+									<tr><td data-i18n="t3.r3">Output, about half of it thinking</td><td class="rp-num">447,873</td><td class="rp-num">141,368</td><td class="rp-num">$40.00</td><td class="rp-num">$23.57</td></tr>
+									<tr><td data-i18n="t3.r4">Fresh input</td><td class="rp-num">694</td><td class="rp-num">358</td><td class="rp-num">$8.00</td><td class="rp-num">$0.01</td></tr>
+									<tr class="rp-total"><td data-i18n="t3.total">Total</td><td class="rp-num">142,073,701</td><td class="rp-num">45,841,197</td><td class="rp-num"></td><td class="rp-num">$97.45</td></tr>
+								</tbody>
+							</table>
+						</div>
+						<p data-i18n="p.costs2">Day 1 cost $77.04 and day 2 cost $20.41. Almost all of it is the model re-reading its own conversation. It was called 520 times over the two days.</p>
+						<p data-i18n="p.costs3">Day 2 was much cheaper per hour. On day 1 each call re-read about 414,000 tokens on average, and the conversation grew to 616,000. Day 2 started from a written summary of day 1, plus the notes and scripts the model had left for itself, so each call re-read about 258,000 tokens.</p>
+						<p data-i18n="p.costs4">A quarter of day 1's bill, $19.33, came from three moments when the whole conversation was written to the cache again. The most likely cause is the app dropping old camera images from the conversation to stay under a limit, which changes the start of the conversation and makes the cache useless. That did not happen on day 2.</p>
+
+						<div class="table-wrapper">
+							<table>
+								<thead>
+									<tr><th data-i18n="t4.h1">Phase</th><th class="rp-num" data-i18n="t4.h2">Working time</th><th class="rp-num" data-i18n="t4.h3">Tokens</th><th class="rp-num" data-i18n="t4.h4">Cost</th></tr>
+								</thead>
+								<tbody>
+									<tr><td data-i18n="t4.r1">Day 1: survey, calibration, sheet 1</td><td class="rp-num">1 h 25 min</td><td class="rp-num">25.1 M</td><td class="rp-num">$17.85</td></tr>
+									<tr><td data-i18n="t4.r2">Sheet 2</td><td class="rp-num">43 min</td><td class="rp-num">17.6 M</td><td class="rp-num">$7.02</td></tr>
+									<tr><td data-i18n="t4.r3">Sheet 3</td><td class="rp-num">1 h 13 min</td><td class="rp-num">30.3 M</td><td class="rp-num">$10.53</td></tr>
+									<tr><td data-i18n="t4.r4">Sheet 4</td><td class="rp-num">1 h 04 min</td><td class="rp-num">25.9 M</td><td class="rp-num">$15.61</td></tr>
+									<tr><td data-i18n="t4.r5">Sheet 5, the rehearsal</td><td class="rp-num">2 h 25 min</td><td class="rp-num">43.2 M</td><td class="rp-num">$26.03</td></tr>
+									<tr><td data-i18n="t4.r6">Day 2: recalibration and paper height</td><td class="rp-num">45 min</td><td class="rp-num">15.6 M</td><td class="rp-num">$9.68</td></tr>
+									<tr><td data-i18n="t4.r7">Sheet 6, lines and outlines</td><td class="rp-num">1 h 40 min</td><td class="rp-num">14.2 M</td><td class="rp-num">$5.31</td></tr>
+									<tr><td data-i18n="t4.r8">Sheet 6, colour, two coats</td><td class="rp-num">1 h 43 min</td><td class="rp-num">8.9 M</td><td class="rp-num">$2.90</td></tr>
+									<tr><td data-i18n="t4.r9">Sheet 6, last outlines, bolts, washing up</td><td class="rp-num">31 min</td><td class="rp-num">7.3 M</td><td class="rp-num">$2.53</td></tr>
+									<tr class="rp-total"><td data-i18n="t4.total">Total</td><td class="rp-num">11 h 29 min</td><td class="rp-num">187.9 M</td><td class="rp-num">$97.45</td></tr>
+								</tbody>
+							</table>
+						</div>
+						<p data-i18n="p.costs5">Two things are not in that total. Preparing the lab on the first morning, with Claude Opus 5.5 and a human working together on access, safety checks, cameras and the recorder, used 17 million tokens, or $9.13. Writing this post and cutting the videos were separate sessions afterwards.</p>
+
+						<h3 data-i18n="h.time">Time</h3>
+						<div class="table-wrapper">
+							<table>
+								<thead>
+									<tr><th data-i18n="t5.h1">What</th><th data-i18n="t5.h2">Day 1</th><th data-i18n="t5.h3">Day 2</th></tr>
+								</thead>
+								<tbody>
+									<tr><td data-i18n="t5.r1">From the first message to the model's last report</td><td data-i18n="t5.r1.d1">7 h 23 min</td><td data-i18n="t5.r1.d2">4 h 40 min</td></tr>
+									<tr><td data-i18n="t5.r2">The model working</td><td data-i18n="t5.r2.d1">6 h 50 min, in five stretches</td><td data-i18n="t5.r2.d2">4 h 39 min, in one</td></tr>
+									<tr><td data-i18n="t5.r3">The model waiting for a human</td><td data-i18n="t5.r3.d1">33 min, four times</td><td data-i18n="t5.r3.d2">none</td></tr>
+									<tr><td data-i18n="t5.r4">The arm actually moving</td><td data-i18n="t5.r4.d1">4 h 12 min</td><td data-i18n="t5.r4.d2">3 h 21 min</td></tr>
+									<tr><td data-i18n="t5.r5">Painting the picture, first stroke to last</td><td data-i18n="t5.r5.d1">2 h 05 min, sheet 5</td><td data-i18n="t5.r5.d2">3 h 28 min, sheet 6</td></tr>
+								</tbody>
+							</table>
+						</div>
+						<p data-i18n="p.time1">The waits on day 1 were for fresh paper and clean water. The longest was sixteen minutes. On day 2 nobody had to do anything after the sheet was down.</p>
+						<p data-i18n="p.time2">Painting is slow because the brush holds very little. Every ten to twenty centimetres of stroke it goes back to the water and the pan, and that round trip takes about half a minute. On sheet 6 the sky took 24 minutes. The orange arm took 10 minutes, and 11 more for its second coat. The black outlines took about an hour in all, over three passes.</p>
+						<p data-i18n="p.time3">Its own estimates were off. Before sheet 5 it said the painting would take about an hour. It took two. On day 2 it allowed fifteen minutes for recalibration and needed more than an hour.</p>
+
+						<h3 data-i18n="h.people">People and materials</h3>
+						<p data-i18n="p.people1">The human side was small. Over the two days someone put down five fresh sheets, kept the water clean, taped down a towel and later a bigger one, and swapped the water well for a tub. Nobody touched the painting.</p>
+						<p data-i18n="p.people2">The materials were six sheets of paper, a watercolour palette, masking tape and paper towels. The arm, the cameras and the computer were already in the lab and are not counted.</p>
+
+						<h2><span class="rp-day" data-i18n="h.concl.small">Conclusions</span><span data-i18n="h.concl">What we take from it</span></h2>
+						<ol class="rp-findings">
+							<li data-i18n="f.1"><b>It can close the loop by itself.</b> Look, build a model, act, check the result with a camera, find what went wrong, fix it. It did that for twelve hours over two days, on hardware it had never seen, with tools it wrote as it went.</li>
+							<li data-i18n="f.2"><b>The robot was not the hard part.</b> The arm's wobble of about a millimetre set a limit, and it worked within that limit early. What cost the first afternoon was water, bristles and paper. Each of those problems looked like something else at first.</li>
+							<li data-i18n="f.3"><b>One wrong number hid for three and a half hours.</b> The pan height was a guess from a camera, written down at a quarter to three and never checked by touch. Everything built on it looked like a different problem. When it finally measured instead of assuming, three problems disappeared together.</li>
+							<li data-i18n="f.4"><b>It used the practice sheets as practice.</b> Outlines first, less water in the brush, light colours before dark: each of those rules came from something that failed on sheets 2 to 5, and each one held on sheet 6.</li>
+							<li data-i18n="f.5"><b>The calibration did not survive the night.</b> The tub, the towel, the pans and the brush were all a few millimetres from where they had been. It checked before it painted, and the check took an hour. Fixed positions for water, towel and palette would have saved most of that.</li>
+							<li data-i18n="f.6"><b>It told us when things went wrong.</b> It reported the crash, the dirty drips on a sheet, the failed outlines on the rehearsal, the water under the tape and the brush it left resting on the finished painting. We did not have to find those ourselves.</li>
+							<li data-i18n="f.7"><b>As a painter it is slow and expensive.</b> $97 and twelve hours bought one small watercolour that a child would beat in ten minutes. As a way to see how far an agent gets alone on a physical task, it was cheap.</li>
+							<li data-i18n="f.8"><b>The setup held it back more than the model did.</b> A 720p camera in which the sheet fills a small corner. Plain paper that buckles when wet. A soft brush held at an angle. No sense of touch at all. Better paper, a closer camera and a simple contact signal would each remove a whole class of problems.</li>
+						</ol>
+
+						<figure class="rp-figure rp-narrow">
+							<img src="../images/blog_robot_painter/20261111_table_at_the_end.jpg" alt="The table at the end of the second day, with the finished painting taped down and the five practice sheets on the floor underneath" loading="lazy" />
+							<figcaption data-i18n="fig.end">The table at the end of the second day. The five practice sheets are on the floor underneath.</figcaption>
+						</figure>
+
+						<hr />
+
+						<p class="rp-foot" data-i18n="foot">The run took place on 10 and 11 November 2026 in RebelDot's robotics lab. The model was Claude Fable 5.2, running in the Claude desktop app and reaching the lab computer over SSH. Token counts come from the sessions' own logs, counted once per model call. Prices are from Anthropic's pricing page on the first day. Times are from the session logs and from the side camera recording, which covers 7 h 26 min of day 1 and all of sheet 6 on day 2 without a gap.</p>
+
+						<h3 data-i18n="keepreading">Keep Reading</h3>
+						<p data-i18n="related">Continue with <a href="/blog/">the blog index</a>, read how <a href="/blog/camera-story">an agent worked out left from right by looking at the cameras</a>, or <a href="/blog/3d-printer-caricature">how we turned a 3D printer into a caricature artist</a>.</p>
+						<ul class="actions">
+							<li><a href="/" class="button primary" data-i18n="btn.home">Back to Home</a></li>
+							<li><a href="/blog/" class="button" data-i18n="btn.blog">More Blog Posts</a></li>
+							<li><a href="/blog/camera-story" class="button" data-i18n="btn.related">Related Article</a></li>
+						</ul>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					<ul class="icons">
+						<li><a href="https://www.facebook.com/vilk.coco" class="icon brands fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="https://www.linkedin.com/in/voic-andrei-622781212/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+						<li><a href="mailto:andrei@voic.ro" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+					</ul>
+					<div class="lang-select-wrap">
+						<svg class="lang-switcher-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 2a10 10 0 100 20 10 10 0 000-20zm6.93 6h-2.95a15.7 15.7 0 00-1.38-3.56A8.03 8.03 0 0118.93 8zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14a7.96 7.96 0 010-4h3.38a16.6 16.6 0 000 4H4.26zm.81 2h2.95c.32 1.25.78 2.45 1.38 3.56A8.03 8.03 0 015.07 16zm2.95-8H5.07a8.03 8.03 0 014.33-3.56A15.7 15.7 0 008.02 8zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82A13.7 13.7 0 0112 19.96zM14.34 14H9.66a14.6 14.6 0 010-4h4.68a14.6 14.6 0 010 4zm.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 01-4.33 3.56zM16.36 14a16.6 16.6 0 000-4h3.38a7.96 7.96 0 010 4h-3.38z"/></svg>
+						<label for="lang-select" class="lang-switcher-label">Language</label>
+						<select id="lang-select" aria-label="Select language">
+							<option value="en">English</option>
+							<option value="ro">Română</option>
+							<option value="de">Deutsch</option>
+							<option value="es">Español</option>
+							<option value="fr">Français</option>
+							<option value="zh">中文</option>
+						</select>
+					</div>
+					<ul class="copyright">
+						<li>&copy; Voic Andrei</li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/jquery.poptrox.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+
+				<script src="../assets/js/i18n/blog-robot-painter.js"></script>
+			<script src="../assets/js/i18n.js"></script>
+</body>
+</html>
